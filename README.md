@@ -193,8 +193,26 @@ if the profiles.clj doesn't seem to take efect (so no droid task) consider insta
 Save the image in VirtualBox.
 Create a clone of this image for new instances to avoid repeating the steps each time.
 
-To create your first app check out the tutorial at:
-https://github.com/krisc/events/blob/master/tutorial.md
+# App Development
+
+To create your first app see the tutorial at https://github.com/clojure-android/lein-droid/wiki/Tutorial
+
+With the configuration above you are ready to use Android SDK 20 as in:
+
+    lein droid new droidapp com.droid :activity DroidActivity :target-sdk 20 :app-name CljDroid
+
+If you use a target-sdk below 20:
+
+1. Open project.clj
+2. Comment out the :javac-options
+3. Change dependencies to:
+ 
+    :dependencies [[org.clojure-android/clojure "1.5.1-jb" :use-resources true]
+                   [neko/neko "3.0.0-preview4"]]
+
+If you use target-sdk 20 or later, consider changing the neko/neko dependency to the latest version, e.g. ``3.1.0-beta1``
+
+
 
 Copyright ©2014 Terje Norderhaug
 
