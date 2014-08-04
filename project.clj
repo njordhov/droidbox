@@ -17,7 +17,8 @@
   :profiles {:dev
              {:dependencies
               [[com.palletops/pallet "0.8.0-RC.9"
-                :classifier "tests"]]
+                :classifier "tests"]
+	       [com.palletops/pallet-vmfest "0.4.0-alpha.1"]]
               :plugins
               [[com.palletops/pallet-lein "0.8.0-alpha.1"]]}
              :leiningen/reply

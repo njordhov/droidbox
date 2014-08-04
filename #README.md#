@@ -16,8 +16,16 @@ The instructions below assumes OSX. See the [vmfest][vmfest] README for platform
 
 ## Create VM Instance
 
+After cloning this repo you can create vm instances from the repl.
+Start a repl by executing In the root folder of the project:
 
+    lein repl
 
+In the repl, evaluate:
+
+    (require 'droidbox.groups.droidbox)
+    (install-ubuntu)
+    (spin)
 
 ### Alternatively:
 
@@ -196,7 +204,7 @@ Later you can use the path to the key in the profile.clj file.
 
 Change the content of ~/.lein/profiles.clj as follows:
 
-    {:user {:plugins [â€‰[lein-droid "0.2.3"]â€‰] :android {:sdk-path "/home/vmfest/android-sdk-linux/sdk"}}}
+    {:user {:plugins [œôòé[lein-droid "0.2.3"]œôòé] :android {:sdk-path "/home/vmfest/android-sdk-linux/sdk"}}}
 
 The sdk path shoud be the same as downloaded previously.
 
@@ -271,6 +279,6 @@ install 32bit as specified earlier on.
 
 
 
-Copyright Â©2014 Terje Norderhaug
+Copyright ©2014 Terje Norderhaug
 
 Distributed under the Eclipse Public License.

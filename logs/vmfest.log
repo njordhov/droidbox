@@ -1,0 +1,265 @@
+2014-08-04 15:59:36,629 INFO [nREPL-worker-2] v.v.image About to execute job 
+{:key-file "/Users/terje/.vmfest/models/vagrant-key",
+ :image-file
+ "/var/folders/cr/1r5ysv0x6y7bql64vgr0k3yr000101/T/vmfest-vmfest-ubuntu-14.04/ubuntu-14.04.vdi",
+ :temp-dir
+ #<File /var/folders/cr/1r5ysv0x6y7bql64vgr0k3yr000101/T/vmfest-vmfest-ubuntu-14.04>,
+ :model-meta "/Users/terje/.vmfest/models/vmfest-ubuntu-14.04.meta",
+ :vbox
+ {:url "http://localhost:18083/", :username "test", :password "test"},
+ :model-name "ubuntu-14.04",
+ :image-name "ubuntu-14.04",
+ :key-url
+ "https://raw.github.com/mitchellh/vagrant/master/keys/vagrant",
+ :gzipped? true,
+ :gzipped-image-file
+ "/var/folders/cr/1r5ysv0x6y7bql64vgr0k3yr000101/T/vmfest-vmfest-ubuntu-14.04/ubuntu-14.04.vdi.gz",
+ :vagrant-box? false,
+ :meta nil,
+ :model-file "/Users/terje/.vmfest/models/vmfest-ubuntu-14.04.vdi",
+ :image-file-name "ubuntu-14.04.vdi.gz",
+ :model-path "/Users/terje/.vmfest/models",
+ :meta-url "https://s3.amazonaws.com/vmfest-images/ubuntu-14.04.meta",
+ :image-url
+ "https://s3.amazonaws.com/vmfest-images/ubuntu-14.04.vdi.gz"}
+
+2014-08-04 15:59:36,630 ERROR [nREPL-worker-2] v.v.image The model /Users/terje/.vmfest/models/vmfest-ubuntu-14.04.vdi already exists. Manually specifiy another file name with :model-name
+2014-08-04 16:04:37,302 INFO [nREPL-worker-6] v.v.image About to execute job 
+{:key-file "/Users/terje/.vmfest/models/vagrant-key",
+ :image-file
+ "/var/folders/cr/1r5ysv0x6y7bql64vgr0k3yr000101/T/vmfest-vmfest-ubuntu-14.04-1/ubuntu-14.04.vdi",
+ :temp-dir
+ #<File /var/folders/cr/1r5ysv0x6y7bql64vgr0k3yr000101/T/vmfest-vmfest-ubuntu-14.04-1>,
+ :model-meta "/Users/terje/.vmfest/models/vmfest-ubuntu-14.04.meta",
+ :vbox
+ {:url "http://localhost:18083/", :username "test", :password "test"},
+ :model-name "ubuntu-14.04",
+ :image-name "ubuntu-14.04",
+ :key-url
+ "https://raw.github.com/mitchellh/vagrant/master/keys/vagrant",
+ :gzipped? true,
+ :gzipped-image-file
+ "/var/folders/cr/1r5ysv0x6y7bql64vgr0k3yr000101/T/vmfest-vmfest-ubuntu-14.04-1/ubuntu-14.04.vdi.gz",
+ :vagrant-box? false,
+ :meta nil,
+ :model-file "/Users/terje/.vmfest/models/vmfest-ubuntu-14.04.vdi",
+ :image-file-name "ubuntu-14.04.vdi.gz",
+ :model-path "/Users/terje/.vmfest/models",
+ :meta-url "https://s3.amazonaws.com/vmfest-images/ubuntu-14.04.meta",
+ :image-url
+ "https://s3.amazonaws.com/vmfest-images/ubuntu-14.04.vdi.gz"}
+
+2014-08-04 16:04:37,304 ERROR [nREPL-worker-6] v.v.image The model /Users/terje/.vmfest/models/vmfest-ubuntu-14.04.vdi already exists. Manually specifiy another file name with :model-name
+2014-08-04 16:09:17,576 INFO [clojure-agent-send-off-pool-11] v.v.virtualbox create-machine: Creating machine droidbox-0 in /Users/terje/.vmfest/nodes/vmfest/droidbox-0/droidbox-0.vbox,  overwriting previous contents
+2014-08-04 16:09:17,647 DEBUG [clojure-agent-send-off-pool-11] v.v.machine-config Configuring network for machine droidbox-0 with [{:attachment-type :host-only, :host-only-interface "vboxnet0"} {:attachment-type :nat}]
+2014-08-04 16:09:17,659 DEBUG [clojure-agent-send-off-pool-11] v.v.machine-config Configuring adapter 0 with {:attachment-type :host-only, :host-only-interface "vboxnet0"}
+2014-08-04 16:09:17,660 DEBUG [clojure-agent-send-off-pool-11] v.v.machine-config configure-adapter: Configuring network adapter for machine 'droidbox-0' slot 0 with {:attachment-type :host-only, :host-only-interface "vboxnet0"}
+2014-08-04 16:09:17,712 DEBUG [clojure-agent-send-off-pool-11] v.v.machine-config Configuring adapter 1 with {:attachment-type :nat}
+2014-08-04 16:09:17,713 DEBUG [clojure-agent-send-off-pool-11] v.v.machine-config configure-adapter: Configuring network adapter for machine 'droidbox-0' slot 1 with {:attachment-type :nat}
+2014-08-04 16:09:17,793 DEBUG [clojure-agent-send-off-pool-11] v.manager Configuring storage for {:cpu-count 1, :network [{:attachment-type :host-only, :host-only-interface "vboxnet0"} {:attachment-type :nat}], :storage ({:devices [{:device-type :hard-disk, :location "/Users/terje/.vmfest/models/vmfest-ubuntu-14.04.vdi", :attachment-type :multi-attach} nil nil nil], :name "IDE Controller", :bus :ide}), :io-apic-enabled? true, :boot-mount-point ["IDE Controller" 0], :memory-size 1024}
+2014-08-04 16:09:17,955 DEBUG [clojure-agent-send-off-pool-11] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:09:18,106 DEBUG [clojure-agent-send-off-pool-11] v.v.machine-config Configuring storage for machine droidbox-0: clojure.lang.LazySeq@3da2e7fa
+2014-08-04 16:09:18,106 DEBUG [clojure-agent-send-off-pool-11] v.v.machine-config Configuring controller for {:devices [{:device-type :hard-disk, :location "/Users/terje/.vmfest/models/vmfest-ubuntu-14.04.vdi", :attachment-type :multi-attach} nil nil nil], :name "IDE Controller", :bus :ide}
+2014-08-04 16:09:18,107 DEBUG [clojure-agent-send-off-pool-11] v.v.machine-config configure-controller: Configuring controller for machine 'droidbox-0': {:devices [{:device-type :hard-disk, :location "/Users/terje/.vmfest/models/vmfest-ubuntu-14.04.vdi", :attachment-type :multi-attach} nil nil nil], :name "IDE Controller", :bus :ide}
+2014-08-04 16:09:18,108 DEBUG [clojure-agent-send-off-pool-11] v.v.machine-config add-storage-controller: m=org.virtualbox_4_3.IMachine@56b8ed99 name='IDE Controller' storage-bus IDE
+2014-08-04 16:09:18,115 DEBUG [clojure-agent-send-off-pool-11] v.v.machine-config attach-devices: Attaching devices to droidbox-0 in controller IDE Controller: [{:device-type :hard-disk, :location "/Users/terje/.vmfest/models/vmfest-ubuntu-14.04.vdi", :attachment-type :multi-attach} nil nil nil]
+2014-08-04 16:09:18,117 DEBUG [clojure-agent-send-off-pool-11] v.v.machine-config attach-device: Attaching {:device-type :hard-disk, :location "/Users/terje/.vmfest/models/vmfest-ubuntu-14.04.vdi", :attachment-type :multi-attach} in controller IDE Controller slot 0 port 0 for machine droidbox-0
+2014-08-04 16:09:18,639 DEBUG [clojure-agent-send-off-pool-11] v.v.session unlock-machine droidbox-0
+2014-08-04 16:09:18,646 DEBUG [clojure-agent-send-off-pool-11] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:09:18,731 DEBUG [clojure-agent-send-off-pool-11] v.v.session unlock-machine droidbox-0
+2014-08-04 16:09:18,739 DEBUG [clojure-agent-send-off-pool-11] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:09:18,796 DEBUG [clojure-agent-send-off-pool-11] v.v.session unlock-machine droidbox-0
+2014-08-04 16:09:18,803 DEBUG [clojure-agent-send-off-pool-11] v.v.virtualbox find-vb-m: found machine 'c871d628-878e-44d9-8722-6d926d598b21': org.virtualbox_4_3.IMachine@1b610267
+2014-08-04 16:09:18,814 DEBUG [clojure-agent-send-off-pool-11] v.v.machine will-it-run?: droidbox-0 will run -> {os-type-id Ubuntu_64 os-64-bit? true host-64-bit? true}
+2014-08-04 16:09:18,869 DEBUG [clojure-agent-send-off-pool-11] v.v.machine start: Starting session for VM c871d628-878e-44d9-8722-6d926d598b21...
+2014-08-04 16:09:21,774 DEBUG [clojure-agent-send-off-pool-11] v.v.machine start: VM c871d628-878e-44d9-8722-6d926d598b21 started with result code 0
+2014-08-04 16:09:21,809 DEBUG [clojure-agent-send-off-pool-11] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:09:21,924 DEBUG [clojure-agent-send-off-pool-11] v.v.session unlock-machine droidbox-0
+2014-08-04 16:09:23,929 DEBUG [clojure-agent-send-off-pool-11] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:09:23,937 DEBUG [clojure-agent-send-off-pool-11] v.v.session unlock-machine droidbox-0
+2014-08-04 16:09:25,941 DEBUG [clojure-agent-send-off-pool-11] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:09:25,950 DEBUG [clojure-agent-send-off-pool-11] v.v.session unlock-machine droidbox-0
+2014-08-04 16:09:27,957 DEBUG [clojure-agent-send-off-pool-11] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:09:28,029 DEBUG [clojure-agent-send-off-pool-11] v.v.session unlock-machine droidbox-0
+2014-08-04 16:09:30,034 DEBUG [clojure-agent-send-off-pool-11] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:09:30,041 DEBUG [clojure-agent-send-off-pool-11] v.v.session unlock-machine droidbox-0
+2014-08-04 16:09:32,045 DEBUG [clojure-agent-send-off-pool-11] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:09:32,082 DEBUG [clojure-agent-send-off-pool-11] v.v.session unlock-machine droidbox-0
+2014-08-04 16:09:34,087 DEBUG [clojure-agent-send-off-pool-11] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:09:34,097 DEBUG [clojure-agent-send-off-pool-11] v.v.session unlock-machine droidbox-0
+2014-08-04 16:09:36,101 DEBUG [clojure-agent-send-off-pool-11] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:09:36,109 DEBUG [clojure-agent-send-off-pool-11] v.v.session unlock-machine droidbox-0
+2014-08-04 16:09:38,115 DEBUG [clojure-agent-send-off-pool-11] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:09:38,123 DEBUG [clojure-agent-send-off-pool-11] v.v.session unlock-machine droidbox-0
+2014-08-04 16:09:40,129 DEBUG [clojure-agent-send-off-pool-11] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:09:40,139 DEBUG [clojure-agent-send-off-pool-11] v.v.session unlock-machine droidbox-0
+2014-08-04 16:09:42,143 DEBUG [clojure-agent-send-off-pool-11] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:09:42,151 DEBUG [clojure-agent-send-off-pool-11] v.v.session unlock-machine droidbox-0
+2014-08-04 16:09:44,156 DEBUG [clojure-agent-send-off-pool-11] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:09:44,164 DEBUG [clojure-agent-send-off-pool-11] v.v.session unlock-machine droidbox-0
+2014-08-04 16:09:46,169 DEBUG [clojure-agent-send-off-pool-11] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:09:46,178 DEBUG [clojure-agent-send-off-pool-11] v.v.session unlock-machine droidbox-0
+2014-08-04 16:09:48,182 DEBUG [clojure-agent-send-off-pool-11] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:09:48,191 DEBUG [clojure-agent-send-off-pool-11] v.v.session unlock-machine droidbox-0
+2014-08-04 16:09:48,253 DEBUG [clojure-agent-send-off-pool-11] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:09:48,261 DEBUG [clojure-agent-send-off-pool-11] v.v.session unlock-machine droidbox-0
+2014-08-04 16:09:52,374 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:09:52,382 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:09:52,455 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:09:52,463 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:09:52,492 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:09:52,501 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:09:52,508 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:09:52,546 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:09:52,550 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:09:52,558 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:09:52,561 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:09:52,569 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:09:52,578 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:09:52,615 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:09:52,618 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:09:52,625 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:09:52,628 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:09:52,636 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:01,507 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:01,516 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:01,519 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:01,555 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:01,559 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:01,567 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:01,570 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:01,578 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:01,581 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:01,618 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:01,621 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:01,629 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:01,632 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:01,640 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:02,018 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:02,026 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:02,097 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:02,106 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:02,136 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:02,144 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:02,147 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:02,184 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:02,188 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:02,196 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:02,199 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:02,207 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:02,211 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:02,248 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:02,252 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:02,260 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:02,263 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:02,271 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:13,907 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:13,915 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:13,918 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:13,954 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:13,957 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:13,965 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:13,968 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:13,976 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:13,979 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:14,015 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:14,019 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:14,028 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:14,031 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:14,039 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:14,673 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:14,682 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:14,685 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:14,721 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:14,724 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:14,732 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:14,735 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:14,742 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:14,745 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:14,783 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:14,786 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:14,794 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:14,797 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:14,805 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:15,133 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:15,142 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:15,145 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:15,181 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:15,184 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:15,191 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:15,194 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:15,202 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:15,205 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:15,242 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:15,245 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:15,253 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:15,256 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:15,264 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:15,745 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:15,754 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:15,757 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:15,793 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:15,796 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:15,804 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:15,807 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:15,815 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:15,819 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:15,866 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:15,869 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:15,877 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:15,880 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:15,888 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:16,245 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:16,253 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:16,256 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:16,292 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:16,295 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:16,303 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:16,306 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:16,314 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:16,317 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:16,354 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:16,358 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:16,366 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:16,369 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:16,378 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:16,775 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:16,783 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:16,786 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:16,823 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:16,826 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:16,834 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:16,838 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:16,845 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:16,849 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:16,886 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:16,889 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:16,897 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:16,900 DEBUG [operate-37] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:16,908 DEBUG [operate-37] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:17,569 DEBUG [operate-38] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:17,670 DEBUG [operate-38] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:17,695 DEBUG [operate-38] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:17,704 DEBUG [operate-38] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:17,720 DEBUG [operate-38] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:17,728 DEBUG [operate-38] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:17,809 DEBUG [nREPL-worker-11] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:17,851 DEBUG [nREPL-worker-11] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:17,857 DEBUG [nREPL-worker-11] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:17,866 DEBUG [nREPL-worker-11] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:17,967 DEBUG [nREPL-worker-11] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:17,975 DEBUG [nREPL-worker-11] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:18,011 DEBUG [nREPL-worker-11] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:18,019 DEBUG [nREPL-worker-11] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:18,054 DEBUG [nREPL-worker-11] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:18,063 DEBUG [nREPL-worker-11] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:18,099 DEBUG [nREPL-worker-11] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:18,107 DEBUG [nREPL-worker-11] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:18,143 DEBUG [nREPL-worker-11] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:18,151 DEBUG [nREPL-worker-11] v.v.session unlock-machine droidbox-0
+2014-08-04 16:10:18,199 DEBUG [nREPL-worker-11] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:10:18,207 DEBUG [nREPL-worker-11] v.v.session unlock-machine droidbox-0
+2014-08-04 16:15:19,821 DEBUG [nREPL-worker-12] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:15:19,883 DEBUG [nREPL-worker-12] v.v.session unlock-machine droidbox-0
+2014-08-04 16:15:19,888 DEBUG [nREPL-worker-12] v.v.session lock-machine droidbox-0 :shared
+2014-08-04 16:15:19,896 DEBUG [nREPL-worker-12] v.v.session unlock-machine droidbox-0

@@ -1,0 +1,816 @@
+2014-08-04 15:59:30,367 DEBUG [nREPL-worker-2] p.c.v.properties The vbox.home system property guessed as /Applications/VirtualBox.app/Contents/MacOS
+2014-08-04 15:59:31,701 DEBUG [nREPL-worker-2] p.c.implementation pallet.compute.vmfest.service provider failed to load: No VirtualBox library loaded. This namespace can only be referred to *after* a vmfest provider is initialized or if a vboxjws.jar or vboxjxpcom.jar library is in the classpath.
+2014-08-04 15:59:31,703 INFO [nREPL-worker-2] p.c.vmfest Connecting to VirtualBox via XPCom
+2014-08-04 15:59:35,752 DEBUG [nREPL-worker-2] p.c.v.service Loading images from /Users/terje/.vmfest/models
+2014-08-04 15:59:35,861 DEBUG [nREPL-worker-2] p.c.v.service Loaded images (:ubuntu-14.04 :ubuntu-13.04-64bit :debian-6.0.2.1-64bit-v0.3)
+2014-08-04 15:59:36,446 INFO [nREPL-worker-2] p.c.v.service No :default-bridged-interface defined. Will chose from these options: en1: Access Point (AirPort)
+2014-08-04 15:59:36,447 DEBUG [nREPL-worker-2] p.c.v.service No Local Interface defined. Using vboxnet0
+2014-08-04 15:59:36,447 DEBUG [nREPL-worker-2] p.c.v.service Loaded images: (:debian-6.0.2.1-64bit-v0.3 :ubuntu-13.04-64bit :ubuntu-14.04)
+2014-08-04 15:59:36,447 DEBUG [nREPL-worker-2] p.c.v.service Using 'local' networking via interface 'vboxnet0' as defaults for new machines
+2014-08-04 15:59:36,461 DEBUG [nREPL-worker-2] p.c.v.service loaded model :micro = {:cpu-count 1, :storage [{:devices [nil nil nil nil], :name "IDE Controller", :bus :ide}], :io-apic-enabled? true, :boot-mount-point ["IDE Controller" 0], :memory-size 512}
+2014-08-04 15:59:36,462 DEBUG [nREPL-worker-2] p.c.v.service loaded model :small = {:cpu-count 1, :storage [{:devices [nil nil nil nil], :name "IDE Controller", :bus :ide}], :io-apic-enabled? true, :boot-mount-point ["IDE Controller" 0], :memory-size 1024}
+2014-08-04 15:59:36,462 DEBUG [nREPL-worker-2] p.c.v.service loaded model :medium = {:cpu-count 2, :storage [{:devices [nil nil nil nil], :name "IDE Controller", :bus :ide}], :io-apic-enabled? true, :boot-mount-point ["IDE Controller" 0], :memory-size 2048}
+2014-08-04 15:59:36,462 DEBUG [nREPL-worker-2] p.c.v.service loaded model :large = {:cpu-count 4, :storage [{:devices [nil nil nil nil], :name "IDE Controller", :bus :ide}], :io-apic-enabled? true, :boot-mount-point ["IDE Controller" 0], :memory-size 4096}
+2014-08-04 15:59:36,464 DEBUG [nREPL-worker-2] p.c.v.service installing image to /Users/terje/.vmfest/models with options null
+2014-08-04 16:00:11,682 INFO [nREPL-worker-3] p.c.vmfest This VMFest provider is already configured to use XPCOM.
+2014-08-04 16:00:11,684 DEBUG [nREPL-worker-3] p.c.v.service Loading images from /Users/terje/.vmfest/models
+2014-08-04 16:00:11,686 DEBUG [nREPL-worker-3] p.c.v.service Loaded images (:ubuntu-14.04 :ubuntu-13.04-64bit :debian-6.0.2.1-64bit-v0.3)
+2014-08-04 16:00:11,759 INFO [nREPL-worker-3] p.c.v.service No :default-bridged-interface defined. Will chose from these options: en1: Access Point (AirPort)
+2014-08-04 16:00:11,759 DEBUG [nREPL-worker-3] p.c.v.service No Local Interface defined. Using vboxnet0
+2014-08-04 16:00:11,759 DEBUG [nREPL-worker-3] p.c.v.service Loaded images: (:debian-6.0.2.1-64bit-v0.3 :ubuntu-13.04-64bit :ubuntu-14.04)
+2014-08-04 16:00:11,759 DEBUG [nREPL-worker-3] p.c.v.service Using 'local' networking via interface 'vboxnet0' as defaults for new machines
+2014-08-04 16:00:11,759 DEBUG [nREPL-worker-3] p.c.v.service loaded model :micro = {:cpu-count 1, :storage [{:devices [nil nil nil nil], :name "IDE Controller", :bus :ide}], :io-apic-enabled? true, :boot-mount-point ["IDE Controller" 0], :memory-size 512}
+2014-08-04 16:00:11,760 DEBUG [nREPL-worker-3] p.c.v.service loaded model :small = {:cpu-count 1, :storage [{:devices [nil nil nil nil], :name "IDE Controller", :bus :ide}], :io-apic-enabled? true, :boot-mount-point ["IDE Controller" 0], :memory-size 1024}
+2014-08-04 16:00:11,760 DEBUG [nREPL-worker-3] p.c.v.service loaded model :medium = {:cpu-count 2, :storage [{:devices [nil nil nil nil], :name "IDE Controller", :bus :ide}], :io-apic-enabled? true, :boot-mount-point ["IDE Controller" 0], :memory-size 2048}
+2014-08-04 16:00:11,760 DEBUG [nREPL-worker-3] p.c.v.service loaded model :large = {:cpu-count 4, :storage [{:devices [nil nil nil nil], :name "IDE Controller", :bus :ide}], :io-apic-enabled? true, :boot-mount-point ["IDE Controller" 0], :memory-size 4096}
+2014-08-04 16:00:45,463 INFO [nREPL-worker-4] p.c.vmfest This VMFest provider is already configured to use XPCOM.
+2014-08-04 16:00:45,464 DEBUG [nREPL-worker-4] p.c.v.service Loading images from /Users/terje/.vmfest/models
+2014-08-04 16:00:45,465 DEBUG [nREPL-worker-4] p.c.v.service Loaded images (:ubuntu-14.04 :ubuntu-13.04-64bit :debian-6.0.2.1-64bit-v0.3)
+2014-08-04 16:00:45,518 INFO [nREPL-worker-4] p.c.v.service No :default-bridged-interface defined. Will chose from these options: en1: Access Point (AirPort)
+2014-08-04 16:00:45,518 DEBUG [nREPL-worker-4] p.c.v.service No Local Interface defined. Using vboxnet0
+2014-08-04 16:00:45,518 DEBUG [nREPL-worker-4] p.c.v.service Loaded images: (:debian-6.0.2.1-64bit-v0.3 :ubuntu-13.04-64bit :ubuntu-14.04)
+2014-08-04 16:00:45,518 DEBUG [nREPL-worker-4] p.c.v.service Using 'local' networking via interface 'vboxnet0' as defaults for new machines
+2014-08-04 16:00:45,518 DEBUG [nREPL-worker-4] p.c.v.service loaded model :micro = {:cpu-count 1, :storage [{:devices [nil nil nil nil], :name "IDE Controller", :bus :ide}], :io-apic-enabled? true, :boot-mount-point ["IDE Controller" 0], :memory-size 512}
+2014-08-04 16:00:45,519 DEBUG [nREPL-worker-4] p.c.v.service loaded model :small = {:cpu-count 1, :storage [{:devices [nil nil nil nil], :name "IDE Controller", :bus :ide}], :io-apic-enabled? true, :boot-mount-point ["IDE Controller" 0], :memory-size 1024}
+2014-08-04 16:00:45,519 DEBUG [nREPL-worker-4] p.c.v.service loaded model :medium = {:cpu-count 2, :storage [{:devices [nil nil nil nil], :name "IDE Controller", :bus :ide}], :io-apic-enabled? true, :boot-mount-point ["IDE Controller" 0], :memory-size 2048}
+2014-08-04 16:00:45,519 DEBUG [nREPL-worker-4] p.c.v.service loaded model :large = {:cpu-count 4, :storage [{:devices [nil nil nil nil], :name "IDE Controller", :bus :ide}], :io-apic-enabled? true, :boot-mount-point ["IDE Controller" 0], :memory-size 4096}
+2014-08-04 16:02:28,570 INFO [nREPL-worker-5] p.c.vmfest This VMFest provider is already configured to use XPCOM.
+2014-08-04 16:02:28,571 DEBUG [nREPL-worker-5] p.c.v.service Loading images from /Users/terje/.vmfest/models
+2014-08-04 16:02:28,572 DEBUG [nREPL-worker-5] p.c.v.service Loaded images (:ubuntu-14.04 :ubuntu-13.04-64bit :debian-6.0.2.1-64bit-v0.3)
+2014-08-04 16:02:28,642 INFO [nREPL-worker-5] p.c.v.service No :default-bridged-interface defined. Will chose from these options: en1: Access Point (AirPort)
+2014-08-04 16:02:28,642 DEBUG [nREPL-worker-5] p.c.v.service No Local Interface defined. Using vboxnet0
+2014-08-04 16:02:28,643 DEBUG [nREPL-worker-5] p.c.v.service Loaded images: (:debian-6.0.2.1-64bit-v0.3 :ubuntu-13.04-64bit :ubuntu-14.04)
+2014-08-04 16:02:28,643 DEBUG [nREPL-worker-5] p.c.v.service Using 'local' networking via interface 'vboxnet0' as defaults for new machines
+2014-08-04 16:02:28,643 DEBUG [nREPL-worker-5] p.c.v.service loaded model :micro = {:cpu-count 1, :storage [{:devices [nil nil nil nil], :name "IDE Controller", :bus :ide}], :io-apic-enabled? true, :boot-mount-point ["IDE Controller" 0], :memory-size 512}
+2014-08-04 16:02:28,643 DEBUG [nREPL-worker-5] p.c.v.service loaded model :small = {:cpu-count 1, :storage [{:devices [nil nil nil nil], :name "IDE Controller", :bus :ide}], :io-apic-enabled? true, :boot-mount-point ["IDE Controller" 0], :memory-size 1024}
+2014-08-04 16:02:28,643 DEBUG [nREPL-worker-5] p.c.v.service loaded model :medium = {:cpu-count 2, :storage [{:devices [nil nil nil nil], :name "IDE Controller", :bus :ide}], :io-apic-enabled? true, :boot-mount-point ["IDE Controller" 0], :memory-size 2048}
+2014-08-04 16:02:28,644 DEBUG [nREPL-worker-5] p.c.v.service loaded model :large = {:cpu-count 4, :storage [{:devices [nil nil nil nil], :name "IDE Controller", :bus :ide}], :io-apic-enabled? true, :boot-mount-point ["IDE Controller" 0], :memory-size 4096}
+2014-08-04 16:04:37,174 INFO [nREPL-worker-6] p.c.vmfest This VMFest provider is already configured to use XPCOM.
+2014-08-04 16:04:37,174 DEBUG [nREPL-worker-6] p.c.v.service Loading images from /Users/terje/.vmfest/models
+2014-08-04 16:04:37,176 DEBUG [nREPL-worker-6] p.c.v.service Loaded images (:ubuntu-14.04 :ubuntu-13.04-64bit :debian-6.0.2.1-64bit-v0.3)
+2014-08-04 16:04:37,228 INFO [nREPL-worker-6] p.c.v.service No :default-bridged-interface defined. Will chose from these options: en1: Access Point (AirPort)
+2014-08-04 16:04:37,228 DEBUG [nREPL-worker-6] p.c.v.service No Local Interface defined. Using vboxnet0
+2014-08-04 16:04:37,228 DEBUG [nREPL-worker-6] p.c.v.service Loaded images: (:debian-6.0.2.1-64bit-v0.3 :ubuntu-13.04-64bit :ubuntu-14.04)
+2014-08-04 16:04:37,228 DEBUG [nREPL-worker-6] p.c.v.service Using 'local' networking via interface 'vboxnet0' as defaults for new machines
+2014-08-04 16:04:37,229 DEBUG [nREPL-worker-6] p.c.v.service loaded model :micro = {:cpu-count 1, :storage [{:devices [nil nil nil nil], :name "IDE Controller", :bus :ide}], :io-apic-enabled? true, :boot-mount-point ["IDE Controller" 0], :memory-size 512}
+2014-08-04 16:04:37,229 DEBUG [nREPL-worker-6] p.c.v.service loaded model :small = {:cpu-count 1, :storage [{:devices [nil nil nil nil], :name "IDE Controller", :bus :ide}], :io-apic-enabled? true, :boot-mount-point ["IDE Controller" 0], :memory-size 1024}
+2014-08-04 16:04:37,229 DEBUG [nREPL-worker-6] p.c.v.service loaded model :medium = {:cpu-count 2, :storage [{:devices [nil nil nil nil], :name "IDE Controller", :bus :ide}], :io-apic-enabled? true, :boot-mount-point ["IDE Controller" 0], :memory-size 2048}
+2014-08-04 16:04:37,229 DEBUG [nREPL-worker-6] p.c.v.service loaded model :large = {:cpu-count 4, :storage [{:devices [nil nil nil nil], :name "IDE Controller", :bus :ide}], :io-apic-enabled? true, :boot-mount-point ["IDE Controller" 0], :memory-size 4096}
+2014-08-04 16:04:37,229 DEBUG [nREPL-worker-6] p.c.v.service installing image to /Users/terje/.vmfest/models with options null
+2014-08-04 16:08:39,702 DEBUG [nREPL-worker-10] p.c.jclouds Found jclouds sshj driver
+2014-08-04 16:08:39,716 DEBUG [nREPL-worker-10] p.c.jclouds extensions (:slf4j :sshj)
+2014-08-04 16:09:16,233 INFO [nREPL-worker-11] p.c.vmfest This VMFest provider is already configured to use XPCOM.
+2014-08-04 16:09:16,233 DEBUG [nREPL-worker-11] p.c.v.service Loading images from /Users/terje/.vmfest/models
+2014-08-04 16:09:16,284 DEBUG [nREPL-worker-11] p.c.v.service Loaded images (:ubuntu-14.04 :ubuntu-13.04-64bit :debian-6.0.2.1-64bit-v0.3)
+2014-08-04 16:09:16,358 INFO [nREPL-worker-11] p.c.v.service No :default-bridged-interface defined. Will chose from these options: en1: Access Point (AirPort)
+2014-08-04 16:09:16,358 DEBUG [nREPL-worker-11] p.c.v.service No Local Interface defined. Using vboxnet0
+2014-08-04 16:09:16,358 DEBUG [nREPL-worker-11] p.c.v.service Loaded images: (:debian-6.0.2.1-64bit-v0.3 :ubuntu-13.04-64bit :ubuntu-14.04)
+2014-08-04 16:09:16,358 DEBUG [nREPL-worker-11] p.c.v.service Using 'local' networking via interface 'vboxnet0' as defaults for new machines
+2014-08-04 16:09:16,359 DEBUG [nREPL-worker-11] p.c.v.service loaded model :micro = {:cpu-count 1, :storage [{:devices [nil nil nil nil], :name "IDE Controller", :bus :ide}], :io-apic-enabled? true, :boot-mount-point ["IDE Controller" 0], :memory-size 512}
+2014-08-04 16:09:16,359 DEBUG [nREPL-worker-11] p.c.v.service loaded model :small = {:cpu-count 1, :storage [{:devices [nil nil nil nil], :name "IDE Controller", :bus :ide}], :io-apic-enabled? true, :boot-mount-point ["IDE Controller" 0], :memory-size 1024}
+2014-08-04 16:09:16,359 DEBUG [nREPL-worker-11] p.c.v.service loaded model :medium = {:cpu-count 2, :storage [{:devices [nil nil nil nil], :name "IDE Controller", :bus :ide}], :io-apic-enabled? true, :boot-mount-point ["IDE Controller" 0], :memory-size 2048}
+2014-08-04 16:09:16,359 DEBUG [nREPL-worker-11] p.c.v.service loaded model :large = {:cpu-count 4, :storage [{:devices [nil nil nil nil], :name "IDE Controller", :bus :ide}], :io-apic-enabled? true, :boot-mount-point ["IDE Controller" 0], :memory-size 4096}
+2014-08-04 16:09:17,460 DEBUG [operate-38] p.c.operations converge :phase [:configure] :groups [:droidbox] :settings-groups []
+2014-08-04 16:09:17,485 DEBUG [operate-38] p.c.primitives build-and-execute-phase :destroy-server on 0 target(s)
+2014-08-04 16:09:17,515 DEBUG [operate-38] p.c.primitives remove-group-nodes {}
+2014-08-04 16:09:17,519 DEBUG [operate-38] p.c.primitives build-and-execute-phase :destroy-group on 0 target(s)
+2014-08-04 16:09:17,524 DEBUG [operate-38] p.c.primitives build-and-execute-phase :create-group on 1 target(s)
+2014-08-04 16:09:17,531 DEBUG [operate-38] p.c.primitives create-group-nodes pallet.compute.vmfest.service.VmfestService@55c45fa4 {:compute #<VmfestService pallet.compute.vmfest.service.VmfestService@55c45fa4>, :user #pallet.core.user.User{:username "terje", :public-key-path "/Users/terje/.ssh/id_rsa.pub", :private-key-path "/Users/terje/.ssh/id_rsa", :public-key nil, :private-key nil, :passphrase nil, :password nil, :sudo-password nil, :no-sudo nil, :sudo-user nil, :state-root nil, :state-group nil}} {{:default-phases [:configure], :phases {:pallet/os #< clojure.lang.AFunction$1@79e94926>, :pallet/os-bs #< clojure.lang.AFunction$1@42c19c51>, :bootstrap #< clojure.lang.AFunction$1@606e8c5>, :configure #<droidbox$fn__14238 droidbox.groups.droidbox$fn__14238@1bbb8798>}, :image {:image-id :ubuntu-14.04}, :hardware {:min-cores 1, :min-ram 1024}, :group-name :droidbox, :count 1} {:actual 0, :target 1, :delta 1}}
+2014-08-04 16:09:17,543 DEBUG [operate-38] p.c.v.service run-nodes with template {:min-cores 1, :image-id :ubuntu-14.04, :min-ram 1024}
+2014-08-04 16:09:17,544 DEBUG [operate-38] p.c.v.service Looking for {:min-cores 1, :image-id :ubuntu-14.04, :min-ram 1024} in {:debian-6.0.2.1-64bit-v0.3 {:os-type-id "Debian_64", :sudo-password "vmfest", :no-sudo false, :image-name "debian-6.0.2.1-64bit-v0.3", :username "vmfest", :os-family :debian, :os-version "6.0.2.1", :uuid "/Users/terje/.vmfest/models/vmfest-debian-6.0.2.1-64bit-v0.3.vdi", :os-64-bit true, :image-id "debian-6.0.2.1-64bit-v0.3", :password "vmfest", :description "Debian 6.0.2.1 (64bit) v0.3"}, :ubuntu-13.04-64bit {:os-type-id "Ubuntu_64", :sudo-password "vmfest", :no-sudo false, :image-name "ubuntu-13.04-64bit", :packager :apt, :username "vmfest", :os-family :ubuntu, :os-version "13.04", :uuid "/Users/terje/.vmfest/models/vmfest-ubuntu-13.04-64bit.vdi", :os-64-bit true, :image-id "ubuntu-13.04-64bit", :password "vmfest", :description "Ubuntu 13.04 (64bit)"}, :ubuntu-14.04 {:os-type-id "Ubuntu_64", :no-sudo false, :image-name "ubuntu-14.04", :packager :apt, :username "vmfest", :os-family :ubuntu, :os-version "14.04", :uuid "/Users/terje/.vmfest/models/vmfest-ubuntu-14.04.vdi", :os-64-bit true, :image-id "ubuntu-14.04", :password "vmfest", :description "Ubuntu 14.04 (64bit)"}}
+2014-08-04 16:09:17,566 DEBUG [operate-38] p.c.v.service Final network config: type %s bridged-if %s local-if %s nat-rules :local en1: Access Point (AirPort) vboxnet0 nil
+2014-08-04 16:09:17,570 DEBUG [operate-38] p.c.v.service current-machine-names #{}
+2014-08-04 16:09:17,570 DEBUG [operate-38] p.c.v.service target-machine-names #{"droidbox-0"}
+2014-08-04 16:09:17,570 DEBUG [operate-38] p.c.v.service target-machines-already-existing #{}
+2014-08-04 16:09:17,570 DEBUG [operate-38] p.c.v.service target-machines-to-create#{"droidbox-0"}
+2014-08-04 16:09:17,571 DEBUG [operate-38] p.c.v.service Selected image: :ubuntu-14.04
+2014-08-04 16:09:17,571 DEBUG [operate-38] p.c.v.service Hardware model {:cpu-count 1, :network [{:attachment-type :host-only, :host-only-interface "vboxnet0"} {:attachment-type :nat}], :storage [{:devices [nil nil nil nil], :name "IDE Controller", :bus :ide}], :io-apic-enabled? true, :boot-mount-point ["IDE Controller" 0], :memory-size 1024}
+2014-08-04 16:09:21,784 DEBUG [clojure-agent-send-off-pool-11] p.c.v.service Waiting 300000 ms for the IP in slot 0 of droidbox-0 to come up.
+2014-08-04 16:09:48,194 DEBUG [clojure-agent-send-off-pool-11] p.c.v.service Waiting 300000 ms for the IP in slot 1 of droidbox-0 to come up.
+2014-08-04 16:09:52,276 DEBUG [operate-38] p.c.operations lift-partitions :phases [:pallet/os-bs :pallet/os :settings] :targets [:droidbox]
+2014-08-04 16:09:52,295 DEBUG [operate-37] p.c.operations lift :phases [:pallet/os-bs] :targets [:droidbox]
+2014-08-04 16:09:52,328 DEBUG [operate-37] p.core.api has-state-flag :bootstrapped c871d628-878e-44d9-8722-6d926d598b21
+2014-08-04 16:09:52,333 DEBUG [operate-37] p.c.primitives build-and-execute-phase :pallet/os-bs on 0 target(s)
+2014-08-04 16:09:52,360 DEBUG [operate-37] p.c.operations lift :phases [:pallet/os] :targets [:droidbox]
+2014-08-04 16:09:52,367 DEBUG [operate-37] p.core.api has-state-flag :bootstrapped c871d628-878e-44d9-8722-6d926d598b21
+2014-08-04 16:09:52,369 DEBUG [operate-37] p.c.primitives build-and-execute-phase :pallet/os on 1 target(s)
+2014-08-04 16:09:52,401 DEBUG [operate-37] p.c.api-impl target-os-details node {:packager :apt, :os-version "14.04", :os-family :ubuntu} detected {}
+2014-08-04 16:09:52,402 DEBUG [operate-37] p.c.api-impl Script context: [:ubuntu :apt :ubuntu-14.04]
+2014-08-04 16:09:52,451 DEBUG [operate-37] p.core.api Image-user is {:username "vmfest", :password "******"}
+2014-08-04 16:09:52,472 DEBUG [operate-37] p.c.api-impl target-os-details node {:packager :apt, :os-version "14.04", :os-family :ubuntu} detected {}
+2014-08-04 16:09:52,473 DEBUG [operate-37] p.c.api-impl Script context: [:ubuntu :apt :ubuntu-14.04]
+2014-08-04 16:09:52,572 INFO [operate-37] p.s.execute 192.168.56.101 22 os: infer-os: 
+2014-08-04 16:09:52,641 DEBUG [operate-37] p.s.execute authentication {:username "vmfest", :password "******"}
+2014-08-04 16:09:59,428 DEBUG [operate-37] p.s.transport SSH user vmfest :private-key-path null :private-key null :password ******
+2014-08-04 16:09:59,432 DEBUG [operate-37] p.s.transport attempt-connect username: vmfest  password: ******
+2014-08-04 16:09:59,439 DEBUG [operate-37] p.s.transport SSH connecting {:server "192.168.56.101", :port 22}
+2014-08-04 16:09:59,440 DEBUG [operate-37] p.s.transport wait-for-port-reachable ip 192.168.56.101 port 22
+2014-08-04 16:09:59,442 DEBUG [operate-37] p.s.transport port-reachable? ip 192.168.56.101 port 22 timeout 2000
+2014-08-04 16:10:00,622 DEBUG [operate-37] p.t.ssh Create ssh transport state: {:server "192.168.56.101", :port 22}
+2014-08-04 16:10:00,741 DEBUG [operate-37] p.s.execute 192.168.56.101 ==>  -----------------------------------------
+2014-08-04 16:10:00,741 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> #!/usr/bin/env bash
+2014-08-04 16:10:00,741 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> set -h
+2014-08-04 16:10:00,741 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> echo {
+2014-08-04 16:10:00,741 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> echo   :os '"'$(uname -s)'"'
+2014-08-04 16:10:00,741 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> echo   :rev '"'$(uname -r)'"'
+2014-08-04 16:10:00,741 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> echo   :mach '"'$(uname -m)'"'
+2014-08-04 16:10:00,741 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> echo }
+2014-08-04 16:10:00,741 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> 
+2014-08-04 16:10:00,741 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> exit $?
+2014-08-04 16:10:00,741 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> ------------------------------------------
+2014-08-04 16:10:00,742 DEBUG [operate-37] p.s.execute 192.168.56.101:22 send script via /tmp/palletF09tV as root
+2014-08-04 16:10:00,742 DEBUG [operate-37] p.s.execute 192.168.56.101   <== ----------------------------------------
+2014-08-04 16:10:00,750 DEBUG [operate-37] p.s.transport send-text set mode /tmp/palletF09tV 384
+2014-08-04 16:10:00,755 DEBUG [operate-37] p.script-builder {}
+2014-08-04 16:10:00,755 DEBUG [operate-37] p.script-builder prefix kw :sudo
+2014-08-04 16:10:00,764 DEBUG [operate-37] p.script-builder prefix sudo {:action {:action-symbol pallet.actions/exec-script*, :impls #<Atom@93b75a7: {:direct {:f #<exec_script$eval10665$exec_script_STAR__direct__10666 pallet.actions.direct.exec_script$eval10665$exec_script_STAR__direct__10666@58a681c3>, :metadata {:location :target, :action-type :script}}}>, :execution :in-sequence, :precedence {}}, :args ("echo {\necho   :os '\"'$(uname -s)'\"'\necho   :rev '\"'$(uname -r)'\"'\necho   :mach '\"'$(uname -m)'\"'\necho }\n"), :context ("os" "infer-os"), :node-value-path nv19230, :username "vmfest", :password "vmfest"}
+2014-08-04 16:10:00,765 DEBUG [operate-37] p.script-builder sudo-cmd-for {:username "vmfest", :password "vmfest"}
+2014-08-04 16:10:00,767 DEBUG [operate-37] p.script-builder prefix /usr/bin/sudo -n
+2014-08-04 16:10:00,769 DEBUG [operate-37] p.s.execute ssh-script-on-target command {:env-cmd "/usr/bin/env", :env nil, :env-fwd [:SSH_AUTH_SOCK], :prefix ["/usr/bin/sudo" "-n"], :execv ("/bin/bash" "/tmp/palletF09tV")}
+2014-08-04 16:10:01,383 DEBUG [operate-37] p.execute 192.168.56.101   <== {
+2014-08-04 16:10:01,384 DEBUG [operate-37] p.execute 192.168.56.101   <== :os "Linux"
+2014-08-04 16:10:01,384 DEBUG [operate-37] p.execute 192.168.56.101   <== :rev "3.13.0-24-generic"
+2014-08-04 16:10:01,384 DEBUG [operate-37] p.execute 192.168.56.101   <== :mach "x86_64"
+2014-08-04 16:10:01,384 DEBUG [operate-37] p.execute 192.168.56.101   <== }
+2014-08-04 16:10:01,493 DEBUG [operate-37] p.s.execute 192.168.56.101   <== ----------------------------------------
+2014-08-04 16:10:01,498 DEBUG [operate-37] p.l.execute clojure-on-origin pallet.crate.os$infer_os$action__4104__auto___direct__13032$clj_action13031__13033@47724e0c
+2014-08-04 16:10:01,579 INFO [operate-37] p.s.execute 192.168.56.101 22 os: infer-distro: 
+2014-08-04 16:10:01,642 DEBUG [operate-37] p.s.execute authentication {:username "vmfest", :password "******"}
+2014-08-04 16:10:01,643 DEBUG [operate-37] p.s.transport SSH user vmfest :private-key-path null :private-key null :password ******
+2014-08-04 16:10:01,747 DEBUG [operate-37] p.s.execute 192.168.56.101 ==>  -----------------------------------------
+2014-08-04 16:10:01,747 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> #!/usr/bin/env bash
+2014-08-04 16:10:01,747 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> set -h
+2014-08-04 16:10:01,747 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> if [ -e /etc/debconf_version ]; then
+2014-08-04 16:10:01,747 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> ID=$(cat /etc/redhat-release | egrep -o -e '^[A-Za-z ]+release' | sed -e 's/ release//')
+2014-08-04 16:10:01,747 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> RELEASE=$(lsb_release -s -r)
+2014-08-04 16:10:01,747 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi
+2014-08-04 16:10:01,747 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> if [ -e /etc/lsb-release ]; then
+2014-08-04 16:10:01,747 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> source /etc/lsb-release
+2014-08-04 16:10:01,747 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> ID=${DISTRIB_ID}
+2014-08-04 16:10:01,748 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> RELEASE=${DISTRIB_RELEASE}
+2014-08-04 16:10:01,748 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi
+2014-08-04 16:10:01,748 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> if [ -e /etc/redhat-release ]; then
+2014-08-04 16:10:01,748 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> ID=$(cat /etc/redhat-release | egrep -o -e '^[A-Za-z ]+release' | sed -e 's/ release//')
+2014-08-04 16:10:01,748 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> RELEASE=$(cat /etc/redhat-release | sed -e 's/.*release//' | sed -e 's/[^0-9.]//g')
+2014-08-04 16:10:01,748 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi
+2014-08-04 16:10:01,748 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> if [ -e /etc/SUSE-release ]; then
+2014-08-04 16:10:01,748 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> ID=$(cat /etc/SUSE-release | tr ' ' | sed -e 's/VERSION.*//')
+2014-08-04 16:10:01,748 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> RELEASE=$(cat /etc/SUSE-release | tr ' ' | sed -e 's/.*= //')
+2014-08-04 16:10:01,748 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi
+2014-08-04 16:10:01,748 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> if [ -e /etc/mandrake-release ]; then
+2014-08-04 16:10:01,749 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> ID=Mandrake
+2014-08-04 16:10:01,749 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> RELEASE=$(cat /etc/mandrake-release | sed -e 's/.*release //' | sed -e 's/ .*//')
+2014-08-04 16:10:01,749 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi
+2014-08-04 16:10:01,749 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> echo {
+2014-08-04 16:10:01,749 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> echo   :id '"'${ID:-unknown}'"'
+2014-08-04 16:10:01,749 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> echo   :release '"'${RELEASE:-unknown}'"'
+2014-08-04 16:10:01,749 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> echo }
+2014-08-04 16:10:01,749 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> 
+2014-08-04 16:10:01,749 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> exit $?
+2014-08-04 16:10:01,749 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> ------------------------------------------
+2014-08-04 16:10:01,749 DEBUG [operate-37] p.s.execute 192.168.56.101:22 send script via /tmp/palletoj74O as root
+2014-08-04 16:10:01,750 DEBUG [operate-37] p.s.execute 192.168.56.101   <== ----------------------------------------
+2014-08-04 16:10:01,754 DEBUG [operate-37] p.s.transport send-text set mode /tmp/palletoj74O 384
+2014-08-04 16:10:01,755 DEBUG [operate-37] p.script-builder {}
+2014-08-04 16:10:01,755 DEBUG [operate-37] p.script-builder prefix kw :sudo
+2014-08-04 16:10:01,757 DEBUG [operate-37] p.script-builder prefix sudo {:action {:action-symbol pallet.actions/exec-script*, :impls #<Atom@93b75a7: {:direct {:f #<exec_script$eval10665$exec_script_STAR__direct__10666 pallet.actions.direct.exec_script$eval10665$exec_script_STAR__direct__10666@58a681c3>, :metadata {:location :target, :action-type :script}}}>, :execution :in-sequence, :precedence {}}, :args ("if [ -e /etc/debconf_version ]; then\nID=$(cat /etc/redhat-release | egrep -o -e '^[A-Za-z ]+release' | sed -e 's/ release//')\nRELEASE=$(lsb_release -s -r)\nfi\nif [ -e /etc/lsb-release ]; then\nsource /etc/lsb-release\nID=${DISTRIB_ID}\nRELEASE=${DISTRIB_RELEASE}\nfi\nif [ -e /etc/redhat-release ]; then\nID=$(cat /etc/redhat-release | egrep -o -e '^[A-Za-z ]+release' | sed -e 's/ release//')\nRELEASE=$(cat /etc/redhat-release | sed -e 's/.*release//' | sed -e 's/[^0-9.]//g')\nfi\nif [ -e /etc/SUSE-release ]; then\nID=$(cat /etc/SUSE-release | tr ' ' | sed -e 's/VERSION.*//')\nRELEASE=$(cat /etc/SUSE-release | tr ' ' | sed -e 's/.*= //')\nfi\nif [ -e /etc/mandrake-release ]; then\nID=Mandrake\nRELEASE=$(cat /etc/mandrake-release | sed -e 's/.*release //' | sed -e 's/ .*//')\nfi\necho {\necho   :id '\"'${ID:-unknown}'\"'\necho   :release '\"'${RELEASE:-unknown}'\"'\necho }\n"), :context ("os" "infer-distro"), :node-value-path nv19232, :username "vmfest", :password "vmfest"}
+2014-08-04 16:10:01,757 DEBUG [operate-37] p.script-builder sudo-cmd-for {:username "vmfest", :password "vmfest"}
+2014-08-04 16:10:01,757 DEBUG [operate-37] p.script-builder prefix /usr/bin/sudo -n
+2014-08-04 16:10:01,757 DEBUG [operate-37] p.s.execute ssh-script-on-target command {:env-cmd "/usr/bin/env", :env nil, :env-fwd [:SSH_AUTH_SOCK], :prefix ["/usr/bin/sudo" "-n"], :execv ("/bin/bash" "/tmp/palletoj74O")}
+2014-08-04 16:10:01,860 DEBUG [operate-37] p.execute 192.168.56.101   <== {
+2014-08-04 16:10:01,860 DEBUG [operate-37] p.execute 192.168.56.101   <== :id "Ubuntu"
+2014-08-04 16:10:01,860 DEBUG [operate-37] p.execute 192.168.56.101   <== :release "14.04"
+2014-08-04 16:10:01,860 DEBUG [operate-37] p.execute 192.168.56.101   <== }
+2014-08-04 16:10:01,963 DEBUG [operate-37] p.s.execute 192.168.56.101   <== ----------------------------------------
+2014-08-04 16:10:01,965 DEBUG [operate-37] p.l.execute clojure-on-origin pallet.crate.os$infer_distro$action__4104__auto___direct__13057$clj_action13056__13058@1d117b06
+2014-08-04 16:10:01,966 DEBUG [operate-37] p.l.execute clojure-on-origin pallet.crate.os$os$action__4104__auto___direct__13081$clj_action13080__13082@66a3d5d2
+2014-08-04 16:10:01,968 DEBUG [operate-37] p.l.execute clojure-on-origin pallet.actions.direct.settings$eval11737$assoc_settings_direct__11739$fn__11740@e2b02a3
+2014-08-04 16:10:01,981 DEBUG [operate-37] p.c.operations lift :phases [:settings] :targets [:droidbox]
+2014-08-04 16:10:01,985 DEBUG [operate-38] p.c.primitives build-and-execute-phase :settings on 1 target(s)
+2014-08-04 16:10:01,996 DEBUG [operate-38] p.c.operations lift-partitions :phases [:bootstrap :configure] :targets [:droidbox]
+2014-08-04 16:10:02,000 DEBUG [operate-37] p.c.operations lift :phases [:bootstrap] :targets [:droidbox]
+2014-08-04 16:10:02,014 DEBUG [operate-37] p.core.api has-state-flag :bootstrapped c871d628-878e-44d9-8722-6d926d598b21
+2014-08-04 16:10:02,016 DEBUG [operate-37] p.c.primitives build-and-execute-phase :bootstrap on 1 target(s)
+2014-08-04 16:10:02,034 DEBUG [operate-37] p.c.api-impl target-os-details node {:packager :apt, :os-version "14.04", :os-family :ubuntu} detected {:os-version "14.04", :os-family :ubuntu}
+2014-08-04 16:10:02,035 DEBUG [operate-37] p.c.api-impl Script context: [:ubuntu :apt :ubuntu-14.04]
+2014-08-04 16:10:02,037 DEBUG [operate-37] p.c.automated-admin-user a-a-u for pallet.core.user.User@e4d0912f
+2014-08-04 16:10:02,094 DEBUG [operate-37] p.core.api Image-user is {:username "vmfest", :password "******"}
+2014-08-04 16:10:02,115 DEBUG [operate-37] p.c.api-impl target-os-details node {:packager :apt, :os-version "14.04", :os-family :ubuntu} detected {:os-version "14.04", :os-family :ubuntu}
+2014-08-04 16:10:02,115 DEBUG [operate-37] p.c.api-impl Script context: [:ubuntu :apt :ubuntu-14.04]
+2014-08-04 16:10:02,209 INFO [operate-37] p.s.execute 192.168.56.101 22 [automated-admin-user: install]: package sudo :action :install
+2014-08-04 16:10:02,272 DEBUG [operate-37] p.s.execute authentication {:username "vmfest", :password "******"}
+2014-08-04 16:10:02,272 DEBUG [operate-37] p.s.transport SSH user vmfest :private-key-path null :private-key null :password ******
+2014-08-04 16:10:02,376 DEBUG [operate-37] p.s.execute 192.168.56.101 ==>  -----------------------------------------
+2014-08-04 16:10:02,377 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> #!/usr/bin/env bash
+2014-08-04 16:10:02,377 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> set -h
+2014-08-04 16:10:02,377 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> echo '[automated-admin-user: install]: Packages...';
+2014-08-04 16:10:02,377 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> {
+2014-08-04 16:10:02,377 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> { debconf-set-selections <<EOF
+2014-08-04 16:10:02,377 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> debconf debconf/frontend select noninteractive
+2014-08-04 16:10:02,377 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> debconf debconf/frontend seen false
+2014-08-04 16:10:02,377 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> EOF
+2014-08-04 16:10:02,377 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> } && enableStart() {
+2014-08-04 16:10:02,377 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> rm /usr/sbin/policy-rc.d
+2014-08-04 16:10:02,377 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> } && apt-get -q -y install sudo+ && dpkg --get-selections
+2014-08-04 16:10:02,377 DEBUG [operate-37] p.s.execute 192.168.56.101 ==>  } || { echo '#> [automated-admin-user: install]: Packages : FAIL'; exit 1;} >&2 
+2014-08-04 16:10:02,377 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> echo '#> [automated-admin-user: install]: Packages : SUCCESS'
+2014-08-04 16:10:02,377 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> 
+2014-08-04 16:10:02,377 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> exit $?
+2014-08-04 16:10:02,377 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> ------------------------------------------
+2014-08-04 16:10:02,377 DEBUG [operate-37] p.s.execute 192.168.56.101:22 send script via /tmp/palletMSz9e as root
+2014-08-04 16:10:02,378 DEBUG [operate-37] p.s.execute 192.168.56.101   <== ----------------------------------------
+2014-08-04 16:10:02,381 DEBUG [operate-37] p.s.transport send-text set mode /tmp/palletMSz9e 384
+2014-08-04 16:10:02,383 DEBUG [operate-37] p.script-builder {}
+2014-08-04 16:10:02,383 DEBUG [operate-37] p.script-builder prefix kw :sudo
+2014-08-04 16:10:02,390 DEBUG [operate-37] p.script-builder prefix sudo {:always-after #{:package-source :package-manager}, :action {:action-symbol pallet.actions/package, :impls #<Atom@457935f3: {:direct {:f #<package$eval11446$package_direct__11447 pallet.actions.direct.package$eval11446$package_direct__11447@f43a514>, :metadata {:location :target, :doc "Install or remove a package.\n\n   Options\n    - :action [:install | :remove | :upgrade]\n    - :purge [true|false]          when removing, whether to remove all config\n    - :enable [repo|(seq repo)]    enable specific repository\n    - :disable [repo|(seq repo)]   disable specific repository\n    - :priority n                  priority (0-100, default 50)\n    - :allow-unsigned [true|false] allow unsigned packages\n    - :disable-service-start       disable service startup (default false)\n\n   Package management occurs in one shot, so that the package manager can\n   maintain a consistent view.", :action-type :script}}}>, :execution :aggregated, :precedence {:always-after #{:package-source :package-manager}}}, :args (("sudo" :action :install)), :context ("[automated-admin-user: install]"), :node-value-path nv19248, :username "vmfest", :password "vmfest"}
+2014-08-04 16:10:02,390 DEBUG [operate-37] p.script-builder sudo-cmd-for {:username "vmfest", :password "vmfest"}
+2014-08-04 16:10:02,390 DEBUG [operate-37] p.script-builder prefix /usr/bin/sudo -n
+2014-08-04 16:10:02,391 DEBUG [operate-37] p.s.execute ssh-script-on-target command {:env-cmd "/usr/bin/env", :env nil, :env-fwd [:SSH_AUTH_SOCK], :prefix ["/usr/bin/sudo" "-n"], :execv ("/bin/bash" "/tmp/palletMSz9e")}
+2014-08-04 16:10:02,493 DEBUG [operate-37] p.execute 192.168.56.101   <== [automated-admin-user: install]: Packages...
+2014-08-04 16:10:09,244 DEBUG [operate-37] p.execute 192.168.56.101   <== Reading package lists...
+2014-08-04 16:10:13,173 DEBUG [operate-37] p.execute 192.168.56.101   <== Building dependency tree...
+2014-08-04 16:10:13,375 DEBUG [operate-37] p.execute 192.168.56.101   <== 
+2014-08-04 16:10:13,375 DEBUG [operate-37] p.execute 192.168.56.101   <== Reading state information...
+2014-08-04 16:10:13,476 DEBUG [operate-37] p.execute 192.168.56.101   <== sudo is already the newest version.
+2014-08-04 16:10:13,677 DEBUG [operate-37] p.execute 192.168.56.101   <== 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+2014-08-04 16:10:13,780 DEBUG [operate-37] p.execute 192.168.56.101   <== adduser						install
+2014-08-04 16:10:13,780 DEBUG [operate-37] p.execute 192.168.56.101   <== apt						install
+2014-08-04 16:10:13,780 DEBUG [operate-37] p.execute 192.168.56.101   <== apt-utils					install
+2014-08-04 16:10:13,780 DEBUG [operate-37] p.execute 192.168.56.101   <== aptitude					deinstall
+2014-08-04 16:10:13,780 DEBUG [operate-37] p.execute 192.168.56.101   <== base-files					install
+2014-08-04 16:10:13,780 DEBUG [operate-37] p.execute 192.168.56.101   <== base-passwd					install
+2014-08-04 16:10:13,780 DEBUG [operate-37] p.execute 192.168.56.101   <== bash						install
+2014-08-04 16:10:13,781 DEBUG [operate-37] p.execute 192.168.56.101   <== binutils					install
+2014-08-04 16:10:13,781 DEBUG [operate-37] p.execute 192.168.56.101   <== biosdevname					install
+2014-08-04 16:10:13,781 DEBUG [operate-37] p.execute 192.168.56.101   <== bsdutils					install
+2014-08-04 16:10:13,781 DEBUG [operate-37] p.execute 192.168.56.101   <== busybox-initramfs				install
+2014-08-04 16:10:13,781 DEBUG [operate-37] p.execute 192.168.56.101   <== bzip2						install
+2014-08-04 16:10:13,781 DEBUG [operate-37] p.execute 192.168.56.101   <== console-setup					install
+2014-08-04 16:10:13,781 DEBUG [operate-37] p.execute 192.168.56.101   <== coreutils					install
+2014-08-04 16:10:13,781 DEBUG [operate-37] p.execute 192.168.56.101   <== cpio						install
+2014-08-04 16:10:13,781 DEBUG [operate-37] p.execute 192.168.56.101   <== crda						install
+2014-08-04 16:10:13,781 DEBUG [operate-37] p.execute 192.168.56.101   <== cron						install
+2014-08-04 16:10:13,781 DEBUG [operate-37] p.execute 192.168.56.101   <== dash						install
+2014-08-04 16:10:13,781 DEBUG [operate-37] p.execute 192.168.56.101   <== debconf						install
+2014-08-04 16:10:13,781 DEBUG [operate-37] p.execute 192.168.56.101   <== debconf-i18n					install
+2014-08-04 16:10:13,781 DEBUG [operate-37] p.execute 192.168.56.101   <== debianutils					install
+2014-08-04 16:10:13,781 DEBUG [operate-37] p.execute 192.168.56.101   <== dh-python					install
+2014-08-04 16:10:13,782 DEBUG [operate-37] p.execute 192.168.56.101   <== diffutils					install
+2014-08-04 16:10:13,782 DEBUG [operate-37] p.execute 192.168.56.101   <== dkms						deinstall
+2014-08-04 16:10:13,782 DEBUG [operate-37] p.execute 192.168.56.101   <== dpkg						install
+2014-08-04 16:10:13,782 DEBUG [operate-37] p.execute 192.168.56.101   <== e2fslibs:amd64					install
+2014-08-04 16:10:13,782 DEBUG [operate-37] p.execute 192.168.56.101   <== e2fsprogs					install
+2014-08-04 16:10:13,782 DEBUG [operate-37] p.execute 192.168.56.101   <== file						install
+2014-08-04 16:10:13,782 DEBUG [operate-37] p.execute 192.168.56.101   <== findutils					install
+2014-08-04 16:10:13,782 DEBUG [operate-37] p.execute 192.168.56.101   <== gcc-4.8-base:amd64				install
+2014-08-04 16:10:13,782 DEBUG [operate-37] p.execute 192.168.56.101   <== gcc-4.9-base:amd64				install
+2014-08-04 16:10:13,782 DEBUG [operate-37] p.execute 192.168.56.101   <== gnupg						install
+2014-08-04 16:10:13,782 DEBUG [operate-37] p.execute 192.168.56.101   <== gpgv						install
+2014-08-04 16:10:13,782 DEBUG [operate-37] p.execute 192.168.56.101   <== grep						install
+2014-08-04 16:10:13,782 DEBUG [operate-37] p.execute 192.168.56.101   <== grub-common					deinstall
+2014-08-04 16:10:13,782 DEBUG [operate-37] p.execute 192.168.56.101   <== grub-pc						deinstall
+2014-08-04 16:10:13,783 DEBUG [operate-37] p.execute 192.168.56.101   <== gzip						install
+2014-08-04 16:10:13,783 DEBUG [operate-37] p.execute 192.168.56.101   <== hostname					install
+2014-08-04 16:10:13,783 DEBUG [operate-37] p.execute 192.168.56.101   <== ifupdown					install
+2014-08-04 16:10:13,783 DEBUG [operate-37] p.execute 192.168.56.101   <== init-system-helpers				install
+2014-08-04 16:10:13,783 DEBUG [operate-37] p.execute 192.168.56.101   <== initramfs-tools					install
+2014-08-04 16:10:13,783 DEBUG [operate-37] p.execute 192.168.56.101   <== initramfs-tools-bin				install
+2014-08-04 16:10:13,783 DEBUG [operate-37] p.execute 192.168.56.101   <== initscripts					install
+2014-08-04 16:10:13,783 DEBUG [operate-37] p.execute 192.168.56.101   <== insserv						install
+2014-08-04 16:10:13,783 DEBUG [operate-37] p.execute 192.168.56.101   <== installation-report				install
+2014-08-04 16:10:13,783 DEBUG [operate-37] p.execute 192.168.56.101   <== iproute2					install
+2014-08-04 16:10:13,783 DEBUG [operate-37] p.execute 192.168.56.101   <== iputils-ping					install
+2014-08-04 16:10:13,783 DEBUG [operate-37] p.execute 192.168.56.101   <== isc-dhcp-client					install
+2014-08-04 16:10:13,783 DEBUG [operate-37] p.execute 192.168.56.101   <== isc-dhcp-common					install
+2014-08-04 16:10:13,784 DEBUG [operate-37] p.execute 192.168.56.101   <== kbd						install
+2014-08-04 16:10:13,784 DEBUG [operate-37] p.execute 192.168.56.101   <== keyboard-configuration				install
+2014-08-04 16:10:13,784 DEBUG [operate-37] p.execute 192.168.56.101   <== klibc-utils					install
+2014-08-04 16:10:13,784 DEBUG [operate-37] p.execute 192.168.56.101   <== kmod						install
+2014-08-04 16:10:13,784 DEBUG [operate-37] p.execute 192.168.56.101   <== language-pack-en				install
+2014-08-04 16:10:13,784 DEBUG [operate-37] p.execute 192.168.56.101   <== language-pack-en-base				install
+2014-08-04 16:10:13,784 DEBUG [operate-37] p.execute 192.168.56.101   <== language-pack-gnome-en				install
+2014-08-04 16:10:13,784 DEBUG [operate-37] p.execute 192.168.56.101   <== language-pack-gnome-en-base			install
+2014-08-04 16:10:13,784 DEBUG [operate-37] p.execute 192.168.56.101   <== less						install
+2014-08-04 16:10:13,784 DEBUG [operate-37] p.execute 192.168.56.101   <== libacl1:amd64					install
+2014-08-04 16:10:13,784 DEBUG [operate-37] p.execute 192.168.56.101   <== libapt-inst1.5:amd64				install
+2014-08-04 16:10:13,784 DEBUG [operate-37] p.execute 192.168.56.101   <== libapt-pkg4.12:amd64				install
+2014-08-04 16:10:13,784 DEBUG [operate-37] p.execute 192.168.56.101   <== libarchive-extract-perl				install
+2014-08-04 16:10:13,784 DEBUG [operate-37] p.execute 192.168.56.101   <== libasan0:amd64					deinstall
+2014-08-04 16:10:13,785 DEBUG [operate-37] p.execute 192.168.56.101   <== libasn1-8-heimdal:amd64				deinstall
+2014-08-04 16:10:13,785 DEBUG [operate-37] p.execute 192.168.56.101   <== libatomic1:amd64				deinstall
+2014-08-04 16:10:13,785 DEBUG [operate-37] p.execute 192.168.56.101   <== libattr1:amd64					install
+2014-08-04 16:10:13,785 DEBUG [operate-37] p.execute 192.168.56.101   <== libaudit-common					install
+2014-08-04 16:10:13,785 DEBUG [operate-37] p.execute 192.168.56.101   <== libaudit1:amd64					install
+2014-08-04 16:10:13,785 DEBUG [operate-37] p.execute 192.168.56.101   <== libblkid1:amd64					install
+2014-08-04 16:10:13,785 DEBUG [operate-37] p.execute 192.168.56.101   <== libboost-iostreams1.54.0:amd64			deinstall
+2014-08-04 16:10:13,785 DEBUG [operate-37] p.execute 192.168.56.101   <== libbsd0:amd64					install
+2014-08-04 16:10:13,785 DEBUG [operate-37] p.execute 192.168.56.101   <== libbz2-1.0:amd64				install
+2014-08-04 16:10:13,785 DEBUG [operate-37] p.execute 192.168.56.101   <== libc-bin					install
+2014-08-04 16:10:13,785 DEBUG [operate-37] p.execute 192.168.56.101   <== libc6:amd64					install
+2014-08-04 16:10:13,785 DEBUG [operate-37] p.execute 192.168.56.101   <== libcap2:amd64					install
+2014-08-04 16:10:13,785 DEBUG [operate-37] p.execute 192.168.56.101   <== libcap2-bin					install
+2014-08-04 16:10:13,785 DEBUG [operate-37] p.execute 192.168.56.101   <== libcgmanager0:amd64				install
+2014-08-04 16:10:13,785 DEBUG [operate-37] p.execute 192.168.56.101   <== libck-connector0:amd64				install
+2014-08-04 16:10:13,785 DEBUG [operate-37] p.execute 192.168.56.101   <== libcloog-isl4:amd64				deinstall
+2014-08-04 16:10:13,785 DEBUG [operate-37] p.execute 192.168.56.101   <== libcomerr2:amd64				install
+2014-08-04 16:10:13,785 DEBUG [operate-37] p.execute 192.168.56.101   <== libcwidget3					deinstall
+2014-08-04 16:10:13,785 DEBUG [operate-37] p.execute 192.168.56.101   <== libdb5.3:amd64					install
+2014-08-04 16:10:13,786 DEBUG [operate-37] p.execute 192.168.56.101   <== libdbus-1-3:amd64				install
+2014-08-04 16:10:13,786 DEBUG [operate-37] p.execute 192.168.56.101   <== libdebconfclient0:amd64				install
+2014-08-04 16:10:13,786 DEBUG [operate-37] p.execute 192.168.56.101   <== libdevmapper-event1.02.1:amd64			deinstall
+2014-08-04 16:10:13,786 DEBUG [operate-37] p.execute 192.168.56.101   <== libdevmapper1.02.1:amd64			deinstall
+2014-08-04 16:10:13,786 DEBUG [operate-37] p.execute 192.168.56.101   <== libdrm2:amd64					install
+2014-08-04 16:10:13,786 DEBUG [operate-37] p.execute 192.168.56.101   <== libedit2:amd64					install
+2014-08-04 16:10:13,786 DEBUG [operate-37] p.execute 192.168.56.101   <== libept1.4.12:amd64				deinstall
+2014-08-04 16:10:13,786 DEBUG [operate-37] p.execute 192.168.56.101   <== libestr0					install
+2014-08-04 16:10:13,786 DEBUG [operate-37] p.execute 192.168.56.101   <== libevent-2.0-5:amd64				deinstall
+2014-08-04 16:10:13,786 DEBUG [operate-37] p.execute 192.168.56.101   <== libexpat1:amd64					install
+2014-08-04 16:10:13,786 DEBUG [operate-37] p.execute 192.168.56.101   <== libffi6:amd64					install
+2014-08-04 16:10:13,786 DEBUG [operate-37] p.execute 192.168.56.101   <== libfreetype6:amd64				deinstall
+2014-08-04 16:10:13,786 DEBUG [operate-37] p.execute 192.168.56.101   <== libfribidi0:amd64				install
+2014-08-04 16:10:13,786 DEBUG [operate-37] p.execute 192.168.56.101   <== libfuse2:amd64					deinstall
+2014-08-04 16:10:13,786 DEBUG [operate-37] p.execute 192.168.56.101   <== libgcc1:amd64					install
+2014-08-04 16:10:13,787 DEBUG [operate-37] p.execute 192.168.56.101   <== libgcrypt11:amd64				install
+2014-08-04 16:10:13,787 DEBUG [operate-37] p.execute 192.168.56.101   <== libgdbm3:amd64					install
+2014-08-04 16:10:13,787 DEBUG [operate-37] p.execute 192.168.56.101   <== libgmp10:amd64					deinstall
+2014-08-04 16:10:13,787 DEBUG [operate-37] p.execute 192.168.56.101   <== libgnutls-openssl27:amd64			install
+2014-08-04 16:10:13,787 DEBUG [operate-37] p.execute 192.168.56.101   <== libgnutls26:amd64				install
+2014-08-04 16:10:13,787 DEBUG [operate-37] p.execute 192.168.56.101   <== libgomp1:amd64					deinstall
+2014-08-04 16:10:13,787 DEBUG [operate-37] p.execute 192.168.56.101   <== libgpg-error0:amd64				install
+2014-08-04 16:10:13,787 DEBUG [operate-37] p.execute 192.168.56.101   <== libgssapi-krb5-2:amd64				install
+2014-08-04 16:10:13,787 DEBUG [operate-37] p.execute 192.168.56.101   <== libgssapi3-heimdal:amd64			deinstall
+2014-08-04 16:10:13,787 DEBUG [operate-37] p.execute 192.168.56.101   <== libgssglue1:amd64				deinstall
+2014-08-04 16:10:13,787 DEBUG [operate-37] p.execute 192.168.56.101   <== libhcrypto4-heimdal:amd64			deinstall
+2014-08-04 16:10:13,787 DEBUG [operate-37] p.execute 192.168.56.101   <== libheimbase1-heimdal:amd64			deinstall
+2014-08-04 16:10:13,787 DEBUG [operate-37] p.execute 192.168.56.101   <== libheimntlm0-heimdal:amd64			deinstall
+2014-08-04 16:10:13,787 DEBUG [operate-37] p.execute 192.168.56.101   <== libhx509-5-heimdal:amd64			deinstall
+2014-08-04 16:10:13,787 DEBUG [operate-37] p.execute 192.168.56.101   <== libisl10:amd64					deinstall
+2014-08-04 16:10:13,787 DEBUG [operate-37] p.execute 192.168.56.101   <== libitm1:amd64					deinstall
+2014-08-04 16:10:13,787 DEBUG [operate-37] p.execute 192.168.56.101   <== libjson-c2:amd64				install
+2014-08-04 16:10:13,787 DEBUG [operate-37] p.execute 192.168.56.101   <== libjson0:amd64					install
+2014-08-04 16:10:13,787 DEBUG [operate-37] p.execute 192.168.56.101   <== libk5crypto3:amd64				install
+2014-08-04 16:10:13,788 DEBUG [operate-37] p.execute 192.168.56.101   <== libkeyutils1:amd64				install
+2014-08-04 16:10:13,788 DEBUG [operate-37] p.execute 192.168.56.101   <== libklibc					install
+2014-08-04 16:10:13,788 DEBUG [operate-37] p.execute 192.168.56.101   <== libkmod2:amd64					install
+2014-08-04 16:10:13,788 DEBUG [operate-37] p.execute 192.168.56.101   <== libkrb5-26-heimdal:amd64			deinstall
+2014-08-04 16:10:13,788 DEBUG [operate-37] p.execute 192.168.56.101   <== libkrb5-3:amd64					install
+2014-08-04 16:10:13,788 DEBUG [operate-37] p.execute 192.168.56.101   <== libkrb5support0:amd64				install
+2014-08-04 16:10:13,788 DEBUG [operate-37] p.execute 192.168.56.101   <== libldap-2.4-2:amd64				deinstall
+2014-08-04 16:10:13,788 DEBUG [operate-37] p.execute 192.168.56.101   <== liblocale-gettext-perl				install
+2014-08-04 16:10:13,788 DEBUG [operate-37] p.execute 192.168.56.101   <== liblockfile-bin					install
+2014-08-04 16:10:13,788 DEBUG [operate-37] p.execute 192.168.56.101   <== liblockfile1:amd64				install
+2014-08-04 16:10:13,788 DEBUG [operate-37] p.execute 192.168.56.101   <== liblog-message-simple-perl			install
+2014-08-04 16:10:13,788 DEBUG [operate-37] p.execute 192.168.56.101   <== liblzma5:amd64					install
+2014-08-04 16:10:13,788 DEBUG [operate-37] p.execute 192.168.56.101   <== libmagic1:amd64					install
+2014-08-04 16:10:13,788 DEBUG [operate-37] p.execute 192.168.56.101   <== libmodule-pluggable-perl			install
+2014-08-04 16:10:13,789 DEBUG [operate-37] p.execute 192.168.56.101   <== libmount1:amd64					install
+2014-08-04 16:10:13,789 DEBUG [operate-37] p.execute 192.168.56.101   <== libmpc3:amd64					deinstall
+2014-08-04 16:10:13,789 DEBUG [operate-37] p.execute 192.168.56.101   <== libmpdec2:amd64					install
+2014-08-04 16:10:13,789 DEBUG [operate-37] p.execute 192.168.56.101   <== libmpfr4:amd64					deinstall
+2014-08-04 16:10:13,789 DEBUG [operate-37] p.execute 192.168.56.101   <== libncurses5:amd64				install
+2014-08-04 16:10:13,789 DEBUG [operate-37] p.execute 192.168.56.101   <== libncursesw5:amd64				install
+2014-08-04 16:10:13,789 DEBUG [operate-37] p.execute 192.168.56.101   <== libnewt0.52:amd64				install
+2014-08-04 16:10:13,789 DEBUG [operate-37] p.execute 192.168.56.101   <== libnfsidmap2:amd64				deinstall
+2014-08-04 16:10:13,789 DEBUG [operate-37] p.execute 192.168.56.101   <== libnih-dbus1:amd64				install
+2014-08-04 16:10:13,789 DEBUG [operate-37] p.execute 192.168.56.101   <== libnih1:amd64					install
+2014-08-04 16:10:13,789 DEBUG [operate-37] p.execute 192.168.56.101   <== libnl-3-200:amd64				install
+2014-08-04 16:10:13,789 DEBUG [operate-37] p.execute 192.168.56.101   <== libnl-genl-3-200:amd64				install
+2014-08-04 16:10:13,789 DEBUG [operate-37] p.execute 192.168.56.101   <== libp11-kit0:amd64				install
+2014-08-04 16:10:13,789 DEBUG [operate-37] p.execute 192.168.56.101   <== libpam-cap:amd64				install
+2014-08-04 16:10:13,789 DEBUG [operate-37] p.execute 192.168.56.101   <== libpam-modules:amd64				install
+2014-08-04 16:10:13,789 DEBUG [operate-37] p.execute 192.168.56.101   <== libpam-modules-bin				install
+2014-08-04 16:10:13,789 DEBUG [operate-37] p.execute 192.168.56.101   <== libpam-runtime					install
+2014-08-04 16:10:13,789 DEBUG [operate-37] p.execute 192.168.56.101   <== libpam0g:amd64					install
+2014-08-04 16:10:13,789 DEBUG [operate-37] p.execute 192.168.56.101   <== libpci3:amd64					install
+2014-08-04 16:10:13,789 DEBUG [operate-37] p.execute 192.168.56.101   <== libpcre3:amd64					install
+2014-08-04 16:10:13,790 DEBUG [operate-37] p.execute 192.168.56.101   <== libplymouth2:amd64				install
+2014-08-04 16:10:13,790 DEBUG [operate-37] p.execute 192.168.56.101   <== libpng12-0:amd64				install
+2014-08-04 16:10:13,790 DEBUG [operate-37] p.execute 192.168.56.101   <== libpod-latex-perl				install
+2014-08-04 16:10:13,790 DEBUG [operate-37] p.execute 192.168.56.101   <== libpopt0:amd64					install
+2014-08-04 16:10:13,790 DEBUG [operate-37] p.execute 192.168.56.101   <== libprocps3:amd64				install
+2014-08-04 16:10:13,790 DEBUG [operate-37] p.execute 192.168.56.101   <== libpython3-stdlib:amd64				install
+2014-08-04 16:10:13,790 DEBUG [operate-37] p.execute 192.168.56.101   <== libpython3.4-minimal:amd64			install
+2014-08-04 16:10:13,790 DEBUG [operate-37] p.execute 192.168.56.101   <== libpython3.4-stdlib:amd64			install
+2014-08-04 16:10:13,790 DEBUG [operate-37] p.execute 192.168.56.101   <== libquadmath0:amd64				deinstall
+2014-08-04 16:10:13,790 DEBUG [operate-37] p.execute 192.168.56.101   <== libreadline5:amd64				deinstall
+2014-08-04 16:10:13,790 DEBUG [operate-37] p.execute 192.168.56.101   <== libreadline6:amd64				install
+2014-08-04 16:10:13,790 DEBUG [operate-37] p.execute 192.168.56.101   <== libroken18-heimdal:amd64			deinstall
+2014-08-04 16:10:13,790 DEBUG [operate-37] p.execute 192.168.56.101   <== libsasl2-2:amd64				deinstall
+2014-08-04 16:10:13,790 DEBUG [operate-37] p.execute 192.168.56.101   <== libselinux1:amd64				install
+2014-08-04 16:10:13,790 DEBUG [operate-37] p.execute 192.168.56.101   <== libsemanage-common				install
+2014-08-04 16:10:13,790 DEBUG [operate-37] p.execute 192.168.56.101   <== libsemanage1:amd64				install
+2014-08-04 16:10:13,790 DEBUG [operate-37] p.execute 192.168.56.101   <== libsepol1:amd64					install
+2014-08-04 16:10:13,790 DEBUG [operate-37] p.execute 192.168.56.101   <== libsigc++-2.0-0c2a:amd64			deinstall
+2014-08-04 16:10:13,791 DEBUG [operate-37] p.execute 192.168.56.101   <== libslang2:amd64					install
+2014-08-04 16:10:13,791 DEBUG [operate-37] p.execute 192.168.56.101   <== libsqlite3-0:amd64				install
+2014-08-04 16:10:13,791 DEBUG [operate-37] p.execute 192.168.56.101   <== libss2:amd64					install
+2014-08-04 16:10:13,791 DEBUG [operate-37] p.execute 192.168.56.101   <== libssl1.0.0:amd64				install
+2014-08-04 16:10:13,791 DEBUG [operate-37] p.execute 192.168.56.101   <== libstdc++6:amd64				install
+2014-08-04 16:10:13,791 DEBUG [operate-37] p.execute 192.168.56.101   <== libtasn1-6:amd64				install
+2014-08-04 16:10:13,791 DEBUG [operate-37] p.execute 192.168.56.101   <== libterm-ui-perl					install
+2014-08-04 16:10:13,791 DEBUG [operate-37] p.execute 192.168.56.101   <== libtext-charwidth-perl				install
+2014-08-04 16:10:13,791 DEBUG [operate-37] p.execute 192.168.56.101   <== libtext-iconv-perl				install
+2014-08-04 16:10:13,791 DEBUG [operate-37] p.execute 192.168.56.101   <== libtext-soundex-perl				install
+2014-08-04 16:10:13,791 DEBUG [operate-37] p.execute 192.168.56.101   <== libtext-wrapi18n-perl				install
+2014-08-04 16:10:13,791 DEBUG [operate-37] p.execute 192.168.56.101   <== libtinfo5:amd64					install
+2014-08-04 16:10:13,791 DEBUG [operate-37] p.execute 192.168.56.101   <== libtirpc1:amd64					deinstall
+2014-08-04 16:10:13,791 DEBUG [operate-37] p.execute 192.168.56.101   <== libtsan0:amd64					deinstall
+2014-08-04 16:10:13,791 DEBUG [operate-37] p.execute 192.168.56.101   <== libudev1:amd64					install
+2014-08-04 16:10:13,791 DEBUG [operate-37] p.execute 192.168.56.101   <== libusb-0.1-4:amd64				install
+2014-08-04 16:10:13,791 DEBUG [operate-37] p.execute 192.168.56.101   <== libusb-1.0-0:amd64				install
+2014-08-04 16:10:13,792 DEBUG [operate-37] p.execute 192.168.56.101   <== libustr-1.0-1:amd64				install
+2014-08-04 16:10:13,792 DEBUG [operate-37] p.execute 192.168.56.101   <== libuuid1:amd64					install
+2014-08-04 16:10:13,792 DEBUG [operate-37] p.execute 192.168.56.101   <== libwind0-heimdal:amd64				deinstall
+2014-08-04 16:10:13,792 DEBUG [operate-37] p.execute 192.168.56.101   <== libwrap0:amd64					install
+2014-08-04 16:10:13,792 DEBUG [operate-37] p.execute 192.168.56.101   <== libxapian22					deinstall
+2014-08-04 16:10:13,792 DEBUG [operate-37] p.execute 192.168.56.101   <== linux-firmware					install
+2014-08-04 16:10:13,792 DEBUG [operate-37] p.execute 192.168.56.101   <== linux-generic					install
+2014-08-04 16:10:13,792 DEBUG [operate-37] p.execute 192.168.56.101   <== linux-headers-3.13.0-24				install
+2014-08-04 16:10:13,792 DEBUG [operate-37] p.execute 192.168.56.101   <== linux-headers-3.13.0-24-generic			install
+2014-08-04 16:10:13,792 DEBUG [operate-37] p.execute 192.168.56.101   <== linux-headers-generic				install
+2014-08-04 16:10:13,792 DEBUG [operate-37] p.execute 192.168.56.101   <== linux-headers-server				install
+2014-08-04 16:10:13,792 DEBUG [operate-37] p.execute 192.168.56.101   <== linux-image-3.13.0-24-generic			install
+2014-08-04 16:10:13,792 DEBUG [operate-37] p.execute 192.168.56.101   <== linux-image-extra-3.13.0-24-generic		install
+2014-08-04 16:10:13,792 DEBUG [operate-37] p.execute 192.168.56.101   <== linux-image-generic				install
+2014-08-04 16:10:13,792 DEBUG [operate-37] p.execute 192.168.56.101   <== linux-server					install
+2014-08-04 16:10:13,792 DEBUG [operate-37] p.execute 192.168.56.101   <== locales						install
+2014-08-04 16:10:13,792 DEBUG [operate-37] p.execute 192.168.56.101   <== lockfile-progs					install
+2014-08-04 16:10:13,792 DEBUG [operate-37] p.execute 192.168.56.101   <== login						install
+2014-08-04 16:10:13,792 DEBUG [operate-37] p.execute 192.168.56.101   <== logrotate					install
+2014-08-04 16:10:13,792 DEBUG [operate-37] p.execute 192.168.56.101   <== lsb-base					install
+2014-08-04 16:10:13,793 DEBUG [operate-37] p.execute 192.168.56.101   <== lsb-release					install
+2014-08-04 16:10:13,793 DEBUG [operate-37] p.execute 192.168.56.101   <== lvm2						deinstall
+2014-08-04 16:10:13,793 DEBUG [operate-37] p.execute 192.168.56.101   <== makedev						install
+2014-08-04 16:10:13,793 DEBUG [operate-37] p.execute 192.168.56.101   <== mawk						install
+2014-08-04 16:10:13,793 DEBUG [operate-37] p.execute 192.168.56.101   <== mime-support					install
+2014-08-04 16:10:13,793 DEBUG [operate-37] p.execute 192.168.56.101   <== module-init-tools				install
+2014-08-04 16:10:13,793 DEBUG [operate-37] p.execute 192.168.56.101   <== mount						install
+2014-08-04 16:10:13,793 DEBUG [operate-37] p.execute 192.168.56.101   <== mountall					install
+2014-08-04 16:10:13,793 DEBUG [operate-37] p.execute 192.168.56.101   <== multiarch-support				install
+2014-08-04 16:10:13,793 DEBUG [operate-37] p.execute 192.168.56.101   <== ncurses-base					install
+2014-08-04 16:10:13,793 DEBUG [operate-37] p.execute 192.168.56.101   <== ncurses-bin					install
+2014-08-04 16:10:13,793 DEBUG [operate-37] p.execute 192.168.56.101   <== net-tools					install
+2014-08-04 16:10:13,793 DEBUG [operate-37] p.execute 192.168.56.101   <== netbase						install
+2014-08-04 16:10:13,793 DEBUG [operate-37] p.execute 192.168.56.101   <== nfs-common					deinstall
+2014-08-04 16:10:13,793 DEBUG [operate-37] p.execute 192.168.56.101   <== ntpdate						install
+2014-08-04 16:10:13,793 DEBUG [operate-37] p.execute 192.168.56.101   <== openssh-client					install
+2014-08-04 16:10:13,793 DEBUG [operate-37] p.execute 192.168.56.101   <== openssh-server					install
+2014-08-04 16:10:13,793 DEBUG [operate-37] p.execute 192.168.56.101   <== openssh-sftp-server				install
+2014-08-04 16:10:13,793 DEBUG [operate-37] p.execute 192.168.56.101   <== passwd						install
+2014-08-04 16:10:13,793 DEBUG [operate-37] p.execute 192.168.56.101   <== pciutils					install
+2014-08-04 16:10:13,794 DEBUG [operate-37] p.execute 192.168.56.101   <== perl						install
+2014-08-04 16:10:13,794 DEBUG [operate-37] p.execute 192.168.56.101   <== perl-base					install
+2014-08-04 16:10:13,794 DEBUG [operate-37] p.execute 192.168.56.101   <== perl-modules					install
+2014-08-04 16:10:13,794 DEBUG [operate-37] p.execute 192.168.56.101   <== plymouth					install
+2014-08-04 16:10:13,794 DEBUG [operate-37] p.execute 192.168.56.101   <== procps						install
+2014-08-04 16:10:13,794 DEBUG [operate-37] p.execute 192.168.56.101   <== python-apt-common				install
+2014-08-04 16:10:13,794 DEBUG [operate-37] p.execute 192.168.56.101   <== python3						install
+2014-08-04 16:10:13,794 DEBUG [operate-37] p.execute 192.168.56.101   <== python3-apt					install
+2014-08-04 16:10:13,794 DEBUG [operate-37] p.execute 192.168.56.101   <== python3-minimal					install
+2014-08-04 16:10:13,794 DEBUG [operate-37] p.execute 192.168.56.101   <== python3.4					install
+2014-08-04 16:10:13,794 DEBUG [operate-37] p.execute 192.168.56.101   <== python3.4-minimal				install
+2014-08-04 16:10:13,794 DEBUG [operate-37] p.execute 192.168.56.101   <== readline-common					install
+2014-08-04 16:10:13,795 DEBUG [operate-37] p.execute 192.168.56.101   <== resolvconf					install
+2014-08-04 16:10:13,795 DEBUG [operate-37] p.execute 192.168.56.101   <== rpcbind						deinstall
+2014-08-04 16:10:13,795 DEBUG [operate-37] p.execute 192.168.56.101   <== rsyslog						install
+2014-08-04 16:10:13,795 DEBUG [operate-37] p.execute 192.168.56.101   <== sed						install
+2014-08-04 16:10:13,795 DEBUG [operate-37] p.execute 192.168.56.101   <== sensible-utils					install
+2014-08-04 16:10:13,795 DEBUG [operate-37] p.execute 192.168.56.101   <== sudo						install
+2014-08-04 16:10:13,795 DEBUG [operate-37] p.execute 192.168.56.101   <== sysv-rc						install
+2014-08-04 16:10:13,795 DEBUG [operate-37] p.execute 192.168.56.101   <== sysvinit-utils					install
+2014-08-04 16:10:13,795 DEBUG [operate-37] p.execute 192.168.56.101   <== tar						install
+2014-08-04 16:10:13,795 DEBUG [operate-37] p.execute 192.168.56.101   <== tasksel						deinstall
+2014-08-04 16:10:13,795 DEBUG [operate-37] p.execute 192.168.56.101   <== tzdata						install
+2014-08-04 16:10:13,795 DEBUG [operate-37] p.execute 192.168.56.101   <== ubuntu-keyring					install
+2014-08-04 16:10:13,795 DEBUG [operate-37] p.execute 192.168.56.101   <== ucf						install
+2014-08-04 16:10:13,795 DEBUG [operate-37] p.execute 192.168.56.101   <== udev						install
+2014-08-04 16:10:13,795 DEBUG [operate-37] p.execute 192.168.56.101   <== unattended-upgrades				install
+2014-08-04 16:10:13,795 DEBUG [operate-37] p.execute 192.168.56.101   <== upstart						install
+2014-08-04 16:10:13,795 DEBUG [operate-37] p.execute 192.168.56.101   <== ureadahead					install
+2014-08-04 16:10:13,795 DEBUG [operate-37] p.execute 192.168.56.101   <== usbutils					install
+2014-08-04 16:10:13,795 DEBUG [operate-37] p.execute 192.168.56.101   <== util-linux					install
+2014-08-04 16:10:13,795 DEBUG [operate-37] p.execute 192.168.56.101   <== vim-common					deinstall
+2014-08-04 16:10:13,795 DEBUG [operate-37] p.execute 192.168.56.101   <== vim-tiny					deinstall
+2014-08-04 16:10:13,795 DEBUG [operate-37] p.execute 192.168.56.101   <== wireless-regdb					install
+2014-08-04 16:10:13,796 DEBUG [operate-37] p.execute 192.168.56.101   <== xkb-data					install
+2014-08-04 16:10:13,796 DEBUG [operate-37] p.execute 192.168.56.101   <== xz-utils					install
+2014-08-04 16:10:13,796 DEBUG [operate-37] p.execute 192.168.56.101   <== zlib1g:amd64					install
+2014-08-04 16:10:13,796 INFO [operate-37] p.execute 192.168.56.101 #> [automated-admin-user: install]: Packages : SUCCESS
+2014-08-04 16:10:13,900 DEBUG [operate-37] p.s.execute 192.168.56.101   <== ----------------------------------------
+2014-08-04 16:10:13,977 INFO [operate-37] p.s.execute 192.168.56.101 22 [automated-admin-user]: 
+2014-08-04 16:10:14,040 DEBUG [operate-37] p.s.execute authentication {:username "vmfest", :password "******"}
+2014-08-04 16:10:14,041 DEBUG [operate-37] p.s.transport SSH user vmfest :private-key-path null :private-key null :password ******
+2014-08-04 16:10:14,144 DEBUG [operate-37] p.s.execute 192.168.56.101 ==>  -----------------------------------------
+2014-08-04 16:10:14,144 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> #!/usr/bin/env bash
+2014-08-04 16:10:14,144 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> set -h
+2014-08-04 16:10:14,144 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> if getent passwd terje; then /usr/sbin/usermod --shell "/bin/bash" terje;else /usr/sbin/useradd --shell "/bin/bash" --create-home terje;fi
+2014-08-04 16:10:14,144 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> exit $?
+2014-08-04 16:10:14,144 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> ------------------------------------------
+2014-08-04 16:10:14,144 DEBUG [operate-37] p.s.execute 192.168.56.101:22 send script via /tmp/palletYzn8q as root
+2014-08-04 16:10:14,144 DEBUG [operate-37] p.s.execute 192.168.56.101   <== ----------------------------------------
+2014-08-04 16:10:14,148 DEBUG [operate-37] p.s.transport send-text set mode /tmp/palletYzn8q 384
+2014-08-04 16:10:14,150 DEBUG [operate-37] p.script-builder {}
+2014-08-04 16:10:14,150 DEBUG [operate-37] p.script-builder prefix kw :sudo
+2014-08-04 16:10:14,157 DEBUG [operate-37] p.script-builder prefix sudo {:always-after #{#<actions$eval10547$group__10549 pallet.actions$eval10547$group__10549@1e9c98f8>}, :action {:action-symbol pallet.actions/user, :impls #<Atom@18c50827: {:direct {:f #<user$eval11776$user_direct__11777 pallet.actions.direct.user$eval11776$user_direct__11777@d573f78>, :metadata {:location :target, :action-type :script}}}>, :execution :aggregated, :precedence {:always-after #{#<actions$eval10547$group__10549 pallet.actions$eval10547$group__10549@1e9c98f8>}}}, :args (("terje" :create-home true :shell :bash)), :context ("[automated-admin-user]"), :node-value-path nv19249, :username "vmfest", :password "vmfest"}
+2014-08-04 16:10:14,157 DEBUG [operate-37] p.script-builder sudo-cmd-for {:username "vmfest", :password "vmfest"}
+2014-08-04 16:10:14,157 DEBUG [operate-37] p.script-builder prefix /usr/bin/sudo -n
+2014-08-04 16:10:14,157 DEBUG [operate-37] p.s.execute ssh-script-on-target command {:env-cmd "/usr/bin/env", :env nil, :env-fwd [:SSH_AUTH_SOCK], :prefix ["/usr/bin/sudo" "-n"], :execv ("/bin/bash" "/tmp/palletYzn8q")}
+2014-08-04 16:10:14,665 DEBUG [operate-37] p.s.execute 192.168.56.101   <== ----------------------------------------
+2014-08-04 16:10:14,744 INFO [operate-37] p.s.execute 192.168.56.101 22 automated-admin-user: authorize-user-key: authorize-key: 
+2014-08-04 16:10:14,807 DEBUG [operate-37] p.s.execute authentication {:username "vmfest", :password "******"}
+2014-08-04 16:10:14,807 DEBUG [operate-37] p.s.transport SSH user vmfest :private-key-path null :private-key null :password ******
+2014-08-04 16:10:14,910 DEBUG [operate-37] p.s.execute 192.168.56.101 ==>  -----------------------------------------
+2014-08-04 16:10:14,911 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> #!/usr/bin/env bash
+2014-08-04 16:10:14,911 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> set -h
+2014-08-04 16:10:14,911 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> echo 'automated-admin-user: authorize-user-key: authorize-key: Directory $(getent passwd terje | cut -d: -f6)/.ssh/...';
+2014-08-04 16:10:14,911 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> {
+2014-08-04 16:10:14,911 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> mkdir -m "755" -p $(getent passwd terje | cut -d: -f6)/.ssh/ && chown --recursive terje $(getent passwd terje | cut -d: -f6)/.ssh/ && chmod 755 $(getent passwd terje | cut -d: -f6)/.ssh/
+2014-08-04 16:10:14,911 DEBUG [operate-37] p.s.execute 192.168.56.101 ==>  } || { echo '#> automated-admin-user: authorize-user-key: authorize-key: Directory $(getent passwd terje | cut -d: -f6)/.ssh/ : FAIL'; exit 1;} >&2 
+2014-08-04 16:10:14,911 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> echo '#> automated-admin-user: authorize-user-key: authorize-key: Directory $(getent passwd terje | cut -d: -f6)/.ssh/ : SUCCESS'
+2014-08-04 16:10:14,911 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> 
+2014-08-04 16:10:14,911 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> exit $?
+2014-08-04 16:10:14,911 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> ------------------------------------------
+2014-08-04 16:10:14,911 DEBUG [operate-37] p.s.execute 192.168.56.101:22 send script via /tmp/palletI0B2n as root
+2014-08-04 16:10:14,911 DEBUG [operate-37] p.s.execute 192.168.56.101   <== ----------------------------------------
+2014-08-04 16:10:14,915 DEBUG [operate-37] p.s.transport send-text set mode /tmp/palletI0B2n 384
+2014-08-04 16:10:14,917 DEBUG [operate-37] p.script-builder {}
+2014-08-04 16:10:14,917 DEBUG [operate-37] p.script-builder prefix kw :sudo
+2014-08-04 16:10:14,921 DEBUG [operate-37] p.script-builder prefix sudo {:action {:action-symbol pallet.actions/directory, :impls #<Atom@2f9a4525: {:direct {:f #<directory$eval10638$directory_direct__10640 pallet.actions.direct.directory$eval10638$directory_direct__10640@15e62261>, :metadata {:location :target, :action-type :script}}}>, :execution :in-sequence, :precedence {}}, :args ("$(getent passwd terje | cut -d: -f6)/.ssh/" :owner "terje" :mode "755"), :context ("automated-admin-user" "authorize-user-key" "authorize-key"), :node-value-path nv19250, :username "vmfest", :password "vmfest"}
+2014-08-04 16:10:14,921 DEBUG [operate-37] p.script-builder sudo-cmd-for {:username "vmfest", :password "vmfest"}
+2014-08-04 16:10:14,921 DEBUG [operate-37] p.script-builder prefix /usr/bin/sudo -n
+2014-08-04 16:10:14,921 DEBUG [operate-37] p.s.execute ssh-script-on-target command {:env-cmd "/usr/bin/env", :env nil, :env-fwd [:SSH_AUTH_SOCK], :prefix ["/usr/bin/sudo" "-n"], :execv ("/bin/bash" "/tmp/palletI0B2n")}
+2014-08-04 16:10:15,023 DEBUG [operate-37] p.execute 192.168.56.101   <== automated-admin-user: authorize-user-key: authorize-key: Directory $(getent passwd terje | cut -d: -f6)/.ssh/...
+2014-08-04 16:10:15,023 INFO [operate-37] p.execute 192.168.56.101 #> automated-admin-user: authorize-user-key: authorize-key: Directory $(getent passwd terje | cut -d: -f6)/.ssh/ : SUCCESS
+2014-08-04 16:10:15,127 DEBUG [operate-37] p.s.execute 192.168.56.101   <== ----------------------------------------
+2014-08-04 16:10:15,203 INFO [operate-37] p.s.execute 192.168.56.101 22 automated-admin-user: authorize-user-key: authorize-key: 
+2014-08-04 16:10:15,266 DEBUG [operate-37] p.s.execute authentication {:username "vmfest", :password "******"}
+2014-08-04 16:10:15,266 DEBUG [operate-37] p.s.transport SSH user vmfest :private-key-path null :private-key null :password ******
+2014-08-04 16:10:15,370 DEBUG [operate-37] p.s.execute 192.168.56.101 ==>  -----------------------------------------
+2014-08-04 16:10:15,370 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> #!/usr/bin/env bash
+2014-08-04 16:10:15,370 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> set -h
+2014-08-04 16:10:15,370 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> echo 'automated-admin-user: authorize-user-key: authorize-key: file $(getent passwd terje | cut -d: -f6)/.ssh/authorized_keys...';
+2014-08-04 16:10:15,371 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> {
+2014-08-04 16:10:15,371 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> touch $(getent passwd terje | cut -d: -f6)/.ssh/authorized_keys && chown terje $(getent passwd terje | cut -d: -f6)/.ssh/authorized_keys && chmod 644 $(getent passwd terje | cut -d: -f6)/.ssh/authorized_keys
+2014-08-04 16:10:15,371 DEBUG [operate-37] p.s.execute 192.168.56.101 ==>  } || { echo '#> automated-admin-user: authorize-user-key: authorize-key: file $(getent passwd terje | cut -d: -f6)/.ssh/authorized_keys : FAIL'; exit 1;} >&2 
+2014-08-04 16:10:15,371 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> echo '#> automated-admin-user: authorize-user-key: authorize-key: file $(getent passwd terje | cut -d: -f6)/.ssh/authorized_keys : SUCCESS'
+2014-08-04 16:10:15,371 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> 
+2014-08-04 16:10:15,371 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> exit $?
+2014-08-04 16:10:15,371 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> ------------------------------------------
+2014-08-04 16:10:15,371 DEBUG [operate-37] p.s.execute 192.168.56.101:22 send script via /tmp/palletFACh7 as root
+2014-08-04 16:10:15,371 DEBUG [operate-37] p.s.execute 192.168.56.101   <== ----------------------------------------
+2014-08-04 16:10:15,376 DEBUG [operate-37] p.s.transport send-text set mode /tmp/palletFACh7 384
+2014-08-04 16:10:15,377 DEBUG [operate-37] p.script-builder {}
+2014-08-04 16:10:15,377 DEBUG [operate-37] p.script-builder prefix kw :sudo
+2014-08-04 16:10:15,532 DEBUG [operate-37] p.script-builder prefix sudo {:action {:action-symbol pallet.actions/file, :impls #<Atom@3931988d: {:direct {:f #<file$eval10680$file_direct__10682 pallet.actions.direct.file$eval10680$file_direct__10682@427e0877>, :metadata {:location :target, :action-type :script}}}>, :execution :in-sequence, :precedence {}}, :args ("$(getent passwd terje | cut -d: -f6)/.ssh/authorized_keys" :owner "terje" :mode "644"), :context ("automated-admin-user" "authorize-user-key" "authorize-key"), :node-value-path nv19251, :username "vmfest", :password "vmfest"}
+2014-08-04 16:10:15,532 DEBUG [operate-37] p.script-builder sudo-cmd-for {:username "vmfest", :password "vmfest"}
+2014-08-04 16:10:15,533 DEBUG [operate-37] p.script-builder prefix /usr/bin/sudo -n
+2014-08-04 16:10:15,533 DEBUG [operate-37] p.s.execute ssh-script-on-target command {:env-cmd "/usr/bin/env", :env nil, :env-fwd [:SSH_AUTH_SOCK], :prefix ["/usr/bin/sudo" "-n"], :execv ("/bin/bash" "/tmp/palletFACh7")}
+2014-08-04 16:10:15,636 DEBUG [operate-37] p.execute 192.168.56.101   <== automated-admin-user: authorize-user-key: authorize-key: file $(getent passwd terje | cut -d: -f6)/.ssh/authorized_keys...
+2014-08-04 16:10:15,636 INFO [operate-37] p.execute 192.168.56.101 #> automated-admin-user: authorize-user-key: authorize-key: file $(getent passwd terje | cut -d: -f6)/.ssh/authorized_keys : SUCCESS
+2014-08-04 16:10:15,739 DEBUG [operate-37] p.s.execute 192.168.56.101   <== ----------------------------------------
+2014-08-04 16:10:15,817 INFO [operate-37] p.s.execute 192.168.56.101 22 automated-admin-user: authorize-user-key: authorize-key: 
+2014-08-04 16:10:15,890 DEBUG [operate-37] p.s.execute authentication {:username "vmfest", :password "******"}
+2014-08-04 16:10:15,890 DEBUG [operate-37] p.s.transport SSH user vmfest :private-key-path null :private-key null :password ******
+2014-08-04 16:10:15,993 DEBUG [operate-37] p.s.execute 192.168.56.101 ==>  -----------------------------------------
+2014-08-04 16:10:15,994 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> #!/usr/bin/env bash
+2014-08-04 16:10:15,994 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> set -h
+2014-08-04 16:10:15,994 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> echo 'automated-admin-user: authorize-user-key: authorize-key: authorize-key on user terje (ssh_key.clj:32)...';
+2014-08-04 16:10:15,994 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> {
+2014-08-04 16:10:15,994 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> auth_file=$(getent passwd terje | cut -d: -f6)/.ssh/authorized_keys && if ! ( fgrep "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA0EmdCIBwBYQ6Xo8tItihrNf8rSoxngoW90UHvL9+EX41QWs+/OZpGivnhYq4HH9vK2+3QhoVwFBbjZgJG2xGDYqwTNN/dxS0GtEs4VZKiJ/A5aWmpVDCk4mAnUqmuRUn888jvK7AbhvlEnVfiJdMXs0TF5NaHNbK107uSFJ+cxHRK38l6NqrpMXFkTuOIqLkgI8zUEgsWyl0BqGt/S80CiP6H8FaifH5PZE6sdlWUEbjhNkAUviHTeFXCBRVDN4PZxk3qbDFrNLFqUptCgmJ5ngkIfe+urVgXeEc6TzBJefwF7050YImQKv1YgETOmVPF/L7Oq1LzkIFiR5MTKRGnw== terje@in-progress.com" ${auth_file} ); then
+2014-08-04 16:10:16,022 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> echo "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA0EmdCIBwBYQ6Xo8tItihrNf8rSoxngoW90UHvL9+EX41QWs+/OZpGivnhYq4HH9vK2+3QhoVwFBbjZgJG2xGDYqwTNN/dxS0GtEs4VZKiJ/A5aWmpVDCk4mAnUqmuRUn888jvK7AbhvlEnVfiJdMXs0TF5NaHNbK107uSFJ+cxHRK38l6NqrpMXFkTuOIqLkgI8zUEgsWyl0BqGt/S80CiP6H8FaifH5PZE6sdlWUEbjhNkAUviHTeFXCBRVDN4PZxk3qbDFrNLFqUptCgmJ5ngkIfe+urVgXeEc6TzBJefwF7050YImQKv1YgETOmVPF/L7Oq1LzkIFiR5MTKRGnw== terje@in-progress.com
+2014-08-04 16:10:16,023 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> " >> ${auth_file}
+2014-08-04 16:10:16,023 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi
+2014-08-04 16:10:16,023 DEBUG [operate-37] p.s.execute 192.168.56.101 ==>  } || { echo '#> automated-admin-user: authorize-user-key: authorize-key: authorize-key on user terje (ssh_key.clj:32) : FAIL'; exit 1;} >&2 
+2014-08-04 16:10:16,023 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> echo '#> automated-admin-user: authorize-user-key: authorize-key: authorize-key on user terje (ssh_key.clj:32) : SUCCESS'
+2014-08-04 16:10:16,023 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> 
+2014-08-04 16:10:16,023 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> exit $?
+2014-08-04 16:10:16,023 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> ------------------------------------------
+2014-08-04 16:10:16,023 DEBUG [operate-37] p.s.execute 192.168.56.101:22 send script via /tmp/palletUrovp as root
+2014-08-04 16:10:16,023 DEBUG [operate-37] p.s.execute 192.168.56.101   <== ----------------------------------------
+2014-08-04 16:10:16,027 DEBUG [operate-37] p.s.transport send-text set mode /tmp/palletUrovp 384
+2014-08-04 16:10:16,029 DEBUG [operate-37] p.script-builder {}
+2014-08-04 16:10:16,029 DEBUG [operate-37] p.script-builder prefix kw :sudo
+2014-08-04 16:10:16,031 DEBUG [operate-37] p.script-builder prefix sudo {:action {:action-symbol pallet.actions/exec-script*, :impls #<Atom@93b75a7: {:direct {:f #<exec_script$eval10665$exec_script_STAR__direct__10666 pallet.actions.direct.exec_script$eval10665$exec_script_STAR__direct__10666@58a681c3>, :metadata {:location :target, :action-type :script}}}>, :execution :in-sequence, :precedence {}}, :args ("echo 'automated-admin-user: authorize-user-key: authorize-key: authorize-key on user terje (ssh_key.clj:32)...';\n{\nauth_file=$(getent passwd terje | cut -d: -f6)/.ssh/authorized_keys && if ! ( fgrep \"ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA0EmdCIBwBYQ6Xo8tItihrNf8rSoxngoW90UHvL9+EX41QWs+/OZpGivnhYq4HH9vK2+3QhoVwFBbjZgJG2xGDYqwTNN/dxS0GtEs4VZKiJ/A5aWmpVDCk4mAnUqmuRUn888jvK7AbhvlEnVfiJdMXs0TF5NaHNbK107uSFJ+cxHRK38l6NqrpMXFkTuOIqLkgI8zUEgsWyl0BqGt/S80CiP6H8FaifH5PZE6sdlWUEbjhNkAUviHTeFXCBRVDN4PZxk3qbDFrNLFqUptCgmJ5ngkIfe+urVgXeEc6TzBJefwF7050YImQKv1YgETOmVPF/L7Oq1LzkIFiR5MTKRGnw== terje@in-progress.com\" ${auth_file} ); then\necho \"ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA0EmdCIBwBYQ6Xo8tItihrNf8rSoxngoW90UHvL9+EX41QWs+/OZpGivnhYq4HH9vK2+3QhoVwFBbjZgJG2xGDYqwTNN/dxS0GtEs4VZKiJ/A5aWmpVDCk4mAnUqmuRUn888jvK7AbhvlEnVfiJdMXs0TF5NaHNbK107uSFJ+cxHRK38l6NqrpMXFkTuOIqLkgI8zUEgsWyl0BqGt/S80CiP6H8FaifH5PZE6sdlWUEbjhNkAUviHTeFXCBRVDN4PZxk3qbDFrNLFqUptCgmJ5ngkIfe+urVgXeEc6TzBJefwF7050YImQKv1YgETOmVPF/L7Oq1LzkIFiR5MTKRGnw== terje@in-progress.com\n\" >> ${auth_file}\nfi\n } || { echo '#> automated-admin-user: authorize-user-key: authorize-key: authorize-key on user terje (ssh_key.clj:32) : FAIL'; exit 1;} >&2 \necho '#> automated-admin-user: authorize-user-key: authorize-key: authorize-key on user terje (ssh_key.clj:32) : SUCCESS'\n"), :context ("automated-admin-user" "authorize-user-key" "authorize-key"), :node-value-path nv19252, :username "vmfest", :password "vmfest"}
+2014-08-04 16:10:16,031 DEBUG [operate-37] p.script-builder sudo-cmd-for {:username "vmfest", :password "vmfest"}
+2014-08-04 16:10:16,032 DEBUG [operate-37] p.script-builder prefix /usr/bin/sudo -n
+2014-08-04 16:10:16,032 DEBUG [operate-37] p.s.execute ssh-script-on-target command {:env-cmd "/usr/bin/env", :env nil, :env-fwd [:SSH_AUTH_SOCK], :prefix ["/usr/bin/sudo" "-n"], :execv ("/bin/bash" "/tmp/palletUrovp")}
+2014-08-04 16:10:16,135 DEBUG [operate-37] p.execute 192.168.56.101   <== automated-admin-user: authorize-user-key: authorize-key: authorize-key on user terje (ssh_key.clj:32)...
+2014-08-04 16:10:16,135 INFO [operate-37] p.execute 192.168.56.101 #> automated-admin-user: authorize-user-key: authorize-key: authorize-key on user terje (ssh_key.clj:32) : SUCCESS
+2014-08-04 16:10:16,239 DEBUG [operate-37] p.s.execute 192.168.56.101   <== ----------------------------------------
+2014-08-04 16:10:16,315 INFO [operate-37] p.s.execute 192.168.56.101 22 automated-admin-user: authorize-user-key: authorize-key: 
+2014-08-04 16:10:16,379 DEBUG [operate-37] p.s.execute authentication {:username "vmfest", :password "******"}
+2014-08-04 16:10:16,379 DEBUG [operate-37] p.s.transport SSH user vmfest :private-key-path null :private-key null :password ******
+2014-08-04 16:10:16,483 DEBUG [operate-37] p.s.execute 192.168.56.101 ==>  -----------------------------------------
+2014-08-04 16:10:16,483 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> #!/usr/bin/env bash
+2014-08-04 16:10:16,483 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> set -h
+2014-08-04 16:10:16,483 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> echo 'automated-admin-user: authorize-user-key: authorize-key: Set selinux permissions (ssh_key.clj:37)...';
+2014-08-04 16:10:16,483 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> {
+2014-08-04 16:10:16,483 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> if hash chcon 2>&- && [ -d /etc/selinux ] && [ -e /selinux/enforce ] && stat --format %C $(getent passwd terje | cut -d: -f6)/.ssh/ 2>&-; then chcon -Rv --type=user_home_t $(getent passwd terje | cut -d: -f6)/.ssh/;fi
+2014-08-04 16:10:16,483 DEBUG [operate-37] p.s.execute 192.168.56.101 ==>  } || { echo '#> automated-admin-user: authorize-user-key: authorize-key: Set selinux permissions (ssh_key.clj:37) : FAIL'; exit 1;} >&2 
+2014-08-04 16:10:16,483 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> echo '#> automated-admin-user: authorize-user-key: authorize-key: Set selinux permissions (ssh_key.clj:37) : SUCCESS'
+2014-08-04 16:10:16,483 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> 
+2014-08-04 16:10:16,483 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> exit $?
+2014-08-04 16:10:16,483 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> ------------------------------------------
+2014-08-04 16:10:16,483 DEBUG [operate-37] p.s.execute 192.168.56.101:22 send script via /tmp/palletHJSKf as root
+2014-08-04 16:10:16,483 DEBUG [operate-37] p.s.execute 192.168.56.101   <== ----------------------------------------
+2014-08-04 16:10:16,488 DEBUG [operate-37] p.s.transport send-text set mode /tmp/palletHJSKf 384
+2014-08-04 16:10:16,489 DEBUG [operate-37] p.script-builder {}
+2014-08-04 16:10:16,489 DEBUG [operate-37] p.script-builder prefix kw :sudo
+2014-08-04 16:10:16,491 DEBUG [operate-37] p.script-builder prefix sudo {:action {:action-symbol pallet.actions/exec-script*, :impls #<Atom@93b75a7: {:direct {:f #<exec_script$eval10665$exec_script_STAR__direct__10666 pallet.actions.direct.exec_script$eval10665$exec_script_STAR__direct__10666@58a681c3>, :metadata {:location :target, :action-type :script}}}>, :execution :in-sequence, :precedence {}}, :args ("echo 'automated-admin-user: authorize-user-key: authorize-key: Set selinux permissions (ssh_key.clj:37)...';\n{\nif hash chcon 2>&- && [ -d /etc/selinux ] && [ -e /selinux/enforce ] && stat --format %C $(getent passwd terje | cut -d: -f6)/.ssh/ 2>&-; then chcon -Rv --type=user_home_t $(getent passwd terje | cut -d: -f6)/.ssh/;fi\n } || { echo '#> automated-admin-user: authorize-user-key: authorize-key: Set selinux permissions (ssh_key.clj:37) : FAIL'; exit 1;} >&2 \necho '#> automated-admin-user: authorize-user-key: authorize-key: Set selinux permissions (ssh_key.clj:37) : SUCCESS'\n"), :context ("automated-admin-user" "authorize-user-key" "authorize-key"), :node-value-path nv19253, :username "vmfest", :password "vmfest"}
+2014-08-04 16:10:16,491 DEBUG [operate-37] p.script-builder sudo-cmd-for {:username "vmfest", :password "vmfest"}
+2014-08-04 16:10:16,492 DEBUG [operate-37] p.script-builder prefix /usr/bin/sudo -n
+2014-08-04 16:10:16,492 DEBUG [operate-37] p.s.execute ssh-script-on-target command {:env-cmd "/usr/bin/env", :env nil, :env-fwd [:SSH_AUTH_SOCK], :prefix ["/usr/bin/sudo" "-n"], :execv ("/bin/bash" "/tmp/palletHJSKf")}
+2014-08-04 16:10:16,594 DEBUG [operate-37] p.execute 192.168.56.101   <== automated-admin-user: authorize-user-key: authorize-key: Set selinux permissions (ssh_key.clj:37)...
+2014-08-04 16:10:16,594 INFO [operate-37] p.execute 192.168.56.101 #> automated-admin-user: authorize-user-key: authorize-key: Set selinux permissions (ssh_key.clj:37) : SUCCESS
+2014-08-04 16:10:16,698 DEBUG [operate-37] p.s.execute 192.168.56.101   <== ----------------------------------------
+2014-08-04 16:10:16,847 INFO [operate-37] p.s.execute 192.168.56.101 22 automated-admin-user: sudoers: remote-file /etc/sudoers :content "Defaults env_keep=SSH_AUTH_SOCK..."
+2014-08-04 16:10:16,910 DEBUG [operate-37] p.s.execute authentication {:username "vmfest", :password "******"}
+2014-08-04 16:10:16,910 DEBUG [operate-37] p.s.transport SSH user vmfest :private-key-path null :private-key null :password ******
+2014-08-04 16:10:17,014 DEBUG [operate-37] p.s.execute 192.168.56.101 ==>  -----------------------------------------
+2014-08-04 16:10:17,014 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> #!/usr/bin/env bash
+2014-08-04 16:10:17,014 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> set -h
+2014-08-04 16:10:17,014 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> echo 'automated-admin-user: sudoers: remote-file /etc/sudoers...';
+2014-08-04 16:10:17,014 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> {
+2014-08-04 16:10:17,014 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> {
+2014-08-04 16:10:17,014 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> # -- START pallet implementation function
+2014-08-04 16:10:17,014 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> verify_md5() {
+2014-08-04 16:10:17,014 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> path=$1
+2014-08-04 16:10:17,014 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> state_path=$2
+2014-08-04 16:10:17,014 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> md5_path=$3
+2014-08-04 16:10:17,014 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> filediff= && if [ -e ${path} ] && [ -e ${state_path} ]; then
+2014-08-04 16:10:17,014 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> diff -u ${path} ${state_path}
+2014-08-04 16:10:17,015 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> filediff=$?
+2014-08-04 16:10:17,015 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi && md5diff= && if [ -e ${state_path} ] && [ -e ${md5_path} ]; then
+2014-08-04 16:10:17,015 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> ( cd $(dirname ${md5_path}) && md5sum --quiet --check $(basename ${md5_path}) )
+2014-08-04 16:10:17,015 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> md5diff=$?
+2014-08-04 16:10:17,015 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi && errexit=0 && if [ "${filediff}" == "1" ]; then
+2014-08-04 16:10:17,015 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> echo Existing file did not match the pallet master copy: FAIL
+2014-08-04 16:10:17,015 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> errexit=1
+2014-08-04 16:10:17,015 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi && if [ "${md5diff}" == "1" ]; then
+2014-08-04 16:10:17,015 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> echo Existing content did not match md5: FAIL
+2014-08-04 16:10:17,015 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> errexit=1
+2014-08-04 16:10:17,015 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi && [ "${errexit}" == "0" ]
+2014-08-04 16:10:17,015 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> }
+2014-08-04 16:10:17,015 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> # -- END pallet implementation function
+2014-08-04 16:10:17,015 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> verify_md5 /etc/sudoers /var/lib/pallet/etc/sudoers /var/lib/pallet/etc/sudoers.md5
+2014-08-04 16:10:17,015 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> } && mkdir -p $(dirname ${TMPDIR:-${TEMP:-${TMP:-$(if [ -d /tmp ]; then echo /tmp;else
+2014-08-04 16:10:17,015 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> if [ -d /var/tmp ]; then echo /var/tmp;else
+2014-08-04 16:10:17,015 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> if [ -d /use/tmp ]; then echo /usr/tmp;fi
+2014-08-04 16:10:17,015 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi
+2014-08-04 16:10:17,015 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi)}}}/root/bBCdbpTJf7UZAHwfBogFgg/$(basename /etc/sudoers)) && { cat > ${TMPDIR:-${TEMP:-${TMP:-$(if [ -d /tmp ]; then echo /tmp;else
+2014-08-04 16:10:17,015 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> if [ -d /var/tmp ]; then echo /var/tmp;else
+2014-08-04 16:10:17,015 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> if [ -d /use/tmp ]; then echo /usr/tmp;fi
+2014-08-04 16:10:17,015 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi
+2014-08-04 16:10:17,015 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi)}}}/root/bBCdbpTJf7UZAHwfBogFgg/$(basename /etc/sudoers) <<EOFpallet
+2014-08-04 16:10:17,015 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> Defaults env_keep=SSH_AUTH_SOCK
+2014-08-04 16:10:17,015 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> root ALL = (ALL) ALL
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> %adm ALL = (ALL) ALL
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> terje ALL = (ALL) NOPASSWD: ALL
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> EOFpallet
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==>  } && contentdiff= && if [ -e /etc/sudoers ] && [ -e ${TMPDIR:-${TEMP:-${TMP:-$(if [ -d /tmp ]; then echo /tmp;else
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> if [ -d /var/tmp ]; then echo /var/tmp;else
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> if [ -d /use/tmp ]; then echo /usr/tmp;fi
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi)}}}/root/bBCdbpTJf7UZAHwfBogFgg/$(basename /etc/sudoers) ]; then
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> diff -u /etc/sudoers ${TMPDIR:-${TEMP:-${TMP:-$(if [ -d /tmp ]; then echo /tmp;else
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> if [ -d /var/tmp ]; then echo /var/tmp;else
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> if [ -d /use/tmp ]; then echo /usr/tmp;fi
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi)}}}/root/bBCdbpTJf7UZAHwfBogFgg/$(basename /etc/sudoers)
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> contentdiff=$?
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi && if ! { [ "${contentdiff}" == "0" ]; } && [ -e ${TMPDIR:-${TEMP:-${TMP:-$(if [ -d /tmp ]; then echo /tmp;else
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> if [ -d /var/tmp ]; then echo /var/tmp;else
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> if [ -d /use/tmp ]; then echo /usr/tmp;fi
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi)}}}/root/bBCdbpTJf7UZAHwfBogFgg/$(basename /etc/sudoers) ]; then
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> chown root ${TMPDIR:-${TEMP:-${TMP:-$(if [ -d /tmp ]; then echo /tmp;else
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> if [ -d /var/tmp ]; then echo /var/tmp;else
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> if [ -d /use/tmp ]; then echo /usr/tmp;fi
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi)}}}/root/bBCdbpTJf7UZAHwfBogFgg/$(basename /etc/sudoers) && chgrp $(id -ng root) ${TMPDIR:-${TEMP:-${TMP:-$(if [ -d /tmp ]; then echo /tmp;else
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> if [ -d /var/tmp ]; then echo /var/tmp;else
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> if [ -d /use/tmp ]; then echo /usr/tmp;fi
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi)}}}/root/bBCdbpTJf7UZAHwfBogFgg/$(basename /etc/sudoers) && chmod 0440 ${TMPDIR:-${TEMP:-${TMP:-$(if [ -d /tmp ]; then echo /tmp;else
+2014-08-04 16:10:17,016 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> if [ -d /var/tmp ]; then echo /var/tmp;else
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> if [ -d /use/tmp ]; then echo /usr/tmp;fi
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi)}}}/root/bBCdbpTJf7UZAHwfBogFgg/$(basename /etc/sudoers) && mv -f ${TMPDIR:-${TEMP:-${TMP:-$(if [ -d /tmp ]; then echo /tmp;else
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> if [ -d /var/tmp ]; then echo /var/tmp;else
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> if [ -d /use/tmp ]; then echo /usr/tmp;fi
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi)}}}/root/bBCdbpTJf7UZAHwfBogFgg/$(basename /etc/sudoers) /etc/sudoers && {
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> # -- START pallet implementation function
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> set_tree_permissions() {
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> template_path=$1
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> new_path=$2
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> dirpath=$(dirname ${new_path})
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> templatepath=$(dirname $(if [ -e ${template_path} ]; then readlink -f ${template_path};else echo ${template_path};fi))
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> if ! { [ -d ${templatepath} ]; }; then
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> echo ${templatepath} : Directory does not exist.
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> exit 1
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> templatepath=$(readlink -f ${templatepath})
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> mkdir -p ${dirpath} || exit 1
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> while [ "/" != "${templatepath}" ] ;do d=${dirpath} && t=${templatepath} && if ! { [ -d ${templatepath} ]; }; then
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> echo ${templatepath} : Directory does not exist.
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> exit 1
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi && dirpath=$(dirname ${dirpath}) && templatepath=$(dirname ${templatepath}) && if ! { [ "$(stat -c%G ${t})" == "$(stat -c%G ${d})" ]; }; then chgrp $(stat -c%G ${t}) ${d};fi && if ! { [ "$(stat -c%a ${t})" == "$(stat -c%a ${d})" ]; }; then chmod $(stat -c%a ${t}) ${d};fi && if ! { [ "$(stat -c%U ${t})" == "$(stat -c%U ${d})" ]; }; then chown $(stat -c%U ${t}) ${d};fi ; done
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> }
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> # -- END pallet implementation function
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> set_tree_permissions /etc/sudoers /var/lib/pallet/etc/sudoers
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> } && {
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> # -- START pallet implementation function
+2014-08-04 16:10:17,017 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> record_file() {
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> path=$1
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> state_path=$2
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> contentdiff= && if [ -e ${path} ] && [ -e ${state_path} ]; then
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> diff -u ${path} ${state_path}
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> contentdiff=$?
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi && if [ -e ${path} ]; then
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> if ! { [ "${contentdiff}" == "0" ]; }; then cp -f --backup="numbered" ${path} ${state_path};fi
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi && ls -t ${state_path}.~[0-9]*~ 2> /dev/null | tail -n "+6" | xargs \
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==>  rm --force
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> }
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> # -- END pallet implementation function
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> record_file /etc/sudoers /var/lib/pallet/etc/sudoers
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> } && {
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> # -- START pallet implementation function
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> record_md5() {
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> path=$1
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> md5_path=$2
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> (cp=$(readlink -f ${path}) && cd $(dirname ${cp}) && md5sum $(basename ${cp})
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> )>${md5_path} && echo MD5 sum is $(cat ${md5_path})
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> }
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> # -- END pallet implementation function
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> record_md5 /etc/sudoers /var/lib/pallet/etc/sudoers.md5
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> }
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> fi
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==>  } || { echo '#> automated-admin-user: sudoers: remote-file /etc/sudoers : FAIL'; exit 1;} >&2 
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> echo '#> automated-admin-user: sudoers: remote-file /etc/sudoers : SUCCESS'
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> 
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> exit $?
+2014-08-04 16:10:17,018 DEBUG [operate-37] p.s.execute 192.168.56.101 ==> ------------------------------------------
+2014-08-04 16:10:17,019 DEBUG [operate-37] p.s.execute 192.168.56.101:22 send script via /tmp/palletCpfdw as root
+2014-08-04 16:10:17,019 DEBUG [operate-37] p.s.execute 192.168.56.101   <== ----------------------------------------
+2014-08-04 16:10:17,022 DEBUG [operate-37] p.s.transport send-text set mode /tmp/palletCpfdw 384
+2014-08-04 16:10:17,024 DEBUG [operate-37] p.script-builder {}
+2014-08-04 16:10:17,024 DEBUG [operate-37] p.script-builder prefix kw :sudo
+2014-08-04 16:10:17,026 DEBUG [operate-37] p.script-builder prefix sudo {:action {:action-symbol pallet.actions-impl/remote-file-action, :impls #<Atom@658b5012: {:direct {:f #<remote_file$eval11124$remote_file_action_direct__11126 pallet.actions.direct.remote_file$eval11124$remote_file_action_direct__11126@4d7b659f>, :metadata {:location :target, :action-type :script}}}>, :execution :in-sequence, :precedence {}}, :args ("/etc/sudoers" {:mode "0440", :content "Defaults env_keep=SSH_AUTH_SOCK\nroot ALL = (ALL) ALL\n%adm ALL = (ALL) ALL\nterje ALL = (ALL) NOPASSWD: ALL", :install-new-files true, :overwrite-changes nil, :owner "root"}), :context ("automated-admin-user" "sudoers"), :node-value-path nv19258, :username "vmfest", :password "vmfest"}
+2014-08-04 16:10:17,027 DEBUG [operate-37] p.script-builder sudo-cmd-for {:username "vmfest", :password "vmfest"}
+2014-08-04 16:10:17,027 DEBUG [operate-37] p.script-builder prefix /usr/bin/sudo -n
+2014-08-04 16:10:17,027 DEBUG [operate-37] p.s.execute ssh-script-on-target command {:env-cmd "/usr/bin/env", :env nil, :env-fwd [:SSH_AUTH_SOCK], :prefix ["/usr/bin/sudo" "-n"], :execv ("/bin/bash" "/tmp/palletCpfdw")}
+2014-08-04 16:10:17,129 DEBUG [operate-37] p.execute 192.168.56.101   <== automated-admin-user: sudoers: remote-file /etc/sudoers...
+2014-08-04 16:10:17,130 DEBUG [operate-37] p.execute 192.168.56.101   <== --- /etc/sudoers	2014-02-10 19:16:26.000000000 +0000
+2014-08-04 16:10:17,130 DEBUG [operate-37] p.execute 192.168.56.101   <== +++ /tmp/root/bBCdbpTJf7UZAHwfBogFgg/sudoers	2014-08-04 23:10:17.052553159 +0000
+2014-08-04 16:10:17,130 DEBUG [operate-37] p.execute 192.168.56.101   <== @@ -1,30 +1,4 @@
+2014-08-04 16:10:17,130 DEBUG [operate-37] p.execute 192.168.56.101   <== -#
+2014-08-04 16:10:17,130 DEBUG [operate-37] p.execute 192.168.56.101   <== -# This file MUST be edited with the 'visudo' command as root.
+2014-08-04 16:10:17,130 DEBUG [operate-37] p.execute 192.168.56.101   <== -#
+2014-08-04 16:10:17,130 DEBUG [operate-37] p.execute 192.168.56.101   <== -# Please consider adding local content in /etc/sudoers.d/ instead of
+2014-08-04 16:10:17,130 DEBUG [operate-37] p.execute 192.168.56.101   <== -# directly modifying this file.
+2014-08-04 16:10:17,130 DEBUG [operate-37] p.execute 192.168.56.101   <== -#
+2014-08-04 16:10:17,130 DEBUG [operate-37] p.execute 192.168.56.101   <== -# See the man page for details on how to write a sudoers file.
+2014-08-04 16:10:17,130 DEBUG [operate-37] p.execute 192.168.56.101   <== -#
+2014-08-04 16:10:17,130 DEBUG [operate-37] p.execute 192.168.56.101   <== -Defaults	env_reset
+2014-08-04 16:10:17,130 DEBUG [operate-37] p.execute 192.168.56.101   <== -Defaults	mail_badpass
+2014-08-04 16:10:17,130 DEBUG [operate-37] p.execute 192.168.56.101   <== -Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+2014-08-04 16:10:17,130 DEBUG [operate-37] p.execute 192.168.56.101   <== -
+2014-08-04 16:10:17,130 DEBUG [operate-37] p.execute 192.168.56.101   <== -# Host alias specification
+2014-08-04 16:10:17,131 DEBUG [operate-37] p.execute 192.168.56.101   <== -
+2014-08-04 16:10:17,131 DEBUG [operate-37] p.execute 192.168.56.101   <== -# User alias specification
+2014-08-04 16:10:17,131 DEBUG [operate-37] p.execute 192.168.56.101   <== -
+2014-08-04 16:10:17,131 DEBUG [operate-37] p.execute 192.168.56.101   <== -# Cmnd alias specification
+2014-08-04 16:10:17,131 DEBUG [operate-37] p.execute 192.168.56.101   <== -
+2014-08-04 16:10:17,131 DEBUG [operate-37] p.execute 192.168.56.101   <== -# User privilege specification
+2014-08-04 16:10:17,131 DEBUG [operate-37] p.execute 192.168.56.101   <== -root	ALL=(ALL:ALL) ALL
+2014-08-04 16:10:17,131 DEBUG [operate-37] p.execute 192.168.56.101   <== -
+2014-08-04 16:10:17,131 DEBUG [operate-37] p.execute 192.168.56.101   <== -# Members of the admin group may gain root privileges
+2014-08-04 16:10:17,131 DEBUG [operate-37] p.execute 192.168.56.101   <== -%admin ALL=(ALL) ALL
+2014-08-04 16:10:17,131 DEBUG [operate-37] p.execute 192.168.56.101   <== -
+2014-08-04 16:10:17,131 DEBUG [operate-37] p.execute 192.168.56.101   <== -# Allow members of group sudo to execute any command
+2014-08-04 16:10:17,131 DEBUG [operate-37] p.execute 192.168.56.101   <== -%sudo	ALL=(ALL:ALL) ALL
+2014-08-04 16:10:17,131 DEBUG [operate-37] p.execute 192.168.56.101   <== -
+2014-08-04 16:10:17,131 DEBUG [operate-37] p.execute 192.168.56.101   <== -# See sudoers(5) for more information on "#include" directives:
+2014-08-04 16:10:17,131 DEBUG [operate-37] p.execute 192.168.56.101   <== -
+2014-08-04 16:10:17,131 DEBUG [operate-37] p.execute 192.168.56.101   <== -#includedir /etc/sudoers.d
+2014-08-04 16:10:17,132 DEBUG [operate-37] p.execute 192.168.56.101   <== +Defaults env_keep=SSH_AUTH_SOCK
+2014-08-04 16:10:17,132 DEBUG [operate-37] p.execute 192.168.56.101   <== +root ALL = (ALL) ALL
+2014-08-04 16:10:17,132 DEBUG [operate-37] p.execute 192.168.56.101   <== +%adm ALL = (ALL) ALL
+2014-08-04 16:10:17,132 DEBUG [operate-37] p.execute 192.168.56.101   <== +terje ALL = (ALL) NOPASSWD: ALL
+2014-08-04 16:10:17,434 DEBUG [operate-37] p.execute 192.168.56.101   <== MD5 sum is 86ecb5dff927263d3aced6b9590f2110 sudoers
+2014-08-04 16:10:17,434 INFO [operate-37] p.execute 192.168.56.101 #> automated-admin-user: sudoers: remote-file /etc/sudoers : SUCCESS
+2014-08-04 16:10:17,537 DEBUG [operate-37] p.s.execute 192.168.56.101   <== ----------------------------------------
+2014-08-04 16:10:17,559 DEBUG [operate-37] p.c.primitives set-state-for-nodes :bootstrapped ["c871d628-878e-44d9-8722-6d926d598b21"]
+2014-08-04 16:10:17,561 DEBUG [operate-38] p.c.primitives set-state-for-node :bootstrapped null
+2014-08-04 16:10:17,562 DEBUG [operate-38] p.core.api set-state-for-node :bootstrapped
+2014-08-04 16:10:17,563 DEBUG [operate-38] p.core.api set-state-for-node taggable
+2014-08-04 16:10:17,566 DEBUG [operate-38] p.core.api set-state-for-node pallet/state {:bootstrapped true}
+2014-08-04 16:10:17,687 DEBUG [operate-37] p.c.operations lift :phases [:configure] :targets [:droidbox]
+2014-08-04 16:10:17,693 DEBUG [operate-38] p.c.primitives build-and-execute-phase :configure on 1 target(s)
+2014-08-04 16:10:17,714 DEBUG [operate-38] p.c.api-impl target-os-details node {:packager :apt, :os-version "14.04", :os-family :ubuntu} detected {:os-version "14.04", :os-family :ubuntu}
+2014-08-04 16:10:17,714 DEBUG [operate-38] p.c.api-impl Script context: [:ubuntu :apt :ubuntu-14.04]
+2014-08-04 16:10:17,718 DEBUG [operate-38] p.core.api environment-execution-settings {:compute #<VmfestService pallet.compute.vmfest.service.VmfestService@55c45fa4>, :user #pallet.core.user.User{:username "terje", :public-key-path "/Users/terje/.ssh/id_rsa.pub", :private-key-path "/Users/terje/.ssh/id_rsa", :public-key nil, :private-key nil, :passphrase nil, :password nil, :sudo-password nil, :no-sudo nil, :sudo-user nil, :state-root nil, :state-group nil}}
+2014-08-04 16:10:17,718 DEBUG [operate-38] p.core.api Env user pallet.core.user.User@e4d0912f
+2014-08-04 16:10:17,737 DEBUG [operate-38] p.c.api-impl target-os-details node {:packager :apt, :os-version "14.04", :os-family :ubuntu} detected {:os-version "14.04", :os-family :ubuntu}
+2014-08-04 16:10:17,737 DEBUG [operate-38] p.c.api-impl Script context: [:ubuntu :apt :ubuntu-14.04]
