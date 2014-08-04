@@ -1,5 +1,6 @@
 DroidBox
 ========
+by Terje Norderhaug
 
 Virtual development environment/sandbox for building Android apps in Clojure
 
