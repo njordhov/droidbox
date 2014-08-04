@@ -8,7 +8,7 @@ Follow these steps and you're good to go with a Clojure Android app development 
 
 ## Prerequisites
 
-Install [VirtualBox 4.3.x](https://www.virtualbox.org/wiki/Downloads)
+Install [VirtualBox 4.3.x](https://www.virtualbox.org/wiki/Downloads) or later.
 
 [Download Ubuntu 14.04 VDI](https://s3.amazonaws.com/vmfest-images/ubuntu-14.04.vdi.gz)
 
