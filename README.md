@@ -218,6 +218,46 @@ If you use a target-sdk below 20:
 
 If you use target-sdk 20 or later, consider changing the neko/neko dependency to the latest version, e.g. ``3.1.0-beta1``
 
+## Connect a Device
+
+Devices can be connected via the USB of the host computer. 
+
+Verify that the device is available:
+
+    adb devices
+
+Troubleshooting if devices command outputs
+
+    ????????????	no permissions
+
+Then restart the adb server:
+
+    sudo adb kill-server; sudo adb start-server
+
+You may have to answer a question on your mobile device.
+
+## Build and Deploy
+
+In the directory of the app:
+
+    lein droid doall
+
+A basic app should now be running on the device.
+
+Troubleshooting:
+If Creating Dex is aborted on lein droid build...
+consider increase the RAM for the VM (512 is too little, 1024 works for plain ubuntu 14.04 with no gui)
+
+Troubleshooting:
+when it says zipalign doesn't exist...
+See instructions above to make zipalign available as a tool.
+
+Troubleshooting if leiningen isn't yet installed, execute:
+install leiningen as instructed above.
+
+Troubleshooting if can't run aatp: 
+install 32bit as specified earlier on.
+
 
 
 Copyright ©2014 Terje Norderhaug
