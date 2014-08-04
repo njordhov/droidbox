@@ -195,3 +195,7 @@ Create a clone of this image for new instances to avoid repeating the steps each
 
 To create your first app check out the tutorial at:
 https://github.com/krisc/events/blob/master/tutorial.md
+
+Copyright ©2014 Terje Norderhaug
+
+Distributed under the Eclipse Public License.
