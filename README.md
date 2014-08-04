@@ -163,6 +163,12 @@ better:
 http://www.upubuntu.com/2012/05/how-to-install-android-sdk-release-18.html
 Download zip from here: https://developer.android.com/sdk/index.html
 
+## Zipalign in Tools
+
+Make zipalign available for older build tools:
+
+    cp ~/android-sdk-linux/sdk/build-tools/android-4.4W/zipalign ~/android-sdk-linux/sdk/tools/
+
 ## Generate Key
 
 Generate a key for releases: 
