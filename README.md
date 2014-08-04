@@ -14,7 +14,11 @@ The instructions below assumes OSX. See the [vmfest][vmfest] README for platform
 
 ## Create VM Instance
 
-Start a new VM instance from the repl of this project:
+Open a repl for this project:
+
+    lein repl
+
+In the repl, start a new VM instance:
 
     (require 'droidbox.groups.droidbox)
     (spin)
