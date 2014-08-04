@@ -10,16 +10,22 @@ Follow these steps and you're good to go with a Clojure Android app development 
 
 Install [VirtualBox 4.3.x](https://www.virtualbox.org/wiki/Downloads) or later.
 
-[Download Ubuntu 14.04 VDI](https://s3.amazonaws.com/vmfest-images/ubuntu-14.04.vdi.gz)
-
 The instructions below assumes OSX. See the [vmfest][vmfest] README for platform-specific requirements.
 
 ## Create VM Instance
 
+Start a new VM instance from the repl of this project:
 
+    (require 'droidbox.groups.droidbox)
+    (spin)
 
+This will download Ubuntu (if required), install it on a new instance, then start the instance. This may take some time.
+
+Note the IP address shown for the new image.
 
 ### Alternatively:
+
+[Download Ubuntu 14.04 VDI](https://s3.amazonaws.com/vmfest-images/ubuntu-14.04.vdi.gz)
 
 1. Use the VirtualBox application to create a new instance called "DroidBox".
 2. Set the Type to Linux with Ubuntu (64) as version. 
