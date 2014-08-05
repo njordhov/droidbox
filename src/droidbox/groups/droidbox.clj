@@ -7,26 +7,6 @@
      [pallet.compute.vmfest :refer [add-image]]
      [clojure.pprint :refer [pprint]]))
 
-(use 'pallet.repl)
-
-(defn install-ubuntu []
-  ; https://s3.amazonaws.com/vmfest-images
-  (let [vmfest (instantiate-provider "vmfest")]
-    (when-not (contains? (images vmfest) :ubuntu-14.04)
-      (add-image (vmfest "https://s3.amazonaws.com/vmfest-images/ubuntu-14.04.vdi.gz")))))
-
-(defn print-images []
-  (let [vmfest (instantiate-provider "vmfest")]
-    (pprint (images vmfest))))
-
-(defn spin []
-  (let [vmfest (instantiate-provider "vmfest")]
-    (let [s (pallet.api/converge {droidbox 1} :compute vmfest)]
-      (show-nodes vmfest)
-      s)))
-
-; (def s (spin))
-
 (def default-node-spec
   (node-spec
    :image {:image-id :ubuntu-14.04}
@@ -55,3 +35,24 @@
    "droidbox"
    :extends [base-server droidbox-server]
    :node-spec default-node-spec))
+
+(use 'pallet.repl)
+
+(defn install-ubuntu []
+  ; https://s3.amazonaws.com/vmfest-images
+  (let [vmfest (instantiate-provider "vmfest")]
+    (when-not (contains? (images vmfest) :ubuntu-14.04)
+      (add-image (vmfest "https://s3.amazonaws.com/vmfest-images/ubuntu-14.04.vdi.gz")))))
+
+(defn print-images []
+  (let [vmfest (instantiate-provider "vmfest")]
+    (pprint (images vmfest))))
+
+(defn spin []
+  (let [vmfest (instantiate-provider "vmfest")]
+    (let [s (converge {droidbox 1} :compute vmfest)]
+      (show-nodes vmfest)
+      s)))
+
+; (def s (spin))
+
