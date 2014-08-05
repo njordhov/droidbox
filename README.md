@@ -35,21 +35,6 @@ Connect to the new instance using:
 
 Use the ip adress of the instance in place of 192.168.1.1
 
-## Configure Name Server
-
-Look up the name server for the host computer, for example by running this in a terminal shell:
-
-    cat /etc/resolv.conf
-
-Next configure the name server in the virtual terminal with the same cofiguration, e.g.:
-
-    sudo cat > /etc/resolvconf/resolv.conf.d/tail
-    nameserver 192.168.1.254
-
-Restart the name server to activate:
-
-    sudo /etc/init.d/resolvconf restart
-
 ## Activate APT
 
 This is required for later use of ``add-apt-repository``:
