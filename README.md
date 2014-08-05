@@ -27,31 +27,13 @@ This will download Ubuntu (if required), install it on a new instance, then star
 
 Note the IP address shown for the new image.
 
-### Alternatively:
-
-[Download Ubuntu 14.04 VDI](https://s3.amazonaws.com/vmfest-images/ubuntu-14.04.vdi.gz)
-
-1. Use the VirtualBox application to create a new instance called "DroidBox".
-2. Set the Type to Linux with Ubuntu (64) as version. 
-3. The minimum memory size should be set to 1024.
-4. Select 'use an existing virtual drive', choosing the previously downloaded Ubuntu VDI file. 
-5. Keep file size at 8.00 GB, VDI, Dynamically Allocated.
-6. Complete by clicking the Create button.
-7. Start the new instance.
-
-Log in to the instance in the virtual terminal.
-Get the IP address to the new instance by executing this in its terminal after logging in:
-
-    ip addr show eth0
-
 ## Connecting to the Instance
 
 Connect to the new instance using:
 
-    ssh vmfest@192.168.1.1
+    ssh 192.168.1.1
 
 Use the ip adress of the instance in place of 192.168.1.1
-
 
 ## Configure Name Server
 

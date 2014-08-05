@@ -56,3 +56,6 @@
 
 ; (def s (spin))
 
+(require '[pallet.stevedore :refer [script with-script-language]])
+(require 'pallet.stevedore.bash) ;; for bash output
+
