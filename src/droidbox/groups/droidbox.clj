@@ -9,7 +9,8 @@
      [pallet.actions :refer [package]]
      [pallet.script.lib :as lib]
      [pallet.stevedore :refer [checked-script]]
-     [pallet.crate.java :as java]))
+     [pallet.crate.java :as java]
+     [pallet.crate.lein :as lein]))
 
 (def default-node-spec
   (node-spec
@@ -24,16 +25,20 @@
    {:bootstrap (plan-fn (automated-admin-user))}))
 
 (def 
-  ^{:doc "provides add-apt-repository required to install java"}
-  software-properties  
+  ^{:doc "Components missing for various crates"}
+  missing-components  
   (server-spec
     :phases
       {:configure
           (plan-fn 
             (pallet.actions/exec-script
               (lib/update-package-list)
+              ; provides add-apt-repository required to install java
               (lib/install-package "python-software-properties")
-              (lib/install-package "software-properties-common"))) }))
+              (lib/install-package "software-properties-common")
+              ; required for remote-file in leiningen crate
+              (lib/install-package "wget") 
+              )) }))
 
 (def java-server
   (java/server-spec
@@ -41,10 +46,14 @@
     ; :components #{:jdk}
     :version "7"}))
 
+(def lein-installation
+  (lein/leiningen {}))
+
 (def
   ^{:doc "Define a server spec for droidbox"}
   droidbox-server
   (server-spec
+   :extends [lein-installation]
    :phases
    {:configure (plan-fn
                  ;; Add your crate class here
@@ -55,7 +64,7 @@
   droidbox
   (group-spec
    "droidbox"
-   :extends [base-server software-properties java-server droidbox-server]
+   :extends [base-server missing-components java-server droidbox-server]
    :node-spec default-node-spec))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

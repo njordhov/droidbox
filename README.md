@@ -49,21 +49,6 @@ Alternatively your editor of choice.
 
     sudo apt-get install maven
 
-## Get Leiningen
-
-Get the latest leiningen:
-
-    wget https://raw.github.com/technomancy/leiningen/stable/bin/lein
-    sudo mv lein /usr/local/bin/lein
-    sudo chmod +x /usr/local/bin/lein 
-    /usr/local/bin/lein
-
-### Alternatively get the older officially supported version:
-
-    sudo apt-get install leiningen
-    sudo apt-get upgrade leiningen
-    sudo apt-get update
-
 ## Android SDK
 
 Get the full bundle (although you may only need the sdk):

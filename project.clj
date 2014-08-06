@@ -19,7 +19,8 @@
               [[com.palletops/pallet "0.8.0-RC.9"
                 :classifier "tests"]
 	       [com.palletops/pallet-vmfest "0.4.0-alpha.1"]
-               [com.palletops/java-crate "0.8.0-beta.6"]]
+               [com.palletops/java-crate "0.8.0-beta.6"]
+               [com.palletops/lein-crate "0.8.0-alpha.1"]]
               :plugins
               [[com.palletops/pallet-lein "0.8.0-alpha.1"]]}
              :leiningen/reply
