@@ -35,12 +35,13 @@ Connect to the new instance using:
 
 Use the ip adress of the instance in place of 192.168.1.1
 
-## Activate APT
+## Install Software Properties Modules
 
 This is required for later use of ``add-apt-repository``:
 
-    sudo apt-get install python-software-properties; sudo apt-get update
-    sudo apt-get install software-properties-common; sudo apt-get update
+    sudo apt-get update
+    sudo apt-get -y install python-software-properties
+    sudo apt-get -y install software-properties-common
 
 Troubleshooting:
 May cause problems if python-software-properties is installed after software-properties-common.
@@ -52,7 +53,7 @@ May cause problems if python-software-properties is installed after software-pro
     echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
     sudo add-apt-repository ppa:webupd8team/java
     sudo apt-get update
-    sudo apt-get install oracle-java7-installer
+    sudo apt-get -y install oracle-java7-installer
     sudo apt-get update  % possibly not required
 
 ### For Debian (alternative)

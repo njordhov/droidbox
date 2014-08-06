@@ -5,7 +5,11 @@
      [pallet.crate.automated-admin-user :refer [automated-admin-user]]
      [pallet.compute :refer [images instantiate-provider nodes]]
      [pallet.compute.vmfest :refer [add-image]]
-     [clojure.pprint :refer [pprint]]))
+     [clojure.pprint :refer [pprint]]
+     [pallet.actions :refer [package]]
+     [pallet.script.lib :as lib]
+     [pallet.stevedore :refer [checked-script]]
+     [pallet.crate.java :as java]))
 
 (def default-node-spec
   (node-spec
@@ -27,6 +31,18 @@
    {:configure (plan-fn
                  ;; Add your crate class here
                  )}))
+
+(def 
+  ^{:doc "provides add-apt-repository required to install java"}
+  software-properties  
+  (server-spec
+    :phases
+      {:configure
+          (plan-fn 
+            (pallet.actions/exec-script
+              (lib/update-package-list)
+              (lib/install-package "python-software-properties")
+              (lib/install-package "software-properties-common"))) }))
 
 (def
   ^{:doc "Defines a group spec that can be passed to converge or lift."}
@@ -54,8 +70,12 @@
       (show-nodes vmfest)
       s)))
 
+(defn done []
+  (let [vmfest (instantiate-provider "vmfest")]
+    (pallet.api/converge {droidbox 0} :compute vmfest)))
+
+
 ; (def s (spin))
 
-(require '[pallet.stevedore :refer [script with-script-language]])
-(require 'pallet.stevedore.bash) ;; for bash output
+
 
