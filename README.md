@@ -35,54 +35,6 @@ Connect to the new instance using:
 
 Use the ip adress of the instance in place of 192.168.1.1
 
-## Install Java
-
-### For Ubuntu
-
-    echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
-    sudo add-apt-repository ppa:webupd8team/java
-    sudo apt-get update
-    sudo apt-get -y install oracle-java7-installer
-    sudo apt-get update  % possibly not required
-
-### For Debian (alternative)
-
-    echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu precise main" > sudo /etc/apt/sources.list.d/webupd8team-java.list
-    echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu precise main" >> sudo /etc/apt/sources.list.d/webupd8team-java.list
-    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886
-    apt-get update
-    echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections
-    apt-get install oracle-java7-installer
-    apt-get install oracle-java7-set-default  
-    exit
-
-If you have to redo these steps, remove this file first:
-
-    rm /etc/apt/sources.list.d/webupd8team-java.list
-
-### Wish this worked because then Pallet could do it:
-
-    sudo add-apt-repository ppa:webupd8team/java
-    sudo apt-get update
-    sudo apt-get install oracle-java7-installer
-
-Troubleshooting if there is a problem with accepting oracle license:
-Make sure you've done the step above correctly. 
-
-## Suppport 32bit
-
-### For ubuntu14
-
-    sudo apt-get install lib32stdc++6
-    sudo apt-get install lib32z1
-
-Troubleshooting for problem with 'aatp no such file':
-Do the steps above to install 32 bit support. 
-
-### For Ubuntu 13 (alternative):
-
-    sudo apt-get install ia32-libs
-
 ## Install Emacs
 
 Alternatively your editor of choice.
