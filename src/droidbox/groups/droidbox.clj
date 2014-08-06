@@ -35,6 +35,12 @@
               (lib/install-package "python-software-properties")
               (lib/install-package "software-properties-common"))) }))
 
+(def java-server
+  (java/server-spec
+    {:vendor :oracle
+    ; :components #{:jdk}
+    :version "7"}))
+
 (def
   ^{:doc "Define a server spec for droidbox"}
   droidbox-server
@@ -49,8 +55,10 @@
   droidbox
   (group-spec
    "droidbox"
-   :extends [base-server software-properties droidbox-server]
+   :extends [base-server software-properties java-server droidbox-server]
    :node-spec default-node-spec))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use 'pallet.repl)
 
