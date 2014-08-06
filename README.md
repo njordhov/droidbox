@@ -35,17 +35,6 @@ Connect to the new instance using:
 
 Use the ip adress of the instance in place of 192.168.1.1
 
-## Install Software Properties Modules
-
-This is required for later use of ``add-apt-repository``:
-
-    sudo apt-get update
-    sudo apt-get -y install python-software-properties
-    sudo apt-get -y install software-properties-common
-
-Troubleshooting:
-May cause problems if python-software-properties is installed after software-properties-common.
-
 ## Install Java
 
 ### For Ubuntu

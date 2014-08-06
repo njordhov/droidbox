@@ -23,15 +23,6 @@
    :phases
    {:bootstrap (plan-fn (automated-admin-user))}))
 
-(def
-  ^{:doc "Define a server spec for droidbox"}
-  droidbox-server
-  (server-spec
-   :phases
-   {:configure (plan-fn
-                 ;; Add your crate class here
-                 )}))
-
 (def 
   ^{:doc "provides add-apt-repository required to install java"}
   software-properties  
@@ -45,11 +36,20 @@
               (lib/install-package "software-properties-common"))) }))
 
 (def
+  ^{:doc "Define a server spec for droidbox"}
+  droidbox-server
+  (server-spec
+   :phases
+   {:configure (plan-fn
+                 ;; Add your crate class here
+                 )}))
+
+(def
   ^{:doc "Defines a group spec that can be passed to converge or lift."}
   droidbox
   (group-spec
    "droidbox"
-   :extends [base-server droidbox-server]
+   :extends [base-server software-properties droidbox-server]
    :node-spec default-node-spec))
 
 (use 'pallet.repl)
