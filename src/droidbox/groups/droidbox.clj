@@ -59,15 +59,15 @@
    :extends [lein-installation]
    :phases
    {:configure (plan-fn
-                 (remote-directory "android-adt"
+                 (remote-directory "/tmp"
                               ;:unpack :tar
                               ;:tar-options "-xzfM" ;"-xzfM"
                               :unpack :unzip
                               :url "http://dl.google.com/android/adt/adt-bundle-linux-x86_64-20140702.zip")
-                 ;(lib/mv "android-adt/adt/adt-bundle-linux-x86_64-20140702" "android")
+                 (lib/mv "/tmp/adt-bundle-linux-x86_64-20140702" "android")
                  (system-environment "android-tools" {"PATH" "~/android/sdk/tools/:~/android/sdk/platform-tools/:$PATH"})
                  ; likely redundant:
-                 (lib/export "PATH" "~/android/sdk/tools/:~/android/sdk/platform-tools/:$PATH")
+                 ; (lib/export "PATH" "~/android/sdk/tools/:~/android/sdk/platform-tools/:$PATH")
                  ; Make zipalign available for older build tools:
                  (lib/cp "~/android/sdk/build-tools/android-4.4W/zipalign" "~/android/sdk/tools/")
                   )}))

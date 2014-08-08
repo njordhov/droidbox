@@ -14,6 +14,14 @@ The instructions below assumes OSX. See the [vmfest][vmfest] README for platform
 
 ## Create VM Instance
 
+To build a new sandbox development environment, from the root of this project, execute:
+
+    lein run
+
+This will download Ubuntu (if required), install it on a new instance, then start the instance. This may take some time.
+
+### Alternative Manual Run
+
 Open a repl for this project:
 
     lein repl
@@ -23,7 +31,8 @@ In the repl, start a new VM instance:
     (use 'droidbox.groups.droidbox)
     (def s (spin))
 
-This will download Ubuntu (if required), install it on a new instance, then start the instance. This may take some time.
+This will download Ubuntu (if required), install it on a new instance, then start the instance.
+Take a break while you wait, expect to wait for a bit.
 
 Note the IP address shown for the new image.
 
@@ -46,44 +55,9 @@ Alternatively your editor of choice.
 
     sudo apt-get install emacs ; sudo apt-get update
 
-## Install Unzip
-
-    sudo apt-get install unzip ; sudo apt-get update
-
 ## Install Maven
 
     sudo apt-get install maven
-
-## Update Path
-
-For convenience add the sdk tools to your path:
-
-    cat >> ~/.profile
-    export PATH=~/android/sdk/tools/:~/android/sdk/platform-tools/:$PATH
-
-### References
-
-http://androidtutorialforbeginners.com/install-android-sdk/
-better:
-http://www.webupd8.org/2012/08/install-adb-and-fastboot-android-tools.html
-better:
-http://www.upubuntu.com/2012/05/how-to-install-android-sdk-release-18.html
-Download zip from here: https://developer.android.com/sdk/index.html
-
-## Zipalign in Tools
-
-Make zipalign available for older build tools:
-
-    cp ~/android/sdk/build-tools/android-4.4W/zipalign ~/android/sdk/tools/
-
-## Generate Key
-
-Generate a key for releases: 
-
-    mkdir ~/.android/
-    keytool -genkey -v -keystore ~/.android/debug.keystore -storepass android -alias androiddebugkey -keypass android -dname "CN=Android Debug,O=Android,C=US" -keyalg RSA -keysize 2048
-
-Later you can use the path to the key in the profile.clj file.
 
 ## Android CLJ
 
@@ -94,12 +68,19 @@ Change the content of ~/.lein/profiles.clj as follows:
 
     {:user {:plugins [ [lein-droid "0.2.3"] ] :android {:sdk-path "~/android/sdk"}}}
 
-The sdk path shoud be the same as downloaded previously.
-
 Troubleshooting:
-if the profiles.clj doesn't seem to take efect (so no droid task) consider installing it manually:
+if the profiles.clj doesn't seem to take effect (so no droid task) consider installing it manually:
 
     lein plugin install lein-droid "0.2.3" 
+
+## Generate Key
+
+Generate a key for releases: 
+
+    mkdir ~/.android/
+    keytool -genkey -v -keystore ~/.android/debug.keystore -storepass android -alias androiddebugkey -keypass android -dname "CN=Android Debug,O=Android,C=US" -keyalg RSA -keysize 2048
+
+Later you can use the path to the key in the profile.clj file.
 
 ## Final Steps
 

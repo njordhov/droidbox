@@ -26,6 +26,7 @@
              :leiningen/reply
              {:dependencies [[org.slf4j/jcl-over-slf4j "1.7.2"]]
               :exclusions [commons-logging]}}
+  :main droidbox.core.main
   :local-repo-classpath true
   :repositories
   {"sonatype" "https://oss.sonatype.org/content/repositories/releases/"})
