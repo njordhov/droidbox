@@ -1,16 +1,17 @@
 (ns droidbox.groups.droidbox
     "Node defintions for droidbox"
     (:require
-     [pallet.api :refer [group-spec server-spec node-spec plan-fn converge]]
+     [pallet.api :refer [group-spec server-spec node-spec plan-fn converge lift]]
      [pallet.crate.automated-admin-user :refer [automated-admin-user]]
      [pallet.compute :refer [images instantiate-provider nodes]]
      [pallet.compute.vmfest :refer [add-image]]
      [clojure.pprint :refer [pprint]]
-     [pallet.actions :refer [package]]
+     [pallet.actions :refer [package remote-directory]]
      [pallet.script.lib :as lib]
      [pallet.stevedore :refer [checked-script]]
      [pallet.crate.java :as java]
-     [pallet.crate.lein :as lein]))
+     [pallet.crate.lein :as lein]
+     [pallet.crate.environment :refer [system-environment]]))
 
 (def default-node-spec
   (node-spec
@@ -26,7 +27,7 @@
 
 (def 
   ^{:doc "Components missing for various crates"}
-  missing-components  
+  missing-prerequisites  
   (server-spec
     :phases
       {:configure
@@ -37,7 +38,9 @@
               (lib/install-package "python-software-properties")
               (lib/install-package "software-properties-common")
               ; required for remote-file in leiningen crate
-              (lib/install-package "wget") 
+              (lib/install-package "wget")
+              ; general use
+              (lib/install-package "unzip")
               )) }))
 
 (def java-server
@@ -56,15 +59,25 @@
    :extends [lein-installation]
    :phases
    {:configure (plan-fn
-                 ;; Add your crate class here
-                 )}))
+                 (remote-directory "android-adt"
+                              ;:unpack :tar
+                              ;:tar-options "-xzfM" ;"-xzfM"
+                              :unpack :unzip
+                              :url "http://dl.google.com/android/adt/adt-bundle-linux-x86_64-20140702.zip")
+                 ;(lib/mv "android-adt/adt/adt-bundle-linux-x86_64-20140702" "android")
+                 (system-environment "android-tools" {"PATH" "~/android/sdk/tools/:~/android/sdk/platform-tools/:$PATH"})
+                 ; likely redundant:
+                 (lib/export "PATH" "~/android/sdk/tools/:~/android/sdk/platform-tools/:$PATH")
+                 ; Make zipalign available for older build tools:
+                 (lib/cp "~/android/sdk/build-tools/android-4.4W/zipalign" "~/android/sdk/tools/")
+                  )}))
 
 (def
   ^{:doc "Defines a group spec that can be passed to converge or lift."}
   droidbox
   (group-spec
    "droidbox"
-   :extends [base-server missing-components java-server droidbox-server]
+   :extends [base-server missing-prerequisites java-server droidbox-server]
    :node-spec default-node-spec))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -87,9 +100,28 @@
       (show-nodes vmfest)
       s)))
 
+
 (defn done []
   (let [vmfest (instantiate-provider "vmfest")]
     (pallet.api/converge {droidbox 0} :compute vmfest)))
+
+(def sp 
+  (group-spec "sys2"
+         :phases 
+         {:configure
+         (plan-fn
+          (system-environment "android-tools3" ["PATH" "~/android/sdk/tools/:~/android/sdk/platform-tools/:$PATH"] :shared true))}))
+
+(defmacro exc [nm v]
+  `(let [vmfest# (instantiate-provider "vmfest")
+         sp# (group-spec ~nm :phases {:configure (plan-fn ~v)})
+         s# (lift [sp#] :compute vmfest#)]
+      (show-nodes vmfest#)
+      (explain-session s#)))
+
+; (lift (group-spec "droidbox2" :extends [droidbox-server-2] :node-spec default-node-spec) :compute (instantiate-provider "vmfest"))
+
+; (exc "a2" (system-environment "android-tools3" ["PATH" "~/android/sdk/tools/:~/android/sdk/platform-tools/:$PATH"] :shared true :literal true))
 
 
 ; (def s (spin))

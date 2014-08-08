@@ -20,12 +20,17 @@ Open a repl for this project:
 
 In the repl, start a new VM instance:
 
-    (require 'droidbox.groups.droidbox)
-    (spin)
+    (use 'droidbox.groups.droidbox)
+    (def s (spin))
 
 This will download Ubuntu (if required), install it on a new instance, then start the instance. This may take some time.
 
 Note the IP address shown for the new image.
+
+Troubleshooting if spinning up fails, evaluate:
+
+    (use 'pallet.repl)
+    (explain-session s)
 
 ## Connecting to the Instance
 
@@ -49,25 +54,12 @@ Alternatively your editor of choice.
 
     sudo apt-get install maven
 
-## Android SDK
-
-Get the full bundle (although you may only need the sdk):
-
-    wget http://dl.google.com/android/adt/adt-bundle-linux-x86_64-20140702.zip
-    unzip adt-bundle-linux-x86_64-20140702.zip
-    mv adt-bundle-linux-x86_64-20140702 /home/vmfest/android-sdk-linux
-
-### Preferable but doesn't work:
-
-    sudo apt-get install android-sdk  
-    tools/android update sdk --no-ui
-
 ## Update Path
 
 For convenience add the sdk tools to your path:
 
     cat >> ~/.profile
-    export PATH=~/android-sdk-linux/sdk/tools/:~/android-sdk-linux/sdk/platform-tools/:$PATH
+    export PATH=~/android/sdk/tools/:~/android/sdk/platform-tools/:$PATH
 
 ### References
 
@@ -82,7 +74,7 @@ Download zip from here: https://developer.android.com/sdk/index.html
 
 Make zipalign available for older build tools:
 
-    cp ~/android-sdk-linux/sdk/build-tools/android-4.4W/zipalign ~/android-sdk-linux/sdk/tools/
+    cp ~/android/sdk/build-tools/android-4.4W/zipalign ~/android/sdk/tools/
 
 ## Generate Key
 
@@ -100,7 +92,7 @@ Later you can use the path to the key in the profile.clj file.
 
 Change the content of ~/.lein/profiles.clj as follows:
 
-    {:user {:plugins [ [lein-droid "0.2.3"] ] :android {:sdk-path "/home/vmfest/android-sdk-linux/sdk"}}}
+    {:user {:plugins [ [lein-droid "0.2.3"] ] :android {:sdk-path "~/android/sdk"}}}
 
 The sdk path shoud be the same as downloaded previously.
 
