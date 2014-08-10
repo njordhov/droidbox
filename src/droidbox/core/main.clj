@@ -1,9 +1,9 @@
-
 (ns droidbox.core.main
    (:require
-    [droidbox.groups.droidbox :refer [spin]]))
+    [droidbox.core.actions :refer [spin install-ubuntu]]))
 
 (defn -main
   "Command-line entry point."
   [& raw-args]
+  (install-ubuntu)
   (spin))

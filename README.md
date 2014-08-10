@@ -28,7 +28,7 @@ Open a repl for this project:
 
 In the repl, start a new VM instance:
 
-    (use 'droidbox.groups.droidbox)
+    (use 'droidbox.core.actions)
     (def s (spin))
 
 This will download Ubuntu (if required), install it on a new instance, then start the instance.
@@ -43,11 +43,11 @@ Troubleshooting if spinning up fails, evaluate:
 
 ## Connecting to the Instance
 
-Connect to the new instance using:
+Connect using:
 
     ssh 192.168.1.1
 
-Use the ip adress of the instance in place of 192.168.1.1
+Use the ip adress from above in place of 192.168.1.1
 
 ## Install Emacs
 
@@ -58,20 +58,6 @@ Alternatively your editor of choice.
 ## Install Maven
 
     sudo apt-get install maven
-
-## Android CLJ
-
-    mkdir ~/.lein/
-    emacs ~/.lein/profiles.clj
-
-Change the content of ~/.lein/profiles.clj as follows:
-
-    {:user {:plugins [ [lein-droid "0.2.3"] ] :android {:sdk-path "~/android/sdk"}}}
-
-Troubleshooting:
-if the profiles.clj doesn't seem to take effect (so no droid task) consider installing it manually:
-
-    lein plugin install lein-droid "0.2.3" 
 
 ## Generate Key
 
@@ -109,6 +95,7 @@ If you use target-sdk 20 or later, consider changing the neko/neko dependency to
 ## Connect a Device
 
 Devices can be connected via the USB of the host computer. 
+First activate USB on the VM, for example by editing the Settings in the VirtualBox after shutting down the instance. 
 
 Verify that the device is available:
 

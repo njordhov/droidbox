@@ -3,12 +3,12 @@
     (:require
      [pallet.api :refer [group-spec server-spec node-spec plan-fn converge lift]]
      [pallet.crate.automated-admin-user :refer [automated-admin-user]]
-     [pallet.compute :refer [images instantiate-provider nodes]]
-     [pallet.compute.vmfest :refer [add-image]]
-     [clojure.pprint :refer [pprint]]
-     [pallet.actions :refer [package remote-directory]]
-     [pallet.script.lib :as lib]
-     [pallet.stevedore :refer [checked-script]]
+     [pallet.actions :refer [package remote-directory remote-file directory exec-script]]
+     [pallet.action :refer [with-action-options]]
+     [pallet.script.lib :as lib :refer [config-root file user-home]]
+     [pallet.stevedore :refer [script checked-script fragment]]
+     [pallet.core.user :refer [*admin-user*]]
+     [pallet.crate :refer [admin-user]]
      [pallet.crate.java :as java]
      [pallet.crate.lein :as lein]
      [pallet.crate.environment :refer [system-environment]]))
@@ -59,18 +59,24 @@
    :extends [lein-installation]
    :phases
    {:configure (plan-fn
-                 (remote-directory "/tmp"
-                              ;:unpack :tar
-                              ;:tar-options "-xzfM" ;"-xzfM"
+                 (remote-directory "/opt"
                               :unpack :unzip
+                              ; :owner (:username *admin-user*)
                               :url "http://dl.google.com/android/adt/adt-bundle-linux-x86_64-20140702.zip")
-                 (lib/mv "/tmp/adt-bundle-linux-x86_64-20140702" "android")
-                 (system-environment "android-tools" {"PATH" "~/android/sdk/tools/:~/android/sdk/platform-tools/:$PATH"})
+                 (exec-script (lib/mv "/opt/adt-bundle-linux-x86_64-20140702" "/opt/android" :force true))
+                 (directory "/opt/android/sdk/tools" :mode "775")
+                 (system-environment "android-tools" {"PATH" "/opt/android/sdk/tools/:/opt/android/sdk/platform-tools/:$PATH"})
                  ; likely redundant:
                  ; (lib/export "PATH" "~/android/sdk/tools/:~/android/sdk/platform-tools/:$PATH")
+                 ;    (chown ~(:username (admin-user)) @tmpfile) :mode "755"
                  ; Make zipalign available for older build tools:
-                 (lib/cp "~/android/sdk/build-tools/android-4.4W/zipalign" "~/android/sdk/tools/")
-                  )}))
+                 (exec-script (lib/cp "/opt/android/sdk/build-tools/android-4.4W/zipalign" "/opt/android/sdk/tools/zipalign"))
+                 (with-action-options {:sudo-user (:username *admin-user*)}
+                   (directory "~/.lein/")
+                   ; (directory (str "/tmp/" (script (:username (admin-user)) "/.lein/")))
+                   (remote-file "~/.lein/profiles.clj" :content
+                               "{:user {:plugins [ [lein-droid \"0.2.3\"] ] :android {:sdk-path \"/opt/android/sdk\"}}}")
+                  ))}))
 
 (def
   ^{:doc "Defines a group spec that can be passed to converge or lift."}
@@ -80,51 +86,7 @@
    :extends [base-server missing-prerequisites java-server droidbox-server]
    :node-spec default-node-spec))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use 'pallet.repl)
-
-(defn install-ubuntu []
-  ; https://s3.amazonaws.com/vmfest-images
-  (let [vmfest (instantiate-provider "vmfest")]
-    (when-not (contains? (images vmfest) :ubuntu-14.04)
-      (add-image (vmfest "https://s3.amazonaws.com/vmfest-images/ubuntu-14.04.vdi.gz")))))
-
-(defn print-images []
-  (let [vmfest (instantiate-provider "vmfest")]
-    (pprint (images vmfest))))
-
-(defn spin []
-  (let [vmfest (instantiate-provider "vmfest")]
-    (let [s (converge {droidbox 1} :compute vmfest)]
-      (show-nodes vmfest)
-      s)))
-
-
-(defn done []
-  (let [vmfest (instantiate-provider "vmfest")]
-    (pallet.api/converge {droidbox 0} :compute vmfest)))
-
-(def sp 
-  (group-spec "sys2"
-         :phases 
-         {:configure
-         (plan-fn
-          (system-environment "android-tools3" ["PATH" "~/android/sdk/tools/:~/android/sdk/platform-tools/:$PATH"] :shared true))}))
-
-(defmacro exc [nm v]
-  `(let [vmfest# (instantiate-provider "vmfest")
-         sp# (group-spec ~nm :phases {:configure (plan-fn ~v)})
-         s# (lift [sp#] :compute vmfest#)]
-      (show-nodes vmfest#)
-      (explain-session s#)))
-
-; (lift (group-spec "droidbox2" :extends [droidbox-server-2] :node-spec default-node-spec) :compute (instantiate-provider "vmfest"))
-
-; (exc "a2" (system-environment "android-tools3" ["PATH" "~/android/sdk/tools/:~/android/sdk/platform-tools/:$PATH"] :shared true :literal true))
-
-
-; (def s (spin))
 
 
 
