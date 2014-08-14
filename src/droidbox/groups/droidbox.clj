@@ -3,14 +3,14 @@
     (:require
      [pallet.api :refer [group-spec server-spec node-spec plan-fn converge lift]]
      [pallet.crate.automated-admin-user :refer [automated-admin-user]]
-     [pallet.actions :refer [package remote-directory remote-file directory exec-script]]
+     [pallet.actions :refer [package package-manager remote-directory remote-file directory exec-script setup-node]]
      [pallet.action :refer [with-action-options]]
      [pallet.script.lib :as lib :refer [config-root file user-home]]
      [pallet.stevedore :refer [script checked-script fragment]]
      [pallet.core.user :refer [*admin-user*]]
-     [pallet.crate :refer [admin-user]]
+     [pallet.crate :refer [defplan admin-user]]
      [pallet.crate.java :as java]
-     [pallet.crate.lein :as lein]
+     [pallet.crate.lein :refer [lein leiningen]]
      [pallet.crate.environment :refer [system-environment]]))
 
 (def default-node-spec
@@ -32,16 +32,17 @@
     :phases
       {:configure
           (plan-fn 
-            (pallet.actions/exec-script
-              (lib/update-package-list)
+            (package-manager :update)
+            (package "wget") ; required for remote-file in leiningen crate
+            (package "unzip") ; general use
+            (package "python-software-properties")
+            (package "software-properties-common")
+            ;(pallet.actions/exec-script
               ; provides add-apt-repository required to install java
-              (lib/install-package "python-software-properties")
-              (lib/install-package "software-properties-common")
-              ; required for remote-file in leiningen crate
-              (lib/install-package "wget")
-              ; general use
-              (lib/install-package "unzip")
-              )) }))
+              ;(lib/install-package "python-software-properties")
+              ;(lib/install-package "software-properties-common")
+;              )
+) }))
 
 (def java-server
   (java/server-spec
@@ -49,8 +50,41 @@
     ; :components #{:jdk}
     :version "7"}))
 
+(defplan lein-droid-deploy
+  []
+  (setup-node)
+  (with-action-options {:script-prefix :no-sudo}
+    (lein "self-install")
+    (remote-file (fragment (file ".lein" "profiles.clj")) 
+                 :content (pr-str {:user {:plugins '[ [lein-droid "0.2.3"] ] :android {:sdk-path "/opt/android/sdk"}}}))))
+
 (def lein-installation
-  (lein/leiningen {}))
+  (server-spec
+    :extends [(leiningen {})]
+    :phases
+      {:configure (plan-fn
+                   (system-environment "lein-env" {"PATH" "/usr/local/bin/:$PATH"})
+                   (lein-droid-deploy)) }))
+
+(defplan adt-dependencies
+  []
+  (package "lib32stdc++6")
+  (package "lib32z1"))
+
+(defplan adt-install
+  []
+  (remote-directory "/opt"
+                    :unpack :unzip
+                    :mode "755"
+                    :url "http://dl.google.com/android/adt/adt-bundle-linux-x86_64-20140702.zip")
+  (exec-script (lib/mv "/opt/adt-bundle-linux-x86_64-20140702" "/opt/android" :force true))
+  (exec-script (lib/cp "/opt/android/sdk/build-tools/android-4.4W/zipalign" "/opt/android/sdk/tools/zipalign")) ; for older build tools
+  (directory "/opt/android/sdk" :mode "755" :recursive true)
+  (pallet.actions/exec-script
+   (lib/chmod "755" "/opt/android/sdk/tools/*")
+   (lib/chmod "755" "/opt/android/sdk/platform-tools/*"))
+  (adt-dependencies)
+  (system-environment "android-tools-env" {"PATH" "/opt/android/sdk/tools/:/opt/android/sdk/platform-tools/:$PATH"})) 
 
 (def
   ^{:doc "Define a server spec for droidbox"}
@@ -59,24 +93,9 @@
    :extends [lein-installation]
    :phases
    {:configure (plan-fn
-                 (remote-directory "/opt"
-                              :unpack :unzip
-                              ; :owner (:username *admin-user*)
-                              :url "http://dl.google.com/android/adt/adt-bundle-linux-x86_64-20140702.zip")
-                 (exec-script (lib/mv "/opt/adt-bundle-linux-x86_64-20140702" "/opt/android" :force true))
-                 (directory "/opt/android/sdk/tools" :mode "775")
-                 (system-environment "android-tools" {"PATH" "/opt/android/sdk/tools/:/opt/android/sdk/platform-tools/:$PATH"})
-                 ; likely redundant:
-                 ; (lib/export "PATH" "~/android/sdk/tools/:~/android/sdk/platform-tools/:$PATH")
-                 ;    (chown ~(:username (admin-user)) @tmpfile) :mode "755"
-                 ; Make zipalign available for older build tools:
-                 (exec-script (lib/cp "/opt/android/sdk/build-tools/android-4.4W/zipalign" "/opt/android/sdk/tools/zipalign"))
-                 (with-action-options {:sudo-user (:username *admin-user*)}
-                   (directory "~/.lein/")
-                   ; (directory (str "/tmp/" (script (:username (admin-user)) "/.lein/")))
-                   (remote-file "~/.lein/profiles.clj" :content
-                               "{:user {:plugins [ [lein-droid \"0.2.3\"] ] :android {:sdk-path \"/opt/android/sdk\"}}}")
-                  ))}))
+                 (adt-install)
+                 (package-manager :update)
+                 (package "maven")) }))
 
 (def
   ^{:doc "Defines a group spec that can be passed to converge or lift."}

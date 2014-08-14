@@ -20,12 +20,12 @@
   (let [vmfest (instantiate-provider "vmfest")]
     (pprint (images vmfest))))
 
-(defn spin []
+(defn run []
   (let [vmfest (instantiate-provider "vmfest")]
     (let [s (converge {droidbox 1} :compute vmfest :user *admin-user*)]
       (show-nodes vmfest)
       s)))
 
-(defn done []
+(defn clean []
   (let [vmfest (instantiate-provider "vmfest")]
     (converge {droidbox 0} :compute vmfest)))
