@@ -12,7 +12,9 @@ Install [VirtualBox 4.3.x](https://www.virtualbox.org/wiki/Downloads) or later.
 
 Review and accept the Android SDK license at http://developer.android.com/sdk/index.html
 
-The instructions below assumes OSX. See the [vmfest][vmfest] README for platform-specific requirements.
+Clone this repo from git.
+
+The instructions below assumes OSX. See the [vmfest README][vmfest] for platform-specific requirements.
 
 ## Create VM Instance
 
@@ -47,14 +49,14 @@ Troubleshooting if spinning up fails, evaluate:
 
 Connect using:
 
-    ssh 192.168.1.1
+    ssh 192.168.56.1
 
-Use the ip adress from the install in place of 192.168.1.1
+Use the ip adress from the install in place of 192.168.56.1
 
 ## Final Steps
 
 Save the image in VirtualBox.
-Create a clone of this image for new instances to avoid repeating the steps each time.
+Consider creating a clone of this image for new instances to avoid repeating the steps each time.
 
 # App Development
 
@@ -80,17 +82,19 @@ If you use a target-sdk below 20:
 ## Connect a Device
 
 Devices can be connected via the USB of the host computer. 
-First activate USB on the VM, for example by editing the Settings in the VirtualBox after shutting down the instance. 
 
-Verify that the device is available:
+First activate USB on the VM, for example by editing the Settings in the VirtualBox after shutting down the instance. 
+See the Ports:USB tab, Enable USB Controller and USB 2.0, then use the + button to add your devices. 
+
+Verify that the device is connected:
 
     adb devices
 
-Troubleshooting - if devices command outputs
+Troubleshooting - if devices command outputs:
 
     ????????????	no permissions
 
-restart the adb server:
+then restart the adb server:
 
     sudo adb kill-server; sudo adb start-server
 

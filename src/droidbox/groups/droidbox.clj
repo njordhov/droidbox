@@ -3,7 +3,7 @@
     (:require
      [pallet.api :refer [group-spec server-spec node-spec plan-fn converge lift]]
      [pallet.crate.automated-admin-user :refer [automated-admin-user]]
-     [pallet.actions :refer [package package-manager remote-directory remote-file directory exec-script setup-node]]
+     [pallet.actions :refer [package package-manager remote-directory remote-file directory exec-script exec-checked-script setup-node]]
      [pallet.action :refer [with-action-options]]
      [pallet.script.lib :as lib :refer [config-root file user-home]]
      [pallet.stevedore :refer [script checked-script fragment]]
@@ -18,12 +18,18 @@
    :image {:image-id :ubuntu-14.04}
    :hardware {:min-cores 1 :min-ram 1024}))
 
+(defplan extend-path
+  [label subpath]
+  ; note: system-environment by default appends to /etc/environment which doesn't expand vars nor is updated on the automatic relogin after the command
+  (system-environment label {"PATH" (str subpath ":$PATH")} :shared true :literal true :path "/etc/profile")) 
+
 (def
   ^{:doc "Defines the type of node droidbox will run on"}
   base-server
   (server-spec
    :phases
-   {:bootstrap (plan-fn (automated-admin-user))}))
+   {:bootstrap (plan-fn 
+                (automated-admin-user))}))
 
 (def 
   ^{:doc "Components missing for various crates"}
@@ -32,17 +38,13 @@
     :phases
       {:configure
           (plan-fn 
+           (extend-path "lein-env" "/usr/local/bin/")
             (package-manager :update)
             (package "wget") ; required for remote-file in leiningen crate
             (package "unzip") ; general use
-            (package "python-software-properties")
-            (package "software-properties-common")
-            ;(pallet.actions/exec-script
-              ; provides add-apt-repository required to install java
-              ;(lib/install-package "python-software-properties")
-              ;(lib/install-package "software-properties-common")
-;              )
-) }))
+            (pallet.actions/exec-script
+              (lib/install-package "python-software-properties")
+              (lib/install-package "software-properties-common"))) }))
 
 (def java-server
   (java/server-spec
@@ -62,14 +64,15 @@
   (server-spec
     :extends [(leiningen {})]
     :phases
-      {:configure (plan-fn
-                   (system-environment "lein-env" {"PATH" "/usr/local/bin/:$PATH"})
-                   (lein-droid-deploy)) }))
+      {:configure 
+       (plan-fn
+        (lein-droid-deploy)) }))
 
 (defplan adt-dependencies
   []
-  (package "lib32stdc++6")
-  (package "lib32z1"))
+  (pallet.actions/exec-script
+    (lib/install-package "lib32stdc++6")
+    (lib/install-package "lib32z1")))
 
 (defplan adt-install
   []
@@ -84,7 +87,7 @@
    (lib/chmod "755" "/opt/android/sdk/tools/*")
    (lib/chmod "755" "/opt/android/sdk/platform-tools/*"))
   (adt-dependencies)
-  (system-environment "android-tools-env" {"PATH" "/opt/android/sdk/tools/:/opt/android/sdk/platform-tools/:$PATH"})) 
+  (extend-path "android-tools-env" "/opt/android/sdk/tools/:/opt/android/sdk/platform-tools/")) 
 
 (def
   ^{:doc "Define a server spec for droidbox"}
@@ -95,7 +98,8 @@
    {:configure (plan-fn
                  (adt-install)
                  (package-manager :update)
-                 (package "maven")) }))
+                 (pallet.actions/exec-script
+                   (lib/install-package "maven"))) }))
 
 (def
   ^{:doc "Defines a group spec that can be passed to converge or lift."}
