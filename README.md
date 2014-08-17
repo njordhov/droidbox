@@ -24,7 +24,7 @@ To build a new sandbox development environment, from the root of this project, e
 
 This will download Ubuntu (if required), install it on a new instance, then start the instance. This may take some time.
 
-### Alternative Manual Run
+### Alternative Manual Run *
 
 Open a repl for this project:
 
@@ -44,6 +44,18 @@ Troubleshooting if spinning up fails, evaluate:
 
     (use 'pallet.repl)
     (explain-session s)
+
+## Activate USB
+
+Activate USB from the host computer while the VM is powered off:
+
+    VBoxManage controlvm droidbox-0 poweroff
+    VBoxManage modifyvm droidbox-0  --usb on
+    VBoxManage modifyvm droidbox-0  --usbehci on
+    VBoxManage startvm droidbox-0 --type headless
+
+Alternatively, edit the Settings in the VirtualBox application after shutting down the instance. 
+See the Ports:USB tab, Enable USB Controller and USB 2.0.
 
 ## Final Steps
 
@@ -76,24 +88,17 @@ If you use a target-sdk below 20:
 1. Open project.clj
 2. Comment out the :javac-options
 3. Change dependencies to:
+
  
     :dependencies [[org.clojure-android/clojure "1.5.1-jb" :use-resources true]
                    [neko/neko "3.0.0-preview4"]]
 
 ## Connect a Device
 
-Devices can be connected via the USB of the host computer. 
+Connected your Android device via the USB of the host computer.
 
-First activate USB on the VM from the host computer:
-
-    VBoxManage controlvm droidbox-0 poweroff
-    VBoxManage modifyvm droidbox-0  --usb on
-    VBoxManage modifyvm droidbox-0  --usbehci on
-    VBoxManage startvm droidbox-0 --type headless
-
-Alternatively, edit the Settings in the VirtualBox application after shutting down the instance. 
-
-See the Ports:USB tab, Enable USB Controller and USB 2.0, then use the + button to add your devices before starting up the instance.
+Open the Ports:USB Settings in the VirtualBox application. 
+Use the + button to add devices before starting up the instance.
 
 Verify that the Android device is connected:
 
