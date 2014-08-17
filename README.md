@@ -14,7 +14,7 @@ Review and accept the Android SDK license at http://developer.android.com/sdk/in
 
 Clone this repo from git.
 
-The instructions below assumes OSX. See the [vmfest README][vmfest] for platform-specific requirements.
+The instructions below assumes OSX. See the [vmfest README](vmfest) for platform-specific requirements.
 
 ## Create VM Instance
 
