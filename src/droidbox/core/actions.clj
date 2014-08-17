@@ -9,12 +9,13 @@
      [pallet.api :refer [group-spec server-spec node-spec plan-fn converge lift]])
    (:use [pallet.repl]))
 
+(defn vmfest-install-ubuntu [vmfest]
+  (when-not (contains? (images vmfest) :ubuntu-14.04)
+    (add-image (vmfest "https://s3.amazonaws.com/vmfest-images/ubuntu-14.04.vdi.gz"))))
 
 (defn install-ubuntu []
   ; https://s3.amazonaws.com/vmfest-images
-  (let [vmfest (instantiate-provider "vmfest")]
-    (when-not (contains? (images vmfest) :ubuntu-14.04)
-      (add-image (vmfest "https://s3.amazonaws.com/vmfest-images/ubuntu-14.04.vdi.gz")))))
+  (vmfest-install-ubuntu (instantiate-provider "vmfest")))
 
 (defn print-images []
   (let [vmfest (instantiate-provider "vmfest")]
@@ -22,6 +23,7 @@
 
 (defn run []
   (let [vmfest (instantiate-provider "vmfest")]
+    (vmfest-install-ubuntu vmfest)
     (let [s (converge {droidbox 1} :compute vmfest :user *admin-user*)]
       (show-nodes vmfest)
       s)))

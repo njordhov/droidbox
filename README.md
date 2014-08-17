@@ -45,6 +45,10 @@ Troubleshooting if spinning up fails, evaluate:
     (use 'pallet.repl)
     (explain-session s)
 
+## Final Steps
+
+Consider creating a clone of this image for new instances to avoid repeating the steps each time.
+
 ## Connecting to the Instance
 
 Connect using:
@@ -53,18 +57,15 @@ Connect using:
 
 Use the ip adress from the install in place of 192.168.56.1
 
-## Final Steps
-
-Save the image in VirtualBox.
-Consider creating a clone of this image for new instances to avoid repeating the steps each time.
-
 # App Development
 
 To create your first app see the tutorial at https://github.com/clojure-android/lein-droid/wiki/Tutorial
 
-With the configuration above you are ready to use Android SDK 20 as in:
+Create a new project using Android SDK 20:
 
     lein droid new droidapp com.droid :activity DroidActivity :target-sdk 20 :app-name CljDroid
+
+Ignore the eventual warning about missing :android-dev profile.
 
 If you use target-sdk 20 or later:
 
@@ -83,10 +84,18 @@ If you use a target-sdk below 20:
 
 Devices can be connected via the USB of the host computer. 
 
-First activate USB on the VM, for example by editing the Settings in the VirtualBox after shutting down the instance. 
-See the Ports:USB tab, Enable USB Controller and USB 2.0, then use the + button to add your devices. 
+First activate USB on the VM from the host computer:
 
-Verify that the device is connected:
+    VBoxManage controlvm droidbox-0 poweroff
+    VBoxManage modifyvm droidbox-0  --usb on
+    VBoxManage modifyvm droidbox-0  --usbehci on
+    VBoxManage startvm droidbox-0 --type headless
+
+Alternatively, edit the Settings in the VirtualBox application after shutting down the instance. 
+
+See the Ports:USB tab, Enable USB Controller and USB 2.0, then use the + button to add your devices before starting up the instance.
+
+Verify that the Android device is connected:
 
     adb devices
 

@@ -19,7 +19,7 @@
    :hardware {:min-cores 1 :min-ram 1024}))
 
 (defplan extend-path
-  [label subpath]
+  [label subpath ]
   ; note: system-environment by default appends to /etc/environment which doesn't expand vars nor is updated on the automatic relogin after the command
   (system-environment label {"PATH" (str subpath ":$PATH")} :shared true :literal true :path "/etc/profile")) 
 
@@ -53,20 +53,19 @@
     :version "7"}))
 
 (defplan lein-droid-deploy
-  []
+  [sdk-path]
   (setup-node)
   (with-action-options {:script-prefix :no-sudo}
     (lein "self-install")
     (remote-file (fragment (file ".lein" "profiles.clj")) 
-                 :content (pr-str {:user {:plugins '[ [lein-droid "0.2.3"] ] :android {:sdk-path "/opt/android/sdk"}}}))))
+                 :content (pr-str {:user {:plugins '[ [lein-droid "0.2.3"] ] :android {:sdk-path sdk-path}}}))))
 
 (def lein-installation
   (server-spec
     :extends [(leiningen {})]
     :phases
       {:configure 
-       (plan-fn
-        (lein-droid-deploy)) }))
+       (plan-fn) }))
 
 (defplan adt-dependencies
   []
@@ -74,20 +73,31 @@
     (lib/install-package "lib32stdc++6")
     (lib/install-package "lib32z1")))
 
+(defplan adt-shared-permissions
+  [path]
+  (directory (str path "/sdk") :mode "755" :recursive true)
+  (directory (str path "/sdk/build-tools/android-4.4W") :mode "755" :recursive true)
+  (directory (str path "/sdk/platforms/android-20") :mode "755" :recursive true)
+  (pallet.actions/exec-script
+   (lib/chmod "755" (str path "/sdk/tools/*"))
+   (lib/chmod "755" (str path "/sdk/platform-tools/*"))
+   (lib/chmod "755" (str path "/sdk/build-tools/android-4.4W/*"))))
+  
 (defplan adt-install
-  []
-  (remote-directory "/opt"
+  [path & {shared :shared}]
+  (with-action-options {:script-prefix (if shared :sudo :no-sudo)} 
+    (remote-directory "/tmp"
                     :unpack :unzip
                     :mode "755"
                     :url "http://dl.google.com/android/adt/adt-bundle-linux-x86_64-20140702.zip")
-  (exec-script (lib/mv "/opt/adt-bundle-linux-x86_64-20140702" "/opt/android" :force true))
-  (exec-script (lib/cp "/opt/android/sdk/build-tools/android-4.4W/zipalign" "/opt/android/sdk/tools/zipalign")) ; for older build tools
-  (directory "/opt/android/sdk" :mode "755" :recursive true)
-  (pallet.actions/exec-script
-   (lib/chmod "755" "/opt/android/sdk/tools/*")
-   (lib/chmod "755" "/opt/android/sdk/platform-tools/*"))
+    (exec-script (lib/mv "/tmp/adt-bundle-linux-x86_64-20140702" ~path :force true))
+    (exec-script (lib/cp ~(str path "/sdk/build-tools/android-4.4W/zipalign") ~(str path "/sdk/tools/zipalign"))) ; for older build tools
+    (if shared
+      (adt-shared-permissions path)))
   (adt-dependencies)
-  (extend-path "android-tools-env" "/opt/android/sdk/tools/:/opt/android/sdk/platform-tools/")) 
+  (extend-path "android-tools-env" (str path "/sdk/tools/:" path "/sdk/platform-tools/")))
+
+(def shared-adt false)
 
 (def
   ^{:doc "Define a server spec for droidbox"}
@@ -96,10 +106,10 @@
    :extends [lein-installation]
    :phases
    {:configure (plan-fn
-                 (adt-install)
+                 (adt-install (if shared-adt "/opt/android" "android") :shared shared-adt)
+                 (lein-droid-deploy (if shared-adt "/opt/android/sdk" (str (System/getenv "HOME") "/android/sdk")) )
                  (package-manager :update)
-                 (pallet.actions/exec-script
-                   (lib/install-package "maven"))) }))
+                 (package "maven")) }))
 
 (def
   ^{:doc "Defines a group spec that can be passed to converge or lift."}
