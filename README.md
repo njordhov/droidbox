@@ -2,7 +2,9 @@ DroidBox
 ========
 by Terje Norderhaug
 
-Virtual development environment/sandbox for building Android apps in Clojure
+Virtual development environment/sandbox for building Android apps in Clojure.
+
+Version: Preview
 
 Follow these steps and you're good to go with a Clojure Android app development sandbox on VirtualBox.
 
@@ -18,13 +20,14 @@ The instructions below assumes OSX. See the [vmfest README](https://github.com/t
 
 ## Create VM Instance
 
-To build a new sandbox development environment, from the root of this project, execute:
+From the root of this project, execute:
 
     lein run
 
-This will download Ubuntu (if required), install it on a new instance, then start the instance. This may take some time.
+This will install a canonical VM environment for Android development. Expect it to take a while. 
+If the run fails (possibly due to network problems) then start it again.
 
-### Alternative Manual Run *
+#### Alternative Manual Run *
 
 Open a repl for this project:
 
@@ -47,29 +50,32 @@ Troubleshooting if spinning up fails, evaluate:
 
 ## Activate USB
 
-Activate USB from the host computer while the VM is powered off:
+Activate USB from a host computer terminal:
 
     VBoxManage controlvm droidbox-0 poweroff
-    VBoxManage modifyvm droidbox-0  --usb on
-    VBoxManage modifyvm droidbox-0  --usbehci on
-    VBoxManage startvm droidbox-0 --type headless
+    VBoxManage modifyvm droidbox-0  --usb on --usbehci on
 
-Alternatively, edit the Settings in the VirtualBox application after shutting down the instance. 
+Alternatively, manually edit the Settings in the VirtualBox application after powering down the instance. 
 See the Ports:USB tab, Enable USB Controller and USB 2.0.
 
-## Final Steps
+# Android App Development
 
-Consider creating a clone of this image for new instances to avoid repeating the steps each time.
+Create a clone of the machine image called say droidbox-1:
 
-## Connecting to the Instance
+    VBoxManage clonevm droidbox-0 --name droidbox-1 --register
+
+Start up the new clone:
+
+    VBoxManage startvm droidbox-1 --type gui
+
+In the droidbox-1 window, press enter to select the *Ubuntu entry and continue to login.
 
 Connect using:
 
-    ssh 192.168.56.1
+    droidbox1=`VBoxManage guestproperty get "droidbox-1" "/VirtualBox/GuestInfo/Net/0/V4/IP" | awk '{ print $2 }'`
+    ssh $droidbox1
 
-Use the ip adress from the install in place of 192.168.56.1
-
-# App Development
+##  Create the App
 
 To create your first app see the tutorial at https://github.com/clojure-android/lein-droid/wiki/Tutorial
 
@@ -81,13 +87,13 @@ Ignore the eventual warning about missing :android-dev profile.
 
 If you use target-sdk 20 or later:
 
-Optionally change the neko/neko dependency to the latest version, e.g. ``3.1.0-beta1``
+Optionally change the neko/neko dependency in project.clj to the latest version, e.g. ``3.1.0-beta1``
 
 If you use a target-sdk below 20:
 
 1. Open project.clj
 2. Comment out the :javac-options
-3. Change dependencies to:
+3. Change dependencies to
 
  
     :dependencies [[org.clojure-android/clojure "1.5.1-jb" :use-resources true]
@@ -95,22 +101,25 @@ If you use a target-sdk below 20:
 
 ## Connect a Device
 
-Connected your Android device via the USB of the host computer.
+Connect your Android device via the USB of the host computer.
 
-Open the Ports:USB Settings in the VirtualBox application. 
-Use the + button to add devices before starting up the instance.
+The device needs to be declared in Virtualbox to make it visible for your instance:
+
+1. Open the Ports:USB Settings in the VirtualBox application. 
+2. Use the + button to add devices.
+3. Start up the instance again.
 
 Verify that the Android device is connected:
 
     adb devices
 
-Troubleshooting - if devices command outputs:
+Troubleshooting - if devices command outputs nothing or:
 
     ????????????	no permissions
 
 then restart the adb server:
 
-    sudo adb kill-server; sudo adb start-server
+    sudo adb kill-server; sudo adb start-server; adb devices
 
 You may have to answer a question on your mobile device.
 
@@ -120,12 +129,9 @@ In the directory of the app:
 
     lein droid doall
 
-A basic app should now be running on the device. For more options see:
+After completion a basic app should be running on the device. For more options see:
 
 https://github.com/clojure-android/lein-droid
-
-Troubleshooting - if Creating Dex is aborted on lein droid build...
-consider increase the RAM for the VM (512 is too little, 1024 works for plain ubuntu 14.04 with no gui)
 
 
 Copyright ©2014 Terje Norderhaug

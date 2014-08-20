@@ -58,7 +58,10 @@
   (with-action-options {:script-prefix :no-sudo}
     (lein "self-install")
     (remote-file (fragment (file ".lein" "profiles.clj")) 
-                 :content (pr-str {:user {:plugins '[ [lein-droid "0.2.3"] ] :android {:sdk-path sdk-path}}}))))
+                 :content (pr-str {:user {:plugins '[ [lein-droid "0.2.3"] ] 
+                                          :android {:sdk-path (if (= (nth sdk-path 0) \/)
+                                                                  sdk-path
+                                                                 (str "/home/" (:username (admin-user)) "/" sdk-path))}}}))))
 
 (def lein-installation
   (server-spec
@@ -107,7 +110,7 @@
    :phases
    {:configure (plan-fn
                  (adt-install (if shared-adt "/opt/android" "android") :shared shared-adt)
-                 (lein-droid-deploy (if shared-adt "/opt/android/sdk" (str (System/getenv "HOME") "/android/sdk")) )
+                 (lein-droid-deploy (if shared-adt "/opt/android/sdk" "android/sdk") )
                  (package-manager :update)
                  (package "maven")) }))
 
@@ -118,7 +121,6 @@
    "droidbox"
    :extends [base-server missing-prerequisites java-server droidbox-server]
    :node-spec default-node-spec))
-
 
 
 
