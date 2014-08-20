@@ -6,7 +6,7 @@ Virtual development environment/sandbox for building Android apps in Clojure.
 
 Version: Preview
 
-Follow these steps and you're good to go with a Clojure Android app development sandbox on VirtualBox.
+Follow these steps and you're good to go with a canonical Clojure Android app development sandbox on VirtualBox.
 
 ## Prerequisites
 
