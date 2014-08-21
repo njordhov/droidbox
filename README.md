@@ -14,6 +14,7 @@ Installs a canonical Clojure Android app development sandbox on VirtualBox:
 * Lein Droid 0.2.3
 * Android SDK Tools 23.0.2
 * Maven 
+* emacs
 
 ## Prerequisites
 
