@@ -2,11 +2,18 @@ DroidBox
 ========
 by Terje Norderhaug
 
-Virtual development environment/sandbox for building Android apps in Clojure.
+VirtualBox development environment/sandbox for building Android apps in Clojure using the current SDK.
 
 Version: Preview
 
-Follow these steps and you're good to go with a canonical Clojure Android app development sandbox on VirtualBox.
+Installs a canonical Clojure Android app development sandbox on VirtualBox:
+
+* Ubuntu 14.04
+* Oracle JDK7
+* Leiningen (latest stable version)
+* Lein Droid 0.2.3
+* Android SDK Tools 23.0.2
+* Maven 
 
 ## Prerequisites
 
