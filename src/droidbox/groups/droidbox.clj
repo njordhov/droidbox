@@ -112,7 +112,8 @@
                  (adt-install (if shared-adt "/opt/android" "android") :shared shared-adt)
                  (lein-droid-deploy (if shared-adt "/opt/android/sdk" "android/sdk") )
                  (package-manager :update)
-                 (package "maven")) }))
+                 (package "maven")
+                 (package "emacs")) }))
 
 (def
   ^{:doc "Defines a group spec that can be passed to converge or lift."}
