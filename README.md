@@ -127,7 +127,7 @@ The SDKs are installed in this directory:
 
     $ ls ~/android/sdk/platforms
 
-Run this to install all SDKs:
+Run this to install all SDKs (will take a while):
 
     $ android update sdk --all --no-ui
 
