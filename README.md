@@ -117,8 +117,6 @@ The device needs to be declared in Virtualbox to make it visible for your instan
 2. Use the + button to add devices.
 3. Start up the instance again.
 
-    cd ~
-
 Verify that the Android device is connected:
 
     adb devices
