@@ -66,6 +66,16 @@ Activate USB from a host computer terminal:
 Alternatively, manually edit the Settings in the VirtualBox application after powering down the instance. 
 See the Ports:USB tab, Enable USB Controller and USB 2.0.
 
+## Enable DNS
+
+Configure virtualbox to properly handle domain name resolution:
+
+1. Open Machine:Settins from the VirtualBox menu.
+2. Select the Network tab.
+3. Adapter 1 should remain attached to "host-only".
+3. Change the Attached To pop-up menu of Adapter 2 to "NAT". 
+5. OK the dialog.
+
 # Android App Development
 
 Create a clone of the machine image called say droidbox-1:
@@ -120,14 +130,6 @@ The SDKs are installed in this directory:
 Run this to install all SDKs:
 
     $ android update sdk --all --no-ui
-    
-If you get an error stating unknown host, configure virtualbox to properly handle the DNS:
-
-1. Open Machine:Settins from the VirtualBox menu.
-2. Select the Network tab.
-3. Change the Attached To pop-up menu of Adapter 2 to "bridged Adapter". 
-4. Adapter 1 should still be attached to host-only
-5. OK the dialog.
 
 ## Connect a Device
 
