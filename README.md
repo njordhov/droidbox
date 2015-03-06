@@ -86,7 +86,7 @@ Start up the new clone:
 
     VBoxManage startvm droidbox-1 --type gui
 
-In the droidbox-1 window, press enter to select the *Ubuntu entry and continue to login.
+In the droidbox-1 window, press enter to select the *Ubuntu entry and continue until the login prompt.
 
 Connect using:
 
