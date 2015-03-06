@@ -119,7 +119,7 @@ If you use a target-sdk below 20:
     :dependencies [[org.clojure-android/clojure "1.5.1-jb" :use-resources true]
                    [neko/neko "3.0.0-preview4"]]
                    
-To list available target SDKs:
+To list installed target SDKs:
 
     $ android list targets
 
