@@ -131,6 +131,14 @@ then restart the adb server:
 
 You may have to answer a question on your mobile device.
 
+If still no device is listed as connected, check to see if the device is set to be in development mode:
+
+1. Open Settings on the device.
+2. Select the Developer Options item or equivalent.
+3. Activate USB debugging.
+4. Reconnect the USB cable to the device.
+5. Select the device using the Devices:USB Devices menu of Virtualbox.
+
 ## Build and Deploy
 
 In the directory of the app:
