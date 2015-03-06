@@ -109,6 +109,8 @@ Optionally change the neko/neko dependency in project.clj to the latest version,
 
 ### Using an older target SDK
 
+The target SDK has to be supported by the android running on the device. Target older versions of Android with earlier minimum SDKs. Use the [minimum SDK/API]](http://developer.android.com/about/dashboards/index.html) supported by the Android version on the devide.  
+
 If you use a target-sdk below 20:
 
 1. Open project.clj
