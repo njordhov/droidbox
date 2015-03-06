@@ -106,6 +106,10 @@ If you use a target-sdk below 20:
  
     :dependencies [[org.clojure-android/clojure "1.5.1-jb" :use-resources true]
                    [neko/neko "3.0.0-preview4"]]
+                   
+This assumes you have installed the earlier SDK in:
+
+    ~/android/sdk/platforms
 
 ## Connect a Device
 
