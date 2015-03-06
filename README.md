@@ -97,6 +97,8 @@ If you use target-sdk 20 or later:
 
 Optionally change the neko/neko dependency in project.clj to the latest version, e.g. ``3.1.0-beta1``
 
+### Using an older target SDK
+
 If you use a target-sdk below 20:
 
 1. Open project.clj
@@ -107,9 +109,24 @@ If you use a target-sdk below 20:
     :dependencies [[org.clojure-android/clojure "1.5.1-jb" :use-resources true]
                    [neko/neko "3.0.0-preview4"]]
                    
-This assumes you have installed the earlier SDK in:
+To list available target SDKs:
 
-    ~/android/sdk/platforms
+    $ android list targets
+
+The SDKs are installed in this directory:
+
+    $ ls ~/android/sdk/platforms
+
+Run this to install all SDKs:
+
+    $ android update sdk --all --no-ui
+    
+If you get an error stating unknown host, configure virtualbox to properly handle the DNS:
+
+1. Open Machine:Settins from the VirtualBox menu.
+2. Select the Network tab.
+3. Change the Attached to pop-up menu to "bridged Adapter".
+4. OK the dialog.
 
 ## Connect a Device
 
