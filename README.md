@@ -117,6 +117,8 @@ The device needs to be declared in Virtualbox to make it visible for your instan
 2. Use the + button to add devices.
 3. Start up the instance again.
 
+    cd ~
+
 Verify that the Android device is connected:
 
     adb devices
@@ -131,7 +133,7 @@ then restart the adb server:
 
 You may have to answer a question on your mobile device.
 
-If still no device is listed as connected, check to see if the device is set to be in development mode:
+If the device still isn't on the adb devices list, make sure the device in development mode:
 
 1. Open Settings on the device.
 2. Select the Developer Options item or equivalent.
