@@ -125,8 +125,9 @@ If you get an error stating unknown host, configure virtualbox to properly handl
 
 1. Open Machine:Settins from the VirtualBox menu.
 2. Select the Network tab.
-3. Change the Attached to pop-up menu to "bridged Adapter".
-4. OK the dialog.
+3. Change the Attached To pop-up menu of Adapter 2 to "bridged Adapter". 
+4. Adapter 1 should still be attached to host-only
+5. OK the dialog.
 
 ## Connect a Device
 
