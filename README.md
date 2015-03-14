@@ -76,9 +76,9 @@ Start up the new clone:
 
     VBoxManage startvm droidbox-1 --type gui
 
-In the droidbox-1 window, press enter to select the *Ubuntu entry and continue to login.
+In the droidbox-1 window, press enter to select the *Ubuntu entry wait until the login prompt.
 
-Connect using:
+Login from the prompt, or alternatively connect using:
 
     droidbox1=`VBoxManage guestproperty get "droidbox-1" "/VirtualBox/GuestInfo/Net/0/V4/IP" | awk '{ print $2 }'`
     ssh $droidbox1
@@ -131,15 +131,88 @@ then restart the adb server:
 
 You may have to answer a question on your mobile device.
 
-## Build and Deploy
+## Build and Deploy on Device
+
+For options see:
+
+https://github.com/clojure-android/lein-droid
 
 In the directory of the app:
 
     lein droid doall
 
-After completion a basic app should be running on the device. For more options see:
+After completion a basic app should be running on the device. 
 
-https://github.com/clojure-android/lein-droid
+To install and run a previous build on the device, execute:
+
+    lein droid deploy -d
+
+## Build and Deploy on Emulator
+
+The brave can deploy to an android emulator on the host computer. The instructions below are rudimentary and still incomplete... see if you can get it to work.
+
+You may have to first download the Android SDK on the host computer.
+
+Start an emulator using the Android SDK Manager in the SDK distribution on the host computer:
+
+    ./sdk/android
+
+From the Tools menu of the Android SDK Manager, start the Android Virtual Device (AVD) manager by selecting the item labeled Manage AVDs. Start your preferred virtual device.
+
+See the section on Emulator Networking in the documentation for the Android emulator:
+https://developer.android.com/tools/devices/emulator.html#emulatornetworking
+
+"The emulator listens for connections on ports 5554-5587 and accepts connections only from localhost."
+
+See also:
+http://www.deadcodersociety.org/blog/forwarding-a-range-of-ports-in-virtualbox/
+
+On the host machine, execute the following to make the first emulator available to the virtual box: 
+
+    VBoxManage modifyvm "droidbox-1" --natpf1 "guestssh,tcp,,5554,,5554"
+    VBoxManage modifyvm "droidbox-1" --natpf1 "guestssh,tcp,,5555,,5555"
+
+You may have to stop the virtual machine before running the command. Use the post number shown on the top of the emulator window in place of 5554. 
+
+Alternatively use the post mapping on the virtual machine manager application:
+
+1. Turn off the instance.
+2. Open the Settings
+3. Select the Network tab.
+4. Select an unused Adapter (from the subtabs).
+5. Set it to be Attached to NAT.
+7. Create a new Rule Using the + button to the right.
+7. Open the Advanced options and click Port Forwarding.
+8. Type in 5554 as Host Port and the same as Guest Port.
+8. Repeat the last steps to add a similar rule for port 5555.
+
+You can list the available emulators and devices by running this on the virtual instance:
+
+    adb devices
+
+Install a previous build by executing the install command on the target virtual instance:
+
+    lein droid deploy -e
+
+# Customization
+
+You can create your own droidbox variation (which may extend an existing or new droidbox image). 
+Assuming you have a running droidbox instance you can interact with it from the repl:
+
+    $ lein repl
+
+In the repl:
+
+    (use 'pallet.repl)
+    (require 'pallet.actions 'pallet.api 'pallet.core.user 'pallet.compute)
+    (def vmfest (pallet.compute/instantiate-provider "vmfest"))
+    (show-nodes vmfest)
+    (def my-droidbox
+        (pallet.api/group-spec (str "my-droidbox" (System/currentTimeMillis))
+           :phases {:configure
+                     (pallet.api/plan-fn
+                       (pallet.actions/exec-script ("ls"))) }))
+    (pallet.api/lift my-droidbox :compute vmfest :user pallet.core.user/*admin-user*)
 
 
 Copyright ©2014 Terje Norderhaug
