@@ -66,6 +66,16 @@ Activate USB from a host computer terminal:
 Alternatively, manually edit the Settings in the VirtualBox application after powering down the instance. 
 See the Ports:USB tab, Enable USB Controller and USB 2.0.
 
+## Enable DNS
+
+Configure virtualbox to properly handle domain name resolution:
+
+1. Open Machine:Settins from the VirtualBox menu.
+2. Select the Network tab.
+3. Adapter 1 should remain attached to "host-only".
+3. Change the Attached To pop-up menu of Adapter 2 to "NAT". 
+5. OK the dialog.
+
 # Android App Development
 
 Create a clone of the machine image called say droidbox-1:
@@ -76,7 +86,7 @@ Start up the new clone:
 
     VBoxManage startvm droidbox-1 --type gui
 
-In the droidbox-1 window, press enter to select the *Ubuntu entry wait until the login prompt.
+In the droidbox-1 window, press enter to select the *Ubuntu entry and continue until the login prompt.
 
 Login from the prompt, or alternatively connect using:
 
@@ -97,6 +107,10 @@ If you use target-sdk 20 or later:
 
 Optionally change the neko/neko dependency in project.clj to the latest version, e.g. ``3.1.0-beta1``
 
+### Using an older target SDK
+
+The target SDK has to be supported by the android running on the device. Target older versions of Android with earlier minimum SDKs. Use the [minimum SDK/API]](http://developer.android.com/about/dashboards/index.html) supported by the Android version on the devide.  
+
 If you use a target-sdk below 20:
 
 1. Open project.clj
@@ -106,6 +120,18 @@ If you use a target-sdk below 20:
  
     :dependencies [[org.clojure-android/clojure "1.5.1-jb" :use-resources true]
                    [neko/neko "3.0.0-preview4"]]
+                   
+To list installed target SDKs:
+
+    $ android list targets
+
+The SDKs are installed in this directory:
+
+    $ ls ~/android/sdk/platforms
+
+Run this to install all SDKs (will take a while):
+
+    $ android update sdk --all --no-ui
 
 ## Connect a Device
 
@@ -136,6 +162,14 @@ You may have to answer a question on your mobile device.
 For options see:
 
 https://github.com/clojure-android/lein-droid
+=======
+If the device still isn't on the adb devices list, make sure the device in development mode:
+
+1. Open Settings on the device.
+2. Select the Developer Options item or equivalent.
+3. Activate USB debugging.
+4. Reconnect the USB cable to the device.
+5. Select the device using the Devices:USB Devices menu of Virtualbox.
 
 In the directory of the app:
 
@@ -215,6 +249,6 @@ In the repl:
     (pallet.api/lift my-droidbox :compute vmfest :user pallet.core.user/*admin-user*)
 
 
-Copyright ©2014 Terje Norderhaug
+Copyright ©2014-2015 Terje Norderhaug
 
 Distributed under the Eclipse Public License.
