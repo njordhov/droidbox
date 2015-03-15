@@ -90,8 +90,8 @@ In the droidbox-1 window, press enter to select the *Ubuntu entry and continue u
 
 Login from the prompt, or alternatively connect using:
 
-    droidbox1=`VBoxManage guestproperty get "droidbox-1" "/VirtualBox/GuestInfo/Net/0/V4/IP" | awk '{ print $2 }'`
-    ssh $droidbox1
+    droidbox=`VBoxManage guestproperty get "droidbox-1" "/VirtualBox/GuestInfo/Net/0/V4/IP" | awk '{ print $2 }'`
+    ssh $droidbox
 
 ##  Create the App
 
@@ -228,7 +228,7 @@ Install a previous build by executing the install command on the target virtual 
 
     lein droid deploy -e
 
-# Customization
+# Advanced Customization
 
 You can create your own droidbox variation (which may extend an existing or new droidbox image). 
 Assuming you have a running droidbox instance you can interact with it from the repl:
@@ -247,6 +247,46 @@ In the repl:
                      (pallet.api/plan-fn
                        (pallet.actions/exec-script ("ls"))) }))
     (pallet.api/lift my-droidbox :compute vmfest :user pallet.core.user/*admin-user*)
+
+# Experimental Extensions
+
+It would be convenient to build and deploy apps by using git to push a distribution, much like a PaaS such as Heroku. 
+Here are experimental steps in that direction. You are welcome to take it further.
+
+First use ssh to login to your account on the target machine (see earlier). 
+Install git (all of this is intended to be included in droidbox):
+
+    $ sudo apt-get install git
+
+Next, create a new empty project:
+
+    $ mkdir project.git
+    $ cd project.git
+    $ git init --bare
+
+Back on the host machine, you can now clone the git repo:
+
+    $ DROIDBOX=`VBoxManage guestproperty get "droidbox-1" "/VirtualBox/GuestInfo/Net/0/V4/IP" | awk '{ print $2 }'`
+    $ git clone $USER"@"$DROIDBOX":~/project.git"
+
+Modify as you please, the use git to add/commit/push as usual.
+
+To automate build on each push, add a post-receive hook to project.git:
+ 
+    $ cat > hooks/post-receive
+    #!/bin/sh
+    ~/android/sdk/platform-tools/adb kill-server
+    ~/android/sdk/platform-tools/adb start-server 
+    ~/android/sdk/platform-tools/adb devices
+    mkdir ~/project
+    GIT_WORK_TREE=~/project git checkout -f
+    cd ~/project
+    lein droid doall
+    ^d
+    $ chmod +x hooks/post-receive
+
+Troubleshooting on "Cannot resolve R.java" error:
+Delete the 'gen' directory (or add it to .gitignore)?
 
 
 Copyright ©2014-2015 Terje Norderhaug
